@@ -10,7 +10,7 @@ const montserrat = Montserrat({
     subsets: ["latin"],
 });
 
-const BASE_URL = "https://travas-stineni.cz";
+const BASE_URL = "https://travasstineni.cz";
 
 export const metadata: Metadata = {
     title: {
