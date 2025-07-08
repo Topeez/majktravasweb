@@ -15,7 +15,7 @@ export const services: Service[] = [
     {
         title: "Garážová vrata",
         description: "Sekční, rolovací či výklopná vrata s tichým chodem a moderním ovládáním.",
-        image: "/assets/img/garage.jpg",
+        image: "/assets/img/garaz.jpeg",
         link:"/garazova-vrata"
     },
     {

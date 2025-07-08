@@ -73,7 +73,7 @@ export function Footer() {
                 </div>
 
                 <Separator className="my-8" />
-
+                <div className="text-muted text-center"></div>
                 <div className="text-muted text-center">&copy; {new Date().getFullYear()} Travas Stínění. Všechna práva vyhrazena.</div>
             </div>
         </footer>
