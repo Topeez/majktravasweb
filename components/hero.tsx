@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react"
 
 export function Hero() {
     return (
-        <section id="home" className="z-10 relative flex flex-col justify-center items-center bg-[url(/assets/img/zaluzie.jpg)] bg-cover bg-no-repeat bg-center w-full min-h-screen text-white animate-bg-zoom-out">
+        <section id="home" className="z-10 relative flex flex-col justify-center items-center bg-[url(/assets/img/zaluzie.jpg)] bg-cover bg-no-repeat bg-center w-full min-h-screen text-white animate-bg-zoom-out-mobile lg:animate-bg-zoom-out">
             <div className="z-10 grid grid-cols-12 w-full cs-container">
                 <div className="space-y-12 col-span-12 py-12 text-center">
                     <h1 className="font-bold text-4xl md:text-5xl lg:text-7xl animate-fade-in">

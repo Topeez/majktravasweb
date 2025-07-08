@@ -43,6 +43,8 @@
     --radius-xl: calc(var(--radius) + 4px);
     --animate-fade-in: fade-in 1s ease 300ms backwards;
     --animate-bg-zoom-out: bg-zoom-out 2s ease-in-out 200ms forwards;
+    --animate-bg-zoom-out-mobile: bg-zoom-out-mobile 2s ease-in-out 200ms
+        forwards;
 }
 
 :root {
@@ -169,6 +171,15 @@
     }
     100% {
         background-size: 100%;
+    }
+}
+
+@keyframes bg-zoom-out-mobile {
+    0% {
+        background-size: 353%;
+    }
+    100% {
+        background-size: 350%;
     }
 }
 
