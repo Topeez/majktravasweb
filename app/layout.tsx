@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Toaster } from "sonner";
+import { BackToTop } from "@/components/back-to-top";
 
 const montserrat = Montserrat({
     variable: "--font-montserrat",
@@ -24,6 +25,14 @@ export const metadata: Metadata = {
         type: "website",
         url: "/",
         description: "Webová stránka Travas Stínění",
+        images: [
+            {
+                url: "assets/img/logo/logo.png",
+                width: 800,
+                height: 600,
+                alt: "Travas Stínění",
+            },
+        ],
     }
 
 };
@@ -38,6 +47,7 @@ export default function RootLayout({
             <body className={`${montserrat.variable} antialiased`}>
                 <Header />
                 <main>{children}</main>
+                <BackToTop />
                 <Toaster />
                 <Footer />
             </body>

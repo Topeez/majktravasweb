@@ -2,6 +2,25 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
 
 export default function StiniciTechnika() {
+    const list = [
+        {
+            id: 1,
+            text: "Efektivní ochrana před sluncem a přehříváním",
+        },
+        {
+            id: 2,
+            text: "Zajištění soukromí a bezpečnosti",
+        },
+        {
+            id: 3,
+            text: "Energetická úspora díky tepelné izolaci",
+        },
+        {
+            id: 4,
+            text: "Moderní designové prvky exteriéru i interiéru",
+        }
+    ]
+
     return (
 
         <>
@@ -19,30 +38,65 @@ export default function StiniciTechnika() {
                 <div className="z-0 absolute inset-0 bg-black/55"></div>
             </section>
             <section id="stinici-technika" className="bg-white py-20 text-black">
-                <div className="flex flex-col items-center gap-12 md:grid md:grid-cols-12 cs-container">
+                <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
                     <Breadcrumb items={[
                         { title: "Domů", href: "/" },
                         { title: "Stínicí technika" }
-                    ]}
-                    />
-                    {/* Textový blok */}
+                    ]} />
+
                     <div className="space-y-6 md:col-span-12">
                         <h2 className="font-bold text-4xl md:text-5xl text-center">Co je stínicí technika?</h2>
-                        <p className="text-lg leading-relaxed">
+                        <p className="text-xl leading-relaxed">
                             Stínicí technika zahrnuje širokou škálu produktů navržených pro regulaci světla, teploty a soukromí v interiéru i exteriéru. Od žaluzií, rolet, markýz až po pergoly - vše přizpůsobeno vašemu stylu a potřebám.
                         </p>
-                        <ul className="space-y-2 pl-5 text-base list-disc">
-                            <li>Efektivní ochrana před sluncem a přehříváním</li>
-                            <li>Zajištění soukromí a bezpečnosti</li>
-                            <li>Energetická úspora díky tepelné izolaci</li>
-                            <li>Moderní designové prvky exteriéru i interiéru</li>
-                        </ul>
+
+                        {/* Timeline-style benefits section */}
+                        <div className="relative py-12">
+                            {/* Vertical line */}
+                            <div className="hidden md:block top-0 left-1/2 absolute bg-gray-200 w-0.5 h-full -translate-x-1/2 transform"></div>
+
+                            {/* Mobile line */}
+                            <div className="md:hidden top-0 left-4 absolute bg-gray-200 w-0.5 h-full"></div>
+
+                            {list.map((item, index) => (
+                                <div key={index} className="relative mb-16 last:mb-0">
+                                    {/* Timeline dot */}
+                                    <div className="hidden md:block top-8 left-1/2 z-10 absolute bg-foreground shadow-lg -ml-3 border-4 border-background rounded-full w-6 h-6"></div>
+
+                                    {/* Mobile dot */}
+                                    <div className="md:hidden top-8 left-4 z-10 absolute bg-foreground shadow-lg -ml-3 border-4 border-background rounded-full w-6 h-6"></div>
+
+                                    {/* Benefit card */}
+                                    <div className={`bg-background rounded-xl shadow-lg p-12 relative overflow-hidden
+                                        ${index % 2 === 0 ? 'md:mr-[55%]' : 'md:ml-[55%]'}`}>
+
+                                        <p className="z-10 relative font-semibold text-xl">
+                                            {item.text}
+                                        </p>
+
+                                        {/* Large number indicator */}
+                                        <span className={`absolute font-black text-[180px] leading-none text-transparent opacity-35 
+                                            text-outline-2 z-0
+                                            ${index % 2 === 0 ? '-right-8 -bottom-12' : '-left-8 -bottom-12'}`}>
+                                            {"0" + item.id}
+                                        </span>
+                                    </div>
+
+                                    {/* Connector line */}
+                                    {index < list.length - 1 && (
+                                        <div className="hidden md:block top-full left-1/2 absolute bg-gray-200 w-0.5 h-16"></div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
 
-                    {/* Galerie / Obrázek */}
                     <div className="md:col-span-12">
                         <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 w-full">
+                            <div className="place-items-center col-span-2 p-10 font-bold text-4xl text-center">
+                                Tak co, které stínění bude pro Vás to pravé?
+                            </div>
                             <Link
                                 href={"/stinici-technika/venkovni-stineni"}
                                 className="group relative flex flex-col justify-center items-center rounded-xl w-full h-full min-h-[400px] overflow-hidden will-change-auto">
@@ -59,7 +113,7 @@ export default function StiniciTechnika() {
                             </Link>
                             <Link
                                 href={"/stinici-technika/interierove-stineni"}
-                                className="group relative flex flex-col justify-center items-center rounded-xl h-full min-h-[400px] overflow-hidden will-change-auto">
+                                className="group relative flex flex-col justify-center items-center rounded-xl w-full h-full min-h-[400px] overflow-hidden will-change-auto">
                                 <div
                                     className="absolute inset-0 bg-[url(/assets/img/1_IMG_7635.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]"
                                 />

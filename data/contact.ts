@@ -17,7 +17,7 @@ export const contactInfo: ContactItem[] = [
     {
         icon: React.createElement(Mail, { size: 20 }),
         title: "Email",
-        content: "mistrava@seznam.cz",
+        content: React.createElement(Link, { href: "mailto:mistrava@seznam.cz" }, "mistrava@seznam.cz")
     },
     {
         icon: React.createElement(MapPin, { size: 20 }),

@@ -42,7 +42,7 @@ export function Header() {
             const scrollDown = currentScrollY > lastScrollY.current && currentScrollY > 100;
 
             setIsVisible(!scrollDown || currentScrollY === 0);
-            setBackgroundColor(currentScrollY >= 900 ? "bg-foreground" : "backdrop-blur-lg");
+            setBackgroundColor(currentScrollY >= 900 ? "bg-foreground" : "backdrop-blur-2xl");
 
             if (pathname === "/") {
                 hightlightCurrentSection();
@@ -177,8 +177,8 @@ export function Header() {
                         </li>
                     ))}
                     <li>
-                        <Link href="">
-                            <Button className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl font-bold text-foreground hover:text-foreground text-xl cursor-pointer">
+                        <Link href="/#kontakt" onClick={(e) => handleLinkClick(e, "/#kontakt")}>
+                            <Button className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl w-full font-bold text-foreground hover:text-foreground text-xl transition-all duration-300 cursor-pointer">
                                 Nezávazná konzultace
                             </Button>
                         </Link>
@@ -229,7 +229,7 @@ export function Header() {
                                 </li>
                             ))}
                             <li>
-                                <Link href="" onClick={closeMobileMenu}>
+                                <Link href="/#kontakt" onClick={(e) => handleLinkClick(e, "/#kontakt")}>
                                     <Button className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl w-full font-bold text-foreground hover:text-foreground text-xl transition-all duration-300 cursor-pointer">
                                         Nezávazná konzultace
                                     </Button>

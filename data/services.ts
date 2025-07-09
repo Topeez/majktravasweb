@@ -22,7 +22,7 @@ export const services: Service[] = [
         title: "Markýzy",
         description: "Kazetové i otevřené markýzy, které ochrání terasu či balkon před sluncem i deštěm.",
         image: "/assets/img/markyza.jpg",
-        link:"/markyzy"
+        link:"/stinici-technika/venkovni-stineni/markyzy"
     },
     {
         title: "Sítě proti hmyzu",

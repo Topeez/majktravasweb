@@ -74,7 +74,7 @@ export function Footer() {
 
                 <Separator className="my-8" />
                 <div className="text-muted text-center">&copy; {new Date().getFullYear()} Travas Stínění. Všechna práva vyhrazena.</div>
-                <div className="mt-5 text-muted text-xs text-center">Webovou stránku vytvořil <Link href={"https://www.linkedin.com/in/ond%C5%99ej-top%C3%ADnka-195bb4275/"} className="font-bold">Topeeez</Link></div>
+                <div className="mt-5 text-muted text-xs text-center">Webovou stránku vytvořil <Link href={"https://www.topeeez.cz"} className="font-bold">Topeeez</Link></div>
             </div>
         </footer>
     );
