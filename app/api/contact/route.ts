@@ -24,7 +24,8 @@ export async function POST(req: Request) {
 
         await resend.emails.send({
             from: "onboarding@resend.dev", //Tohle se musí změnit na verified doménu
-            to: "topetopinka7@seznam.cz", //Tady musí byt potom Majkova adresa
+            to: "mistrava@seznam.cz",
+            replyTo: email,
             subject: "Nová zpráva z webu",
             html: `
                 <h2>Nová zpráva</h2>

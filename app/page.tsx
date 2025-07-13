@@ -1,5 +1,4 @@
-
-import { Hero } from "@/components/hero";
+import { HeroSection } from "@/components/hero";
 import Services from "@/components/services";
 
 import { Benefits } from "@/components/benefits";
@@ -11,7 +10,20 @@ import { SpacerBig } from "@/components/spacer-big";
 export default function Home() {
     return (
         <>
-            <Hero />
+            <HeroSection
+                title="Profesionální montáže stínicí techniky, garážových vrat a markýz"
+                subtitle="Kvalita pro Váš domov dle Vašeho gusta."
+                backgroundImage="/assets/img/zaluzie.jpg"
+                primaryCta={{
+                    label: "Moje služby",
+                    href: "#sluzby",
+                }}
+                secondaryCta={{
+                    label: "Domluvte si nezávazné zaměření",
+                    href: "/#kontakt",
+                    icon: true,
+                }}
+            />
             <SpacerBig />
             <Services />
             <SpacerBig />
@@ -19,8 +31,6 @@ export default function Home() {
             <Testimonials />
             <CTA />
             <Contact />
-
         </>
     );
 }
-

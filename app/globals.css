@@ -164,10 +164,12 @@
 @keyframes fade-in {
     0% {
         opacity: 0;
+        filter: blur(8px);
         transform: translateY(20px);
     }
     100% {
         opacity: 100;
+        filter: blur(0px);
         transform: translateY(0);
     }
 }
