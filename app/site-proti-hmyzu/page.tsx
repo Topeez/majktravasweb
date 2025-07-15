@@ -1,7 +1,11 @@
+import { HeroSection } from "@/components/hero";
+
 export default function SiteProtiHmyzu() {
     return (
-        <div className="flex justify-center items-center my-42">
-            <h2>site proti hmyzu</h2>
-        </div>
-    )
+        <HeroSection
+            title="Větrejte bez obav &#45; sítě proti hmyzu vás ochrání ve dne i v noci"
+            subtitle="Nenápadná, ale účinná ochrana pro každé okno a dveře."
+            backgroundImage="/assets/img/hmyz_sit.jpg"
+        />
+    );
 }

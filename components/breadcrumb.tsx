@@ -1,21 +1,24 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import * as React from "react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 type Crumb = {
-    title: string
-    href?: string
-}
+    title: string;
+    href?: string;
+};
 
 interface BreadcrumbProps {
-    items: Crumb[]
+    items: Crumb[];
 }
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
     return (
-        <nav className="flex items-center text-muted-foreground text-sm" aria-label="breadcrumb">
+        <nav
+            className="flex items-center col-span-12 w-full text-muted-foreground text-sm"
+            aria-label="breadcrumb"
+        >
             {items.map((item, index) => (
                 <div className="flex items-center" key={index}>
                     {index !== 0 && <ChevronRight className="mx-2 w-4 h-4" />}
@@ -27,10 +30,12 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
                             {item.title}
                         </Link>
                     ) : (
-                        <span className="w-full text-muted-foreground">{item.title}</span>
+                        <span className="w-full text-muted-foreground">
+                            {item.title}
+                        </span>
                     )}
                 </div>
             ))}
         </nav>
-    )
+    );
 }

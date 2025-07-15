@@ -1,7 +1,11 @@
+import { HeroSection } from "@/components/hero";
+
 export default function GarazovaVrata() {
     return (
-        <div className="flex justify-center items-center my-42">
-            <h2>garazova vrata</h2>
-        </div>
-    )
+        <HeroSection
+            title="Bezpečnost a spolehlivost – garážová vrata na míru vašemu domu"
+            subtitle="Komfortní ovládání, tichý chod a perfektní vzhled."
+            backgroundImage="/assets/img/garaz.jpeg"
+        />
+    );
 }

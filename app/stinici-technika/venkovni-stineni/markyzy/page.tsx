@@ -1,7 +1,11 @@
+import { HeroSection } from "@/components/hero";
+
 export default function Markyzy() {
     return (
-        <div className="flex justify-center items-center my-42">
-            <h2>markyzy</h2>
-        </div>
-    )
+        <HeroSection
+            title="Stín, kde ho potřebujete – markýzy pro vaši terasu i balkon"
+            subtitle="Elegantní ochrana před sluncem a lehkým deštěm."
+            backgroundImage="/assets/img/markyza.jpg"
+        />
+    );
 }

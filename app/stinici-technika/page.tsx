@@ -22,6 +22,11 @@ export default function StiniciTechnika() {
         },
     ];
 
+    const breadcrumbItems = [
+        { title: "Domů", href: "/" },
+        { title: "Stínicí technika" },
+    ];
+
     return (
         <>
             <HeroSection
@@ -34,12 +39,7 @@ export default function StiniciTechnika() {
                 className="bg-white py-20 text-black"
             >
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
-                    <Breadcrumb
-                        items={[
-                            { title: "Domů", href: "/" },
-                            { title: "Stínicí technika" },
-                        ]}
-                    />
+                    <Breadcrumb items={breadcrumbItems} />
 
                     <div className="space-y-6 md:col-span-12">
                         <h2 className="font-bold text-4xl md:text-5xl text-center">

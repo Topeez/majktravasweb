@@ -91,6 +91,15 @@ export default function VenkovniStineni() {
         },
     ];
 
+    const breadcrumbItems = [
+        { title: "Domů", href: "/" },
+        {
+            title: "Stínicí technika",
+            href: "/stinici-technika",
+        },
+        { title: "Venkovní stínění" },
+    ];
+
     return (
         <>
             <HeroSection
@@ -100,18 +109,9 @@ export default function VenkovniStineni() {
             />
             <section className="py-20">
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
-                    <Breadcrumb
-                        items={[
-                            { title: "Domů", href: "/" },
-                            {
-                                title: "Stínicí technika",
-                                href: "/stinici-technika",
-                            },
-                            { title: "Venkovní stínění" },
-                        ]}
-                    />
+                    <Breadcrumb items={breadcrumbItems} />
                     <div className="space-y-6 md:col-span-12">
-                        <h2 className="mb-12 font-bold text-foreground text-3xl md:text-5xl text-center">
+                        <h2 className="mb-12 font-bold text-3xl md:text-5xl text-center">
                             Typy venkovního stínění
                         </h2>
 
