@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 // Constants
 const SECTION_IDS = ["home", "sluzby", "omne", "recenze", "kontakt"];
-const DESKTOP_LINKS = [
+const LINKS = [
     { href: "#sluzby", label: "Služby" },
     { href: "#omne", label: "O mně" },
     { href: "#recenze", label: "Reference" },
@@ -194,7 +194,7 @@ export function Header() {
 
                 {/* Desktop Navigation */}
                 <ul className="hidden lg:flex items-center gap-4 font-bold text-background text-xl">
-                    {DESKTOP_LINKS.map((link) => (
+                    {LINKS.map((link) => (
                         <li
                             key={link.href}
                             className={`${isActive(link.href) ? "active" : ""} ${liClasses} from-left`}
@@ -258,7 +258,7 @@ export function Header() {
                                     : "opacity-0 translate-y-8"
                             }`}
                         >
-                            {DESKTOP_LINKS.map((link, index) => (
+                            {LINKS.map((link, index) => (
                                 <li
                                     key={link.href}
                                     className={`${isActive(link.href) ? "active" : ""} ${liClasses} from-left transition-all duration-800 ease-in-out ${
@@ -291,7 +291,7 @@ export function Header() {
                                 }`}
                                 style={{
                                     transitionDelay: isMobileMenuOpen
-                                        ? `${DESKTOP_LINKS.length * 100}ms`
+                                        ? `${LINKS.length * 100}ms`
                                         : "0ms",
                                 }}
                             >

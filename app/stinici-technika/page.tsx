@@ -36,7 +36,7 @@ export default function StiniciTechnika() {
             />
             <section
                 id="stinici-technika"
-                className="bg-white py-20 text-black"
+                className="bg-white py-20 text-popover-foreground"
             >
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
                     <Breadcrumb items={breadcrumbItems} />
