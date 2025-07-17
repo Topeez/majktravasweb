@@ -196,6 +196,15 @@
     }
 }
 
+@keyframes scroll-x {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 @keyframes bg-zoom-out {
     0% {
         background-size: 103%;

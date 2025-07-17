@@ -202,15 +202,17 @@ export function Header() {
                             <Link
                                 href={`/${link.href}`}
                                 className="block"
+                                draggable={false}
                                 onClick={(e) => handleLinkClick(e, link.href)}
                             >
                                 {link.label}
                             </Link>
                         </li>
                     ))}
-                    <li>
+                    <li className="mb-1.5">
                         <Link
                             href="/#kontakt"
+                            draggable={false}
                             onClick={(e) => handleLinkClick(e, "/#kontakt")}
                         >
                             <Button className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl w-full font-bold text-foreground hover:text-foreground text-xl transition-all duration-300 cursor-pointer">

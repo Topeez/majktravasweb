@@ -12,12 +12,12 @@ export const contactInfo: ContactItem[] = [
     {
         icon: React.createElement(Phone, { size: 20 }),
         title: "Telefon",
-        content: React.createElement(Link, { href: "tel:735864899" }, "735 864 899"),
+        content: React.createElement(Link, { href: "tel:735864899", draggable: false }, "735 864 899"),
     },
     {
         icon: React.createElement(Mail, { size: 20 }),
         title: "Email",
-        content: React.createElement(Link, { href: "mailto:mistrava@seznam.cz" }, "mistrava@seznam.cz")
+        content: React.createElement(Link, { href: "mailto:mistrava@seznam.cz", draggable: false }, "mistrava@seznam.cz")
     },
     {
         icon: React.createElement(MapPin, { size: 20 }),

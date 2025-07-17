@@ -18,13 +18,14 @@ export function Footer() {
                 <div className="gap-8 grid grid-cols-1 md:grid-cols-4">
                     <div>
                         <div className="flex justify-center items-center">
-                            <Link href="/">
+                            <Link href="/" draggable={false}>
                                 <Image
                                     src="/assets/img/logo/logo.png"
                                     width={160}
                                     height={80}
                                     alt="logo"
                                     className="w-40"
+                                    draggable={false}
                                 />
                             </Link>
                         </div>
@@ -43,6 +44,7 @@ export function Footer() {
                                     <Link
                                         href={service.link}
                                         className="transition hover:text-accent-foreground"
+                                        draggable={false}
                                     >
                                         {service.title}
                                     </Link>
@@ -61,6 +63,7 @@ export function Footer() {
                                     <Link
                                         href={link.href}
                                         className="transition hover:text-accent-foreground"
+                                        draggable={false}
                                     >
                                         {link.label}
                                     </Link>
@@ -96,6 +99,7 @@ export function Footer() {
                         href={"https://www.topeeez.cz"}
                         className="font-bold animate-shine effect-shine"
                         target="_blank"
+                        draggable={false}
                     >
                         <span> Topeeez</span>
                     </Link>
