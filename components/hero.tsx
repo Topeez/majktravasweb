@@ -3,12 +3,13 @@ import { ArrowRight, ChevronsDown } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { useMemo, useCallback, memo } from "react";
+import { useMemo, useCallback, memo, useState, useEffect } from "react";
 
 type HeroSectionProps = {
     title: string;
     subtitle?: string;
     backgroundImage: string;
+    placeholderColor?: string; // Optional branded color
     primaryCta?: {
         label: string;
         href: string;
@@ -24,9 +25,40 @@ export const HeroSection = memo(function HeroSection({
     title,
     subtitle,
     backgroundImage,
+    placeholderColor = "#1f2937", // Default dark gray
     primaryCta,
     secondaryCta,
 }: HeroSectionProps) {
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [imageSrc, setImageSrc] = useState("");
+
+    // Load background image
+    useEffect(() => {
+        if (!backgroundImage) return;
+
+        const img = new Image();
+
+        img.onload = () => {
+            setImageSrc(backgroundImage);
+            setImageLoaded(true);
+        };
+
+        img.onerror = () => {
+            // Silently fail - keep the placeholder
+            console.warn(`Failed to load background image: ${backgroundImage}`);
+        };
+
+        // Set crossOrigin if needed for external images
+        if (
+            backgroundImage.startsWith("http") &&
+            !backgroundImage.includes(window.location.hostname)
+        ) {
+            img.crossOrigin = "anonymous";
+        }
+
+        img.src = backgroundImage;
+    }, [backgroundImage]);
+
     // Memoize the scroll function to prevent recreation on every render
     const scrollToNextSection = useCallback(() => {
         const nextSection = document.querySelector("section:nth-of-type(2)");
@@ -46,17 +78,47 @@ export const HeroSection = memo(function HeroSection({
             cn(
                 "z-10 relative flex flex-col justify-center items-center",
                 "bg-cover bg-no-repeat bg-center w-full min-h-screen text-white",
-                "animate-bg-zoom-out-mobile lg:animate-bg-zoom-out"
+                "overflow-hidden"
             ),
         []
+    );
+
+    // Memoize the background layer className
+    const backgroundLayerClassName = useMemo(
+        () =>
+            cn(
+                "absolute inset-0 bg-cover bg-no-repeat bg-center transition-all duration-700 ease-out",
+                imageLoaded
+                    ? "animate-bg-zoom-out-mobile lg:animate-bg-zoom-out opacity-100 scale-100"
+                    : "opacity-0 scale-105"
+            ),
+        [imageLoaded]
+    );
+
+    // Memoize the placeholder layer className
+    const placeholderClassName = useMemo(
+        () =>
+            cn(
+                "absolute inset-0 transition-opacity duration-700 ease-out",
+                imageLoaded ? "opacity-0" : "opacity-100"
+            ),
+        [imageLoaded]
     );
 
     // Memoize the background style object
     const backgroundStyle = useMemo(
         () => ({
-            backgroundImage: `url(${backgroundImage})`,
+            backgroundImage: imageLoaded ? `url(${imageSrc})` : "none",
         }),
-        [backgroundImage]
+        [imageLoaded, imageSrc]
+    );
+
+    // Memoize the placeholder style
+    const placeholderStyle = useMemo(
+        () => ({
+            backgroundColor: placeholderColor,
+        }),
+        [placeholderColor]
     );
 
     // Memoize the primary CTA button to prevent recreation
@@ -94,7 +156,18 @@ export const HeroSection = memo(function HeroSection({
     }, [secondaryCta]);
 
     return (
-        <section className={sectionClassName} style={backgroundStyle}>
+        <section className={sectionClassName}>
+            {/* Elegant Placeholder Layer */}
+            <div className={placeholderClassName}>
+                <div className="absolute inset-0" style={placeholderStyle} />
+                {/* Subtle animated gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent animate-pulse" />
+            </div>
+
+            {/* Background Image Layer */}
+            <div className={backgroundLayerClassName} style={backgroundStyle} />
+
+            {/* Content - Always visible */}
             <div className="z-10 grid grid-cols-12 w-full cs-container">
                 <div className="space-y-12 col-span-12 py-12 text-center">
                     <h1 className="font-bold text-4xl md:text-5xl lg:text-7xl leading-snug animate-fade-in">
@@ -122,6 +195,7 @@ export const HeroSection = memo(function HeroSection({
                 <ChevronsDown size={24} />
             </Button>
 
+            {/* Overlay */}
             <div className="z-0 absolute inset-0 bg-black/55" />
         </section>
     );

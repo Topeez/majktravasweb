@@ -32,6 +32,7 @@ export default function StiniciTechnika() {
             <HeroSection
                 title="Komfort, světlo a soukromí pod kontrolou &#45; stínící technika pro moderní domov"
                 backgroundImage="/assets/img/zaluzie2.jpg"
+                placeholderColor="#5ca437"
             />
             <section
                 id="stinici-technika"
@@ -89,11 +90,6 @@ export default function StiniciTechnika() {
                                             {"0" + item.id}
                                         </span>
                                     </div>
-
-                                    {/* Connector line */}
-                                    {index < list.length - 1 && (
-                                        <div className="hidden md:block top-full left-1/2 absolute bg-gray-200 w-0.5 h-16"></div>
-                                    )}
                                 </div>
                             ))}
                         </div>

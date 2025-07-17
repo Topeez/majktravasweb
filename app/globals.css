@@ -47,6 +47,7 @@
     --animate-bg-zoom-out-mobile: bg-zoom-out-mobile 2s ease-in-out 200ms
         forwards;
     --animate-shine: shine 3s infinite;
+    --animate-shimmer: shimmer 1.5s ease-in-out infinite;
 }
 
 :root {
@@ -220,6 +221,18 @@
     }
     100% {
         background-size: 350%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 

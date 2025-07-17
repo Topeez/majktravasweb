@@ -18,6 +18,7 @@ export default function Markyzy() {
             <HeroSection
                 title="Stín, kde ho potřebujete &#45; markýzy pro vaši terasu i balkon"
                 backgroundImage="/assets/img/markyza_2.jpg"
+                placeholderColor="#5ca437"
             />
             <section className="py-20 cs-container">
                 <Breadcrumb items={breadcrumbItems} />

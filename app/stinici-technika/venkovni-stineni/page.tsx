@@ -105,6 +105,7 @@ export default function VenkovniStineni() {
             <HeroSection
                 title="Elegantní ochrana proti slunci i horku &#45; venkovní stínění pro vaše pohodlí po celý rok"
                 backgroundImage="/assets/img/external_venetian_blind.jpg"
+                placeholderColor="#5ca437"
             />
             <section className="py-20">
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">

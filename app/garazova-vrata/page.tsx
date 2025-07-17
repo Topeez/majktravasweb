@@ -13,6 +13,7 @@ export default function GarazovaVrata() {
             <HeroSection
                 title="Bezpečnost a spolehlivost &#45; garážová vrata na míru vašemu domu"
                 backgroundImage="/assets/img/garaz.jpeg"
+                placeholderColor="#5ca437"
             />
 
             <section className="py-20">
