@@ -12,7 +12,7 @@ export const contactInfo: ContactItem[] = [
     {
         icon: React.createElement(Phone, { size: 20 }),
         title: "Telefon",
-        content: React.createElement(Link, { href: "tel:123456789" }, "123 456 789"),
+        content: React.createElement(Link, { href: "tel:735864899" }, "735 864 899"),
     },
     {
         icon: React.createElement(Mail, { size: 20 }),

@@ -5,14 +5,13 @@ import { HeroSection } from "@/components/hero";
 export default function GarazovaVrata() {
     const breadcrumbItems = [
         { title: "Domů", href: "/" },
-        { title: "Garážové vrata" },
+        { title: "Garážová vrata" },
     ];
 
     return (
         <>
             <HeroSection
-                title="Bezpečnost a spolehlivost – garážová vrata na míru vašemu domu"
-                subtitle="Komfortní ovládání, tichý chod a perfektní vzhled."
+                title="Bezpečnost a spolehlivost &#45; garážová vrata na míru vašemu domu"
                 backgroundImage="/assets/img/garaz.jpeg"
             />
 

@@ -103,8 +103,7 @@ export default function VenkovniStineni() {
     return (
         <>
             <HeroSection
-                title="Ovládněte světlo a teplotu &#45; venkovní stínění pro vaše pohodlí po celý rok"
-                subtitle="Elegantní ochrana proti slunci i horku &#45; bez kompromisů."
+                title="Elegantní ochrana proti slunci i horku &#45; venkovní stínění pro vaše pohodlí po celý rok"
                 backgroundImage="/assets/img/external_venetian_blind.jpg"
             />
             <section className="py-20">

@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <>
             <HeroSection
-                title="Profesionální montáže stínicí techniky, garážových vrat a markýz"
+                title="Profesionální montáže stínící techniky, garážových vrat a markýz"
                 subtitle="Kvalita pro Váš domov dle Vašeho gusta."
                 backgroundImage="/assets/img/zaluzie.jpg"
                 primaryCta={{

@@ -5,14 +5,12 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
-
     const navLinks = [
         { label: "Služby", href: "#sluzby" },
         { label: "O mně", href: "#omne" },
         { label: "Reference", href: "#recenze" },
-        { label: "Kontakt", href: "#contact" }
+        { label: "Kontakt", href: "#contact" },
     ];
-
 
     return (
         <footer className="bg-foreground py-12 text-white">
@@ -31,7 +29,9 @@ export function Footer() {
                             </Link>
                         </div>
                         <p className="mt-4 text-background md:text-left text-center">
-                            Profesionální montáže stínicí techniky s více než 8 letou praxí. Zaměřuji se na individuální řešení a precizní provedení.
+                            Profesionální montáže stínicí techniky s více než 8
+                            letou praxí. Zaměřuji se na individuální řešení a
+                            precizní provedení.
                         </p>
                     </div>
 
@@ -40,18 +40,30 @@ export function Footer() {
                         <ul className="space-y-2 text-background">
                             {services.map((service, index) => (
                                 <li key={index}>
-                                    <Link href="#" className="transition hover:text-accent-foreground">{service.title}</Link>
+                                    <Link
+                                        href={service.link}
+                                        className="transition hover:text-accent-foreground"
+                                    >
+                                        {service.title}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
                     <div className="text-center">
-                        <h4 className="mb-4 font-bold text-lg">Rychlé odkazy</h4>
+                        <h4 className="mb-4 font-bold text-lg">
+                            Rychlé odkazy
+                        </h4>
                         <ul className="space-y-2 text-background">
                             {navLinks.map((link, index) => (
                                 <li key={index}>
-                                    <Link href={link.href} className="transition hover:text-accent-foreground">{link.label}</Link>
+                                    <Link
+                                        href={link.href}
+                                        className="transition hover:text-accent-foreground"
+                                    >
+                                        {link.label}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -61,10 +73,11 @@ export function Footer() {
                         <h4 className="mb-4 font-bold text-lg">Kontakt</h4>
                         <ul className="space-y-2 text-background text-center">
                             {contactInfo.map((item, index) => (
-                                <li key={index} className="flex items-start">
-                                    <div className="mt-1 mr-3">
-                                        {item.icon}
-                                    </div>
+                                <li
+                                    key={index}
+                                    className="flex items-center md:items-start"
+                                >
+                                    <div className="mr-3">{item.icon}</div>
                                     <span>{item.content}</span>
                                 </li>
                             ))}
@@ -73,8 +86,20 @@ export function Footer() {
                 </div>
 
                 <Separator className="my-8" />
-                <div className="text-muted text-center">&copy; {new Date().getFullYear()} Travas Stínění. Všechna práva vyhrazena.</div>
-                <div className="mt-5 text-muted text-xs text-center">Webovou stránku vytvořil <Link href={"https://www.topeeez.cz"} className="font-bold">Topeeez</Link></div>
+                <div className="font-semibold text-muted text-center">
+                    &copy; {new Date().getFullYear()} Travas Stínění. Všechna
+                    práva vyhrazena.
+                </div>
+                <div className="mt-5 text-muted text-xs text-center">
+                    Webovou stránku vytvořil
+                    <Link
+                        href={"https://www.topeeez.cz"}
+                        className="font-bold animate-shine effect-shine"
+                        target="_blank"
+                    >
+                        <span> Topeeez</span>
+                    </Link>
+                </div>
             </div>
         </footer>
     );

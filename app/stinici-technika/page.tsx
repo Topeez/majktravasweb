@@ -6,7 +6,7 @@ export default function StiniciTechnika() {
     const list = [
         {
             id: 1,
-            text: "Efektivní ochrana před sluncem a přehříváním",
+            text: "Efektivní ochrana před sluncem",
         },
         {
             id: 2,
@@ -30,8 +30,7 @@ export default function StiniciTechnika() {
     return (
         <>
             <HeroSection
-                title="Komfort, světlo a soukromí pod kontrolou – stínící technika pro moderní domov"
-                subtitle="Od interiérových rolet po venkovní žaluzie – vyberte si řešení na míru."
+                title="Komfort, světlo a soukromí pod kontrolou &#45; stínící technika pro moderní domov"
                 backgroundImage="/assets/img/zaluzie2.jpg"
             />
             <section
@@ -126,7 +125,7 @@ export default function StiniciTechnika() {
                                 href={"/stinici-technika/interierove-stineni"}
                                 className="group relative flex flex-col justify-center items-center rounded-xl w-full h-full min-h-[400px] overflow-hidden will-change-auto"
                             >
-                                <div className="absolute inset-0 bg-[url(/assets/img/1_IMG_7635.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]" />
+                                <div className="absolute inset-0 bg-[url(/assets/img/IMG_7820.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]" />
 
                                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-500" />
 

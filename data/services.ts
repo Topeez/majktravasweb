@@ -8,25 +8,25 @@ export interface Service {
 export const services: Service[] = [
     {
         title: "Stínicí technika",
-        description: "Vnitřní a venkovní žaluzie, rolety, screenové clony i předokenní systémy pro regulaci světla a tepla.",
-        image: "/assets/img/1_IMG_7635.jpeg",
+        description: "Interierové žaluzie, plisé rolety, látkové clony i předokenní systémy.",
+        image: "/assets/img/IMG_7723.jpeg",
         link:"/stinici-technika"
     },
     {
         title: "Garážová vrata",
-        description: "Sekční, rolovací či výklopná vrata s tichým chodem a moderním ovládáním.",
+        description: "Sekční, rolovací vrata s moderním ovládáním.",
         image: "/assets/img/garaz.jpeg",
         link:"/garazova-vrata"
     },
     {
         title: "Markýzy",
-        description: "Kazetové i otevřené markýzy, které ochrání terasu či balkon před sluncem i deštěm.",
+        description: "Kazetové markýzy, které ochrání terasu či balkon před sluncem i deštěm.",
         image: "/assets/img/markyza.jpg",
         link:"/stinici-technika/venkovni-stineni/markyzy"
     },
     {
         title: "Sítě proti hmyzu",
-        description: "Pevné, rolovací a posuvné sítě pro okna i dveře, díky nimž si užijete čerstvý vzduch bez dotěrného hmyzu.",
+        description: "Pevné, rolovací a posuvné sítě pro okna i dveře.",
         image: "/assets/img/IMG_7628.jpeg",
         link:"/site-proti-hmyzu"
     }

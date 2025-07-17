@@ -11,7 +11,6 @@ export default function InterieroveStineni() {
         <>
             <HeroSection
                 title="Styl a soukromí &#45; interiérové stínění, které ladí s vaším domovem"
-                subtitle="Vyberte si ze široké škály moderních i klasických řešení."
                 backgroundImage="/assets/img/IMG_7601.jpeg"
             />
             <section className="py-20">

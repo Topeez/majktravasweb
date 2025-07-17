@@ -116,7 +116,6 @@ export const HeroSection = memo(function HeroSection({
 
             {/* Scroll Down Button */}
             <Button
-                variant="ghost"
                 onClick={scrollToNextSection}
                 className="bottom-8 left-1/2 z-20 absolute flex justify-center items-center bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 hover:border-white/50 rounded-full size-12 aspect-square text-white transition-all -translate-x-1/2 animate-bounce cursor-pointer transform"
             >
