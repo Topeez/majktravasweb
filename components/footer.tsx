@@ -43,7 +43,7 @@ export function Footer() {
                                 <li key={index}>
                                     <Link
                                         href={service.link}
-                                        className="transition hover:text-accent-foreground"
+                                        className="hover:underline transition"
                                         draggable={false}
                                     >
                                         {service.title}
@@ -62,7 +62,7 @@ export function Footer() {
                                 <li key={index}>
                                     <Link
                                         href={link.href}
-                                        className="transition hover:text-accent-foreground"
+                                        className="hover:underline transition"
                                         draggable={false}
                                     >
                                         {link.label}
