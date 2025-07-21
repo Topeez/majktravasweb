@@ -9,7 +9,7 @@ export function Footer() {
         { label: "Služby", href: "#sluzby" },
         { label: "O mně", href: "#omne" },
         { label: "Reference", href: "#recenze" },
-        { label: "Kontakt", href: "#contact" },
+        { label: "Kontakt", href: "#kontakt" },
     ];
 
     return (
@@ -72,13 +72,13 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div className="flex flex-col items-center">
+                    <div className="text-center">
                         <h4 className="mb-4 font-bold text-lg">Kontakt</h4>
-                        <ul className="space-y-2 text-background text-center">
+                        <ul className="space-y-2 text-background text-left">
                             {contactInfo.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="flex items-center md:items-start"
+                                    className="flex justify-center md:justify-start items-center"
                                 >
                                     <div className="mr-3">{item.icon}</div>
                                     <span>{item.content}</span>
