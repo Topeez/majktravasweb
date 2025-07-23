@@ -20,15 +20,56 @@ export function CTA() {
                     </Link>
                 </div>
             </div>
-            <div className="top-1/2 left-0 z-10 absolute flex flex-col justify-evenly items-center opacity-10 h-full -translate-y-1/2">
-                {[...Array(3)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="relative bg-gradient-to-l from-transparent via-45% via-background to-background w-[200px] sm:w-[300px] lg:w-[400px] h-10 sm:h-12 lg:h-16"
-                    >
-                        <div className="top-0 right-0 absolute border-b-[40px] border-b-transparent sm:border-b-[48px] lg:border-b-[64px] border-l-[40px] border-l-foreground sm:border-l-[48px] lg:border-l-[64px] border-solid rotate-180"></div>
-                    </div>
-                ))}
+            <div className="top-1/2 left-0 z-10 absolute flex flex-col justify-evenly items-start opacity-10 h-full -translate-y-1/2">
+                {[...Array(4)].map((_, i) => {
+                    const widths = [
+                        "w-[120px]",
+                        "w-[110px]",
+                        "w-[100px]",
+                        "w-[90px]",
+                    ];
+                    const translateXs = [
+                        "translate-x-0",
+                        "-translate-x-[10px]",
+                        "-translate-x-[20px]",
+                        "-translate-x-[30px]",
+                    ];
+
+                    return (
+                        <div
+                            key={i}
+                            className={`relative bg-gradient-to-l from-transparent via-45% via-background to-background ${widths[i]} ${translateXs[i]} lg:w-[400px] h-8 sm:h-10 lg:h-12 lg:translate-x-0`}
+                        >
+                            <div className="top-0 right-0 absolute border-b-[40px] border-b-transparent sm:border-b-[48px] lg:border-b-[64px] border-l-[40px] border-l-foreground sm:border-l-[48px] lg:border-l-[64px] border-solid rotate-180"></div>
+                        </div>
+                    );
+                })}
+            </div>
+
+            <div className="top-1/2 right-0 z-10 absolute flex flex-col justify-evenly items-center opacity-10 h-full -translate-y-1/2">
+                {[...Array(4)].map((_, i) => {
+                    const widths = [
+                        "w-[120px]",
+                        "w-[110px]",
+                        "w-[100px]",
+                        "w-[90px]",
+                    ];
+                    const translateXs = [
+                        "translate-x-0",
+                        "translate-x-[10px]",
+                        "translate-x-[20px]",
+                        "translate-x-[30px]",
+                    ];
+
+                    return (
+                        <div
+                            key={i}
+                            className={`relative bg-gradient-to-r from-transparent via-45% via-background to-background ${widths[i]} ${translateXs[i]} lg:w-[400px] h-8 sm:h-10 lg:h-12 lg:translate-x-0`}
+                        >
+                            <div className="top-0 left-0 absolute border-b-[40px] border-b-transparent sm:border-b-[48px] lg:border-b-[64px] border-l-[40px] border-l-foreground sm:border-l-[48px] lg:border-l-[64px] border-solid -rotate-90"></div>
+                        </div>
+                    );
+                })}
             </div>
         </section>
     );

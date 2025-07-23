@@ -12,17 +12,17 @@ export const contactInfo: ContactItem[] = [
     {
         icon: React.createElement(Phone, { size: 20 }),
         title: "Telefon",
-        content: React.createElement(Link, { href: "tel:735864899", draggable: false }, "735 864 899"),
+        content: React.createElement(Link, { href: "tel:735864899", draggable: false,  className: "hover:underline" }, "735 864 899"),
     },
     {
         icon: React.createElement(Mail, { size: 20 }),
         title: "Email",
-        content: React.createElement(Link, { href: "mailto:mistrava@seznam.cz", draggable: false }, "mistrava@seznam.cz")
+        content: React.createElement(Link, { href: "mailto:mistrava@seznam.cz", draggable: false, className: "hover:underline" }, "mistrava@seznam.cz")
     },
     {
         icon: React.createElement(MapPin, { size: 20 }),
         title: "Sídlo",
-        content: "Kobylí na Moravě, Jihomoravský kraj",
+        content: React.createElement(Link, { href: "https://maps.app.goo.gl/CcH32FaUAWpXKBJXA", target: "_blank", draggable: false, className: "font-bold hover:underline"}, "Kobylí 587, 691 10 Kobylí")
     },
     {
         icon: React.createElement(Clock, { size: 20 }),

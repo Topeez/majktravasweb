@@ -36,7 +36,7 @@ export function Card({ title, subtitle, image, stats }: Props) {
                     <h3 className="font-bold text-foreground text-2xl md:text-3xl">
                         {title}
                     </h3>
-                    <p className="text-muted-foreground">{subtitle}</p>
+                    <p className="text-muted-foreground text-lg">{subtitle}</p>
                 </div>
 
                 {/* Stats */}

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import {
     Form,
     FormControl,
@@ -10,11 +10,11 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import { toast } from "sonner"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const formSchema = z.object({
     fullname: z.string().min(2, {
@@ -23,9 +23,10 @@ const formSchema = z.object({
     email: z.string().email({
         message: "Zadejte platnou emailovou adresu.",
     }),
-    phone: z.string()
-        .min(10, { message: 'Telefonní číslo musí mít alespoň 10 znaků' })
-        .max(16, { message: 'Telefonní číslo je příliš dlouhé' }),
+    phone: z
+        .string()
+        .min(10, { message: "Telefonní číslo musí mít alespoň 10 znaků" })
+        .max(16, { message: "Telefonní číslo je příliš dlouhé" }),
     message: z.string().min(10, {
         message: "Zpráva musí mít alespoň 10 znaků.",
     }),
@@ -33,29 +34,32 @@ const formSchema = z.object({
 
 function notify(type: "success" | "error", message: string) {
     toast(message, {
-        description: type === "success"
-            ? "Vaše zpráva byla úspěšně odeslána."
-            : "Nastala chyba při odesílání.",
+        description:
+            type === "success"
+                ? "Vaše zpráva byla úspěšně odeslána."
+                : "Nastala chyba při odesílání.",
         duration: 6000,
         style: {
             backgroundColor: "#F3F4F6",
             color: "#1F2937",
-            borderLeft: `4px solid ${type === "success" ? "#5ca437" : "#c53030"}`
+            borderLeft: `4px solid ${type === "success" ? "#5ca437" : "#c53030"}`,
         },
-        icon: type === "success" ? "✅" : "❌"
+        icon: type === "success" ? "✅" : "❌",
     });
 }
 
 export function ContactForm() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
+        mode: "onSubmit", // Only validate on submit
+        reValidateMode: "onSubmit", // Only re-validate on submit
         defaultValues: {
             fullname: "",
             email: "",
             message: "",
             phone: "",
         },
-    })
+    });
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
@@ -82,18 +86,24 @@ export function ContactForm() {
         }
     }
 
-    const inputClasses = "mt-1 px-4 py-3 border border-gray-300 focus:!border-foreground rounded-lg focus:outline-none focus:!ring-0 w-full transition-colors duration-300 ease-in-out";
+    const inputClasses =
+        "mt-1 px-4 py-3 border border-gray-300 focus:!border-foreground rounded-lg focus:outline-none focus:!ring-0 w-full transition-colors duration-300 ease-in-out";
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="z-10 space-y-6 bg-background">
+            <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="z-10 space-y-6 bg-background"
+            >
                 {/* Full Name Field */}
                 <FormField
                     control={form.control}
                     name="fullname"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel className="block font-medium text-gray-700">Jméno a příjmení</FormLabel>
+                            <FormLabel className="block font-medium text-gray-700">
+                                Jméno a příjmení
+                            </FormLabel>
                             <FormControl>
                                 <Input
                                     placeholder="Zadejte celé jméno"
@@ -114,7 +124,9 @@ export function ContactForm() {
                         name="email"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="block font-medium text-gray-700">Email</FormLabel>
+                                <FormLabel className="block font-medium text-gray-700">
+                                    Email
+                                </FormLabel>
                                 <FormControl>
                                     <Input
                                         placeholder="Zadejte email"
@@ -133,7 +145,9 @@ export function ContactForm() {
                         name="phone"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel className="block font-medium text-gray-700">Telefon</FormLabel>
+                                <FormLabel className="block font-medium text-gray-700">
+                                    Telefon
+                                </FormLabel>
                                 <FormControl>
                                     <Input
                                         placeholder="Zadejte telefon"
@@ -153,7 +167,9 @@ export function ContactForm() {
                     name="message"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel className="block font-medium text-gray-700">Zpráva</FormLabel>
+                            <FormLabel className="block font-medium text-gray-700">
+                                Zpráva
+                            </FormLabel>
                             <FormControl>
                                 <Textarea
                                     placeholder="Napište svou zprávu..."
@@ -174,5 +190,5 @@ export function ContactForm() {
                 </Button>
             </form>
         </Form>
-    )
+    );
 }

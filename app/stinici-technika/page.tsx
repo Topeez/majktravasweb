@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { HeroSection } from "@/components/hero";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function StiniciTechnika() {
     const list = [
@@ -115,6 +117,18 @@ export default function StiniciTechnika() {
                                     <p className="mt-3 max-w-md">
                                         Stínění pro Vaše venkovní prostory
                                     </p>
+                                    <div className="flex justify-center items-center mt-4 font-bold">
+                                        <Button
+                                            variant={"ghost"}
+                                            className="flex items-center bg-transparent hover:bg-transparent text-white hover:text-foreground group-hover:text-foreground text-lg transition-all duration-300 cursor-pointer"
+                                        >
+                                            Zjistit více
+                                            <ArrowRight
+                                                className="mt-0.5 group-hover:ml-2 group-hover:w-4 transition-all duration-300"
+                                                size={16}
+                                            />
+                                        </Button>
+                                    </div>
                                 </div>
                             </Link>
                             <Link
@@ -132,6 +146,18 @@ export default function StiniciTechnika() {
                                     <p className="mt-3 max-w-md">
                                         Stínění pro Váš interiér
                                     </p>
+                                    <div className="flex justify-center items-center mt-4 font-bold">
+                                        <Button
+                                            variant={"ghost"}
+                                            className="flex items-center bg-transparent hover:bg-transparent text-white hover:text-foreground group-hover:text-foreground text-lg transition-all duration-300 cursor-pointer"
+                                        >
+                                            Zjistit více
+                                            <ArrowRight
+                                                className="mt-0.5 group-hover:ml-2 group-hover:w-4 transition-all duration-300"
+                                                size={16}
+                                            />
+                                        </Button>
+                                    </div>
                                 </div>
                             </Link>
                         </div>
