@@ -8,6 +8,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { Blinds, PanelRight, Layers, FoldHorizontal, Moon } from "lucide-react";
 
 export default function InterieroveStineni() {
     const breadcrumbItems = [
@@ -20,31 +21,31 @@ export default function InterieroveStineni() {
             title: "Žaluzie",
             description:
                 "Klasické i moderní řešení pro regulaci světla. Vhodné do každé místnosti díky různým materiálům a barevným variantám.",
-            icon: "window-blinds", // můžeš použít např. z Lucide nebo Heroicons
+            icon: <Blinds className="text-foreground" size={30} />,
         },
         {
             title: "Látkové rolety",
             description:
                 "Minimalistické a praktické stínění s možností propustných i zatemňovacích látek. Skvěle ladí s interiérem.",
-            icon: "layers",
+            icon: <Layers className="text-foreground" size={30} />,
         },
         {
             title: "Plisé",
             description:
                 "Flexibilní stínění vhodné pro klasická i atypická okna. Široká škála látek a tvarů.",
-            icon: "fold-horizontal",
+            icon: <FoldHorizontal className="text-foreground" size={30} />,
         },
         {
             title: "Japonské stěny",
             description:
                 "Ideální pro velké prosklené plochy i jako elegantní interiérový prvek. Designová variabilita.",
-            icon: "panel-right",
+            icon: <PanelRight className="text-foreground" size={30} />,
         },
         {
             title: "Zatemňovací systémy",
             description:
                 "Účinné řešení pro úplné zatemnění místnosti. Vhodné do ložnic, domácích kin či hotelů.",
-            icon: "moon",
+            icon: <Moon className="text-foreground" size={30} />,
         },
     ];
 
@@ -107,7 +108,7 @@ export default function InterieroveStineni() {
                         </h3>
                         <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                             {interiorShadingOptions.map((option, index) => (
-                                <Card key={index}>
+                                <Card key={index} className="relative">
                                     <CardContent>
                                         <CardTitle className="mb-2 text-xl md:text-2xl">
                                             {option.title}
@@ -116,6 +117,9 @@ export default function InterieroveStineni() {
                                             {option.description}
                                         </CardDescription>
                                     </CardContent>
+                                    <div className="top-3 right-3 absolute">
+                                        {option.icon}
+                                    </div>
                                 </Card>
                             ))}
                         </div>

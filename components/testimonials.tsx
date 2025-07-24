@@ -7,6 +7,7 @@ interface Testimonial {
     initials: string;
     name: string;
     text: string;
+    type: string;
 }
 
 interface TestimonialCardProps {
@@ -15,32 +16,36 @@ interface TestimonialCardProps {
 }
 
 export function Testimonials() {
-    // Memoized testimonials to prevent recreation on every render
     const testimonials = useMemo(
         () => [
             {
                 initials: "PN",
                 name: "Petr Novák",
+                type: "Rolety",
                 text: "Velmi profesionální přístup. Montáž rolet proběhla rychle a precizně. Po roce používání vše funguje bez problémů. Rozhodně doporučuji!",
             },
             {
                 initials: "JK",
                 name: "Jana Kovářová",
+                type: "Markýza",
                 text: "Objednala jsem si markýzu na terasu a jsem nadšená. Instalace byla rychlá, cena férová a markýza dokonale plní svůj účel. Skvělá práce!",
             },
             {
                 initials: "MS",
                 name: "Martin Svoboda",
+                type: "Garážová vrata",
                 text: "Montáž garážových vrat proběhla bez problémů. Ocenil jsem individuální přístup a odborné rady. Servis po instalaci je také na výborné úrovni.",
             },
             {
                 initials: "AH",
                 name: "Anna Horáková",
+                type: "Obecný servis",
                 text: "Perfektní servis od začátku do konce. Rychlá reakce na dotazy, kvalitní materiály a precizní montáž. Jsem velmi spokojená s výsledkem.",
             },
             {
                 initials: "TV",
                 name: "Tomáš Veselý",
+                type: "Žaluzie",
                 text: "Excellentní práce! Montáž žaluzií proběhla bez problémů a výsledek předčil moje očekávání. Určitě budu doporučovat dál.",
             },
         ],
@@ -49,23 +54,23 @@ export function Testimonials() {
 
     const [isPaused, setIsPaused] = useState(false);
 
-    // Double the testimonials array for seamless infinite scroll
     const duplicatedTestimonials = useMemo(() => {
         return [...testimonials, ...testimonials];
     }, [testimonials]);
 
-    // Memoized testimonial card component
     const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => (
         <div
             key={index}
-            className="flex-shrink-0 bg-gray-50 hover:bg-gray-100 p-6 rounded-xl min-w-[350px] max-w-[350px] transition-all duration-300 group-hover:cursor-grab"
+            className="relative flex-shrink-0 bg-gray-50 hover:bg-gray-100 p-6 rounded-xl min-w-[400px] max-w-[400px] transition-all duration-300 group-hover:cursor-grab"
         >
             <div className="flex items-center">
-                <div className="flex justify-center items-center bg-foreground rounded-full w-12 h-12 font-bold text-white">
+                <div className="flex justify-center items-center bg-foreground rounded-full w-12 h-12 font-bold text-background">
                     {testimonial.initials}
                 </div>
                 <div className="ml-4">
-                    <h3 className="font-bold">{testimonial.name}</h3>
+                    <h3 className="font-bold md:text-2xl">
+                        {testimonial.name}
+                    </h3>
                     <div className="flex mt-1 text-yellow-400">
                         {[...Array(5)].map((_, i) => (
                             <Star key={i} className="fill-current" size={16} />
@@ -73,9 +78,13 @@ export function Testimonials() {
                     </div>
                 </div>
             </div>
-            <p className="mt-4 text-gray-600 italic leading-relaxed">
+            <p className="mt-4 text-gray-600 md:text-xl italic leading-relaxed">
                 {testimonial.text}
             </p>
+
+            <div className="top-3 right-3 absolute bg-foreground px-2 py-1 rounded-full font-bold text-background text-xs">
+                {testimonial.type}
+            </div>
         </div>
     );
 
@@ -92,9 +101,7 @@ export function Testimonials() {
                     </p>
                 </div>
 
-                {/* Carousel Container */}
                 <div className="group relative">
-                    {/* Scrolling testimonials */}
                     <div
                         className="flex gap-6 w-fit"
                         style={{
