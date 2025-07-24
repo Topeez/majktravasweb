@@ -42,7 +42,7 @@ export default function InterieroveStineni() {
             icon: <PanelRight className="text-foreground" size={30} />,
         },
         {
-            title: "Zatemňovací systémy",
+            title: "Rolety den/noc",
             description:
                 "Účinné řešení pro úplné zatemnění místnosti. Vhodné do ložnic, domácích kin či hotelů.",
             icon: <Moon className="text-foreground" size={30} />,
