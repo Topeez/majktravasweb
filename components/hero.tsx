@@ -9,7 +9,7 @@ type HeroSectionProps = {
     title: string;
     subtitle?: string;
     backgroundImage: string;
-    placeholderColor?: string; // Optional branded color
+    placeholderColor?: string;
     primaryCta?: {
         label: string;
         href: string;
@@ -25,7 +25,7 @@ export const HeroSection = memo(function HeroSection({
     title,
     subtitle,
     backgroundImage,
-    placeholderColor = "#1f2937", // Default dark gray
+    placeholderColor = "#1f2937",
     primaryCta,
     secondaryCta,
 }: HeroSectionProps) {
