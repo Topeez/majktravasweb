@@ -27,13 +27,14 @@ export default function PosuvneSite() {
             </div>
 
             {/* Obrázek a text */}
-            <div className="items-center gap-12 grid md:grid-cols-12">
-                <div className="col-span-12 md:col-span-6 aspect-square">
+            <div className="flex flex-col items-center gap-12 md:grid md:grid-cols-12">
+                <div className="col-span-12 md:col-span-6 max-w-[400px] aspect-square">
                     <Image
-                        src="/assets/img/plisa_sit_2.jpg"
+                        src="/assets/img/posuvne_site.jpg"
                         alt="Pevné okenní sítě"
                         width={1200}
                         height={1000}
+                        draggable={false}
                         className="shadow-lg rounded-2xl size-full object-cover"
                     />
                 </div>

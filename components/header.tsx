@@ -209,7 +209,7 @@ export function Header() {
                         width={200}
                         height={200}
                         alt="logo"
-                        className="w-full h-22 md:h-32"
+                        className="w-full max-w-3xs h-22 md:h-32"
                         priority
                     />
                 </Link>

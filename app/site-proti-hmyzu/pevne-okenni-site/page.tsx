@@ -28,13 +28,14 @@ export default function PevneOkenniSite() {
             </div>
 
             {/* Obrázek a text */}
-            <div className="items-center gap-12 grid md:grid-cols-12">
-                <div className="col-span-12 md:col-span-6 aspect-square">
+            <div className="flex flex-col items-center gap-12 md:grid md:grid-cols-12">
+                <div className="col-span-12 md:col-span-6 max-w-[400px] aspect-square">
                     <Image
                         src="/assets/img/IMG_7628.jpeg"
                         alt="Pevné okenní sítě"
                         width={800}
                         height={800}
+                        draggable={false}
                         className="shadow-lg rounded-2xl size-full object-cover"
                     />
                 </div>

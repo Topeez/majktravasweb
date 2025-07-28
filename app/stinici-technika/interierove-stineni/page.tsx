@@ -86,7 +86,7 @@ export default function InterieroveStineni() {
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
                     <Breadcrumb items={breadcrumbItems} />
 
-                    <div className="flex flex-col justify-between items-start col-span-6 pb-8 h-full">
+                    <div className="flex flex-col justify-between items-center md:items-start col-span-12 pb-8 h-full">
                         <div className="md:text-left text-center">
                             <h2 className="mb-4 font-semibold text-3xl md:text-5xl leading-[1.2]">
                                 Interiérové stínění spojuje funkčnost a estetiku
@@ -94,24 +94,15 @@ export default function InterieroveStineni() {
                         </div>
 
                         <div>
-                            <h3 className="my-4 font-bold text-foreground text-2xl md:text-4xl">
+                            <h3 className="my-4 font-bold text-foreground text-2xl md:text-4xl md:text-left text-center">
                                 Výhody
                             </h3>
-                            <ul className="text-md text-muted-foreground md:text-lg list-disc list-inside">
+                            <ul className="text-muted-foreground text-lg md:text-xl list-disc list-inside">
                                 {interiorShadingPros.map((pro, index) => (
                                     <li key={index}>{pro}</li>
                                 ))}
                             </ul>
                         </div>
-                    </div>
-                    <div className="col-span-6 h-[500px]">
-                        <Image
-                            width={1200}
-                            height={800}
-                            src="/assets/img/IMG_7622.jpeg"
-                            alt="Interiérové stínění"
-                            className="shadow-md rounded-xl w-full h-full object-cover"
-                        />
                     </div>
 
                     <div className="col-span-12">
@@ -127,6 +118,7 @@ export default function InterieroveStineni() {
                                             height={800}
                                             src={option.img}
                                             alt={option.title}
+                                            draggable={false}
                                             className="shadow-md rounded-t-xl w-full h-full object-cover"
                                         />
                                     </div>

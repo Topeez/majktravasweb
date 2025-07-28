@@ -29,7 +29,7 @@ export default function SiteProtiHmyzu() {
                         <Card
                             key={index}
                             link={data.link}
-                            className="flex-1 min-w-[400px] max-w-[400px]"
+                            className="flex-1 min-w-[300px] max-w-[400px]"
                             title={data.title}
                             image={data.image}
                         />
