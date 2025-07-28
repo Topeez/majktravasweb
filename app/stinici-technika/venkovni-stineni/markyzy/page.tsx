@@ -95,7 +95,7 @@ export default function Markyzy() {
                 <Breadcrumb items={breadcrumbItems} />
 
                 <FeaturesSection
-                    title="Proč si zákazníci volí právě moje markýzy?"
+                    title="Profesionální montáž a servis markýz, jak má být"
                     features={awningServiceFeatures}
                 />
 

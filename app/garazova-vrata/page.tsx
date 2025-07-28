@@ -22,15 +22,11 @@ const types = [
                 <strong>Vhodná pro dálkové ovládání</strong> a automatizaci
             </>,
             <>
-                <strong>Tichý a plynulý chod</strong>
-            </>,
-            <>
                 <strong>Elegantní moderní vzhled</strong> a různé povrchové
                 úpravy
             </>,
             <>
-                <strong>Zvýšená bezpečnost díky</strong> pokročilým{" "}
-                <strong> zámkovým</strong> systémům
+                <strong>Zvýšená bezpečnost</strong>
             </>,
         ],
     },
@@ -51,10 +47,10 @@ const types = [
                     Možnost otevírat pouze jedno křídlo pro pěší průchod
                 </strong>
             </>,
-            <>
-                <strong>Vhodná pro ruční otevírání &#45; </strong>ideální bez
-                elektriky
-            </>,
+            // <>
+            //     <strong>Vhodná pro ruční otevírání &#45; </strong>ideální bez
+            //     elektriky
+            // </>,
             <>
                 <strong>Dlouhá životnost </strong>i při náročném provozu
             </>,
@@ -87,7 +83,7 @@ const gateFeatures: Feature[] = [
     {
         icon: <Clock size={30} className="mx-auto mb-4 text-foreground" />,
         title: "Dlouhá životnost",
-        description: "Kvalitní materiály a precizní zpracování.",
+        description: "Kvalitní materiály",
     },
 ];
 
@@ -149,7 +145,7 @@ export default function GarazovaVrata() {
 
                     <div className="col-span-12 px-6 md:px-16 py-12">
                         <FeaturesSection
-                            title="Vrata, která splní vaše očekávání &#45; a ještě víc!"
+                            title="Vrata, která splní vaše očekávání"
                             features={gateFeatures}
                         />
                     </div>

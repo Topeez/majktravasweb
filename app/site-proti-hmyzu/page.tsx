@@ -20,12 +20,16 @@ export default function SiteProtiHmyzu() {
             <section className="py-20 cs-container">
                 <Breadcrumb items={breadcrumbItems} />
 
-                <div className="gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12">
+                <h2 className="my-12 font-semibold text-3xl md:text-5xl text-center leading-[1.2]">
+                    Typy sítí proti hmyzu
+                </h2>
+
+                <div className="flex flex-wrap justify-center gap-8">
                     {nets.map((data, index) => (
                         <Card
                             key={index}
                             link={data.link}
-                            className="col-span-4"
+                            className="flex-1 min-w-[400px] max-w-[400px]"
                             title={data.title}
                             image={data.image}
                         />

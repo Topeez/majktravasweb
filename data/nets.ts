@@ -5,39 +5,29 @@ export interface Net {
 }
 
 export const nets: Net[] = [
-  {
-    title: "Sítě proti hmyzu",
-    image: "/assets/img/IMG_7628.jpeg",
-    link: "/site-proti-hmyzu",
-},
 {
     title: "Pevné okenní sítě",
     image: "/assets/img/IMG_7628.jpeg",
-    link: "/site-proti-hmyzu",
+    link: "/site-proti-hmyzu/pevne-okenni-site",
 },
 {
-    title: "Rolovací sítě do oken",
-    image: "/assets/img/IMG_7637.jpeg",
-    link: "/site-proti-hmyzu",
+    title: "Rolovací sítě",
+    image: "/assets/img/rolovaci_sit.jpeg",
+    link: "/site-proti-hmyzu/rolovaci-site",
 },
 {
-    title: "Sítě do dveří",
-    image: "/assets/img/IMG_7628.jpeg",
-    link: "/site-proti-hmyzu",
+    title: "Síťové dveře",
+    image: "/assets/img/sitove_dvere.jpeg",
+    link: "/site-proti-hmyzu/sitove-dvere",
 },
 {
-    title: "Posuvné sítě do dveří",
-    image: "/assets/img/IMG_7637.jpeg",
-    link: "/site-proti-hmyzu",
-},
-{
-    title: "Sítě s celkovým rámem",
-    image: "/assets/img/IMG_7628.jpeg",
-    link: "/site-proti-hmyzu",
+    title: "Posuvné sítě",
+    image: "/assets/img/posuvne_site.jpg",
+    link: "/site-proti-hmyzu/posuvne-site",
 },
 {
     title: "Plisé sítě",
     image: "/assets/img/IMG_7637.jpeg",
-    link: "/site-proti-hmyzu",
+    link: "/site-proti-hmyzu/plise-site",
 }
 ];

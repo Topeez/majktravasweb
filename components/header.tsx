@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { usePathname } from "next/navigation";
+import { nets } from "@/data/nets";
 
 // Constants
 const SECTION_IDS = ["home", "sluzby", "omne", "recenze", "kontakt"];
@@ -39,6 +40,24 @@ export function Header() {
     const liClasses =
         "li-item relative after:w-full after:h-[3px] after:origin-center will-change-transform";
 
+    // Function to get background color based on current URL
+    const getHeaderBackgroundColor = useCallback(
+        (currentScrollY: number) => {
+            const isNetPage = nets.some((net) => pathname === net.link);
+
+            if (isNetPage) {
+                // If we're on a net page, always use bg-foreground
+                return "bg-foreground";
+            }
+
+            // Default behavior for other pages
+            return currentScrollY >= 900
+                ? "bg-foreground"
+                : "backdrop-blur-2xl";
+        },
+        [pathname]
+    );
+
     // Optimized scroll handler with throttling
     const handleScroll = useCallback(() => {
         const currentScrollY = window.scrollY;
@@ -46,9 +65,7 @@ export function Header() {
             currentScrollY > lastScrollY.current && currentScrollY > 100;
 
         setIsVisible(!scrollDown || currentScrollY === 0);
-        setBackgroundColor(
-            currentScrollY >= 900 ? "bg-foreground" : "backdrop-blur-2xl"
-        );
+        setBackgroundColor(getHeaderBackgroundColor(currentScrollY));
 
         if (isHomePage) {
             // Highlight current section
@@ -72,7 +89,7 @@ export function Header() {
         }
 
         lastScrollY.current = currentScrollY;
-    }, [isHomePage]);
+    }, [isHomePage, getHeaderBackgroundColor]);
 
     // Throttled scroll handler
     const throttledScrollHandler = useMemo(() => {
@@ -94,6 +111,11 @@ export function Header() {
             window.removeEventListener("scroll", throttledScrollHandler);
         };
     }, [throttledScrollHandler, handleScroll]);
+
+    // Set initial background color on pathname change
+    useEffect(() => {
+        setBackgroundColor(getHeaderBackgroundColor(window.scrollY || 0));
+    }, [pathname, getHeaderBackgroundColor]);
 
     // Handle mobile menu state and body overflow
     useEffect(() => {
@@ -226,7 +248,7 @@ export function Header() {
                 <div className="lg:hidden">
                     <Button
                         onClick={toggleMobileMenu}
-                        className="group !z-[1000] bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button"
+                        className={`group !z-[1000] bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
                         aria-expanded={isMobileMenuOpen}
                         aria-label={
                             isMobileMenuOpen ? "Zavřít menu" : "Otevřít menu"
