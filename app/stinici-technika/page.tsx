@@ -35,16 +35,23 @@ export default function StiniciTechnika() {
                 title="Komfort, světlo a soukromí pod kontrolou &#45; stínící technika pro moderní domov"
                 backgroundImage="/assets/img/zaluzie2.jpg"
                 placeholderColor="#5ca437"
+                aria-label="Stínící technika pro moderní domov"
             />
             <section
                 id="stinici-technika"
                 className="bg-white py-20 text-popover-foreground"
             >
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
-                    <Breadcrumb items={breadcrumbItems} />
+                    <Breadcrumb
+                        items={breadcrumbItems}
+                        aria-label="breadcrumb"
+                    />
 
                     <div className="space-y-6 md:col-span-12">
-                        <h2 className="font-bold text-4xl md:text-5xl text-center">
+                        <h2
+                            className="font-bold text-4xl md:text-5xl text-center"
+                            aria-label="Co je stínicí technika?"
+                        >
                             Co je stínicí technika?
                         </h2>
                         <p className="text-xl leading-relaxed">
@@ -56,7 +63,10 @@ export default function StiniciTechnika() {
                         </p>
 
                         {/* Timeline-style benefits section */}
-                        <div className="relative py-12">
+                        <div
+                            className="relative py-12"
+                            aria-label="Benefits of shading technology"
+                        >
                             {/* Vertical line */}
                             <div className="hidden md:block top-0 left-1/2 absolute bg-gray-200 w-0.5 h-full -translate-x-1/2 transform"></div>
 
@@ -78,6 +88,7 @@ export default function StiniciTechnika() {
                                     <div
                                         className={`bg-background rounded-xl shadow-lg p-12 relative overflow-hidden
                                         ${index % 2 === 0 ? "md:mr-[55%]" : "md:ml-[55%]"}`}
+                                        aria-label={item.text}
                                     >
                                         <p className="z-10 relative font-semibold text-xl">
                                             {item.text}
@@ -105,6 +116,7 @@ export default function StiniciTechnika() {
                             <Link
                                 href={"/stinici-technika/venkovni-stineni"}
                                 className="group relative flex flex-col justify-center items-center rounded-xl w-full h-full min-h-[400px] overflow-hidden will-change-auto"
+                                aria-label="Venkovní stínění"
                             >
                                 <div className="absolute inset-0 bg-[url(/assets/img/IMG_7045.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]" />
 
@@ -121,6 +133,7 @@ export default function StiniciTechnika() {
                                         <Button
                                             variant={"ghost"}
                                             className="flex items-center bg-transparent hover:bg-transparent text-white hover:text-foreground group-hover:text-foreground text-lg transition-all duration-300 cursor-pointer"
+                                            aria-label="Zjistit více o venkovním stínění"
                                         >
                                             Zjistit více
                                             <ArrowRight
@@ -134,6 +147,7 @@ export default function StiniciTechnika() {
                             <Link
                                 href={"/stinici-technika/interierove-stineni"}
                                 className="group relative flex flex-col justify-center items-center rounded-xl w-full h-full min-h-[400px] overflow-hidden will-change-auto"
+                                aria-label="Interierové stínění"
                             >
                                 <div className="absolute inset-0 bg-[url(/assets/img/IMG_7820.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]" />
 
@@ -150,6 +164,7 @@ export default function StiniciTechnika() {
                                         <Button
                                             variant={"ghost"}
                                             className="flex items-center bg-transparent hover:bg-transparent text-white hover:text-foreground group-hover:text-foreground text-lg transition-all duration-300 cursor-pointer"
+                                            aria-label="Zjistit více o interierovém stínění"
                                         >
                                             Zjistit více
                                             <ArrowRight

@@ -22,12 +22,25 @@ export const FeaturesSection = memo(function FeaturesSection({
     return (
         <div
             className={`flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container ${className}`}
+            aria-label={title}
         >
             <div className="space-y-16 col-span-12 px-6 md:px-16 py-12">
-                <h2 className="font-bold text-4xl text-center">{title}</h2>
-                <div className="gap-6 grid sm:grid-cols-2 lg:grid-cols-4 text-center">
+                <h2
+                    className="font-bold text-4xl text-center"
+                    aria-label={title}
+                >
+                    {title}
+                </h2>
+                <div
+                    className="gap-6 grid sm:grid-cols-2 lg:grid-cols-4 text-center"
+                    aria-label="Features"
+                >
                     {features.map((feature, index) => (
-                        <div key={index}>
+                        <div
+                            key={index}
+                            aria-label={feature.title}
+                            role="listitem"
+                        >
                             {feature.icon}
                             <h4 className="mb-2 font-semibold text-2xl">
                                 {feature.title}

@@ -92,12 +92,13 @@ export default function VenkovniStineni() {
     ];
 
     const breadcrumbItems = [
-        { title: "Domů", href: "/" },
+        { title: "Domů", href: "/", "aria-label": "Domů" },
         {
             title: "Stínicí technika",
             href: "/stinici-technika",
+            "aria-label": "Stínicí technika",
         },
-        { title: "Venkovní stínění" },
+        { title: "Venkovní stínění", "aria-label": "Venkovní stínění" },
     ];
 
     return (
@@ -106,12 +107,16 @@ export default function VenkovniStineni() {
                 title="Elegantní ochrana proti slunci i horku &#45; venkovní stínění pro vaše pohodlí po celý rok"
                 backgroundImage="/assets/img/external_venetian_blind.jpg"
                 placeholderColor="#5ca437"
+                aria-label="Venkovní stínění"
             />
             <section className="py-20">
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
-                    <Breadcrumb items={breadcrumbItems} />
+                    <Breadcrumb items={breadcrumbItems} aria-label="Navigace" />
                     <div className="space-y-6 md:col-span-12">
-                        <h2 className="mb-12 font-bold text-3xl md:text-5xl text-center">
+                        <h2
+                            className="mb-12 font-bold text-3xl md:text-5xl text-center"
+                            aria-label="Typy venkovního stínění"
+                        >
                             Typy venkovního stínění
                         </h2>
 
@@ -122,13 +127,14 @@ export default function VenkovniStineni() {
                                 subtitle={item.subtitle}
                                 image={item.image}
                                 stats={item.stats}
+                                aria-label={item.title}
                             />
                         ))}
                     </div>
                 </div>
             </section>
 
-            <Contact />
+            <Contact aria-label="Kontakt" />
         </>
     );
 }

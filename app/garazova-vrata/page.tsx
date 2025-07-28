@@ -64,24 +64,46 @@ const types = [
 
 const gateFeatures: Feature[] = [
     {
-        icon: <Zap size={30} className="mx-auto mb-4 text-foreground" />,
+        icon: (
+            <Zap
+                size={30}
+                className="mx-auto mb-4 text-foreground"
+                aria-label="Rychlá montáž"
+            />
+        ),
         title: "Rychlá montáž",
         description: "Namontuji vrata během jediného dne.",
     },
     {
         icon: (
-            <ShieldCheck size={30} className="mx-auto mb-4 text-foreground" />
+            <ShieldCheck
+                size={30}
+                className="mx-auto mb-4 text-foreground"
+                aria-label="Bezpečnost"
+            />
         ),
         title: "Bezpečnost",
         description: "Moderní systémy pro maximální zabezpečení.",
     },
     {
-        icon: <Wrench size={30} className="mx-auto mb-4 text-foreground" />,
+        icon: (
+            <Wrench
+                size={30}
+                className="mx-auto mb-4 text-foreground"
+                aria-label="Profesionální servis"
+            />
+        ),
         title: "Profesionální servis",
         description: "Zajišťuji záruční i pozáruční servis.",
     },
     {
-        icon: <Clock size={30} className="mx-auto mb-4 text-foreground" />,
+        icon: (
+            <Clock
+                size={30}
+                className="mx-auto mb-4 text-foreground"
+                aria-label="Dlouhá životnost"
+            />
+        ),
         title: "Dlouhá životnost",
         description: "Kvalitní materiály",
     },
@@ -103,7 +125,10 @@ export default function GarazovaVrata() {
 
             <section className="py-20">
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
-                    <Breadcrumb items={breadcrumbItems} />
+                    <Breadcrumb
+                        items={breadcrumbItems}
+                        aria-label="Breadcrumb"
+                    />
 
                     <div className="col-span-12 py-12">
                         <h2 className="mb-8 font-bold text-4xl text-center">
@@ -114,6 +139,7 @@ export default function GarazovaVrata() {
                                 <div
                                     key={index}
                                     className="space-y-4 bg-background shadow p-6 rounded-xl"
+                                    aria-label={type.title}
                                 >
                                     <Image
                                         width={1200}
@@ -147,11 +173,12 @@ export default function GarazovaVrata() {
                         <FeaturesSection
                             title="Vrata, která splní vaše očekávání"
                             features={gateFeatures}
+                            aria-label="Garážová vrata"
                         />
                     </div>
                 </div>
             </section>
-            <Contact />
+            <Contact aria-label="Kontakt" />
         </>
     );
 }

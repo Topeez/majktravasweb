@@ -29,42 +29,78 @@ export default function InterieroveStineni() {
             title: "Žaluzie",
             description:
                 "Klasické i moderní řešení pro regulaci světla. Vhodné do každé místnosti díky různým materiálům a barevným variantám.",
-            icon: <Blinds className="text-background" size={30} />,
+            icon: (
+                <Blinds
+                    className="text-background"
+                    size={30}
+                    aria-label="Žaluzie"
+                />
+            ),
         },
         {
             img: "/assets/img/latkove-rolety.jpg",
             title: "Látkové rolety",
             description:
                 "Minimalistické a praktické stínění s možností propustných i zatemňovacích látek. Skvěle ladí s interiérem.",
-            icon: <Layers className="text-background" size={30} />,
+            icon: (
+                <Layers
+                    className="text-background"
+                    size={30}
+                    aria-label="Látkové rolety"
+                />
+            ),
         },
         {
             img: "/assets/img/IMG_7820.jpeg",
             title: "Plisé",
             description:
                 "Flexibilní stínění vhodné pro klasická i atypická okna. Široká škála látek a tvarů.",
-            icon: <FoldHorizontal className="text-background" size={30} />,
+            icon: (
+                <FoldHorizontal
+                    className="text-background"
+                    size={30}
+                    aria-label="Plisé"
+                />
+            ),
         },
         {
             img: "/assets/img/",
             title: "Japonské stěny",
             description:
                 "Ideální pro velké prosklené plochy i jako elegantní interiérový prvek. Designová variabilita.",
-            icon: <PanelRight className="text-background" size={30} />,
+            icon: (
+                <PanelRight
+                    className="text-background"
+                    size={30}
+                    aria-label="Japonské stěny"
+                />
+            ),
         },
         {
             img: "/assets/img/textil_roleta_den_a_noc.jpg",
             title: "Rolety den/noc",
             description:
                 "Účinné řešení pro úplné zatemnění místnosti. Vhodné do ložnic, domácích kin či hotelů.",
-            icon: <Moon className="text-background" size={30} />,
+            icon: (
+                <Moon
+                    className="text-background"
+                    size={30}
+                    aria-label="Rolety den/noc"
+                />
+            ),
         },
         {
             img: "/assets/img/vertikalni_zaluzie.jpg",
             title: "Vertikální žaluzie",
             description:
                 "Klasické i moderní řešení pro regulaci světla. Vhodné do každé místnosti díky různým materiálům a barevným variantám.",
-            icon: <Columns4 className="text-background" size={30} />,
+            icon: (
+                <Columns4
+                    className="text-background"
+                    size={30}
+                    aria-label="Vertikální žaluzie"
+                />
+            ),
         },
     ];
 
@@ -81,23 +117,33 @@ export default function InterieroveStineni() {
                 title="Styl a soukromí &#45; interiérové stínění, které ladí s vaším domovem"
                 backgroundImage="/assets/img/IMG_7601.jpeg"
                 placeholderColor="#5ca437"
+                aria-label="Interiérové stínění"
             />
             <section className="py-20">
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
-                    <Breadcrumb items={breadcrumbItems} />
+                    <Breadcrumb items={breadcrumbItems} aria-label="Navigace" />
 
                     <div className="flex flex-col justify-between items-center md:items-start col-span-12 pb-8 h-full">
                         <div className="md:text-left text-center">
-                            <h2 className="mb-4 font-semibold text-3xl md:text-5xl leading-[1.2]">
+                            <h2
+                                className="mb-4 font-semibold text-3xl md:text-5xl leading-[1.2]"
+                                aria-label="Titulek"
+                            >
                                 Interiérové stínění spojuje funkčnost a estetiku
                             </h2>
                         </div>
 
                         <div>
-                            <h3 className="my-4 font-bold text-foreground text-2xl md:text-4xl md:text-left text-center">
+                            <h3
+                                className="my-4 font-bold text-foreground text-2xl md:text-4xl md:text-left text-center"
+                                aria-label="Titulek"
+                            >
                                 Výhody
                             </h3>
-                            <ul className="text-muted-foreground text-lg md:text-xl list-disc list-inside">
+                            <ul
+                                className="text-muted-foreground text-lg md:text-xl list-disc list-inside"
+                                aria-label="Výhody"
+                            >
                                 {interiorShadingPros.map((pro, index) => (
                                     <li key={index}>{pro}</li>
                                 ))}
@@ -106,12 +152,22 @@ export default function InterieroveStineni() {
                     </div>
 
                     <div className="col-span-12">
-                        <h3 className="my-12 font-bold text-3xl md:text-4xl text-center">
+                        <h3
+                            className="my-12 font-bold text-3xl md:text-4xl text-center"
+                            aria-label="Titulek"
+                        >
                             Typy interiérového stínění
                         </h3>
-                        <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                        <div
+                            className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                            aria-label="Typy stínění"
+                        >
                             {interiorShadingOptions.map((option, index) => (
-                                <Card key={index} className="relative p-0">
+                                <Card
+                                    key={index}
+                                    className="relative p-0"
+                                    aria-label={option.title}
+                                >
                                     <div className="h-[240px] overflow-hidden">
                                         <Image
                                             width={1200}
@@ -120,13 +176,20 @@ export default function InterieroveStineni() {
                                             alt={option.title}
                                             draggable={false}
                                             className="shadow-md rounded-t-xl w-full h-full object-cover"
+                                            aria-label={option.title}
                                         />
                                     </div>
                                     <CardHeader className="p-4">
-                                        <CardTitle className="mb-2 text-xl md:text-2xl">
+                                        <CardTitle
+                                            className="mb-2 text-xl md:text-2xl"
+                                            aria-label={option.title}
+                                        >
                                             {option.title}
                                         </CardTitle>
-                                        <CardDescription className="text-md md:text-lg">
+                                        <CardDescription
+                                            className="text-md md:text-lg"
+                                            aria-label={option.description}
+                                        >
                                             {option.description}
                                         </CardDescription>
                                     </CardHeader>
@@ -139,7 +202,7 @@ export default function InterieroveStineni() {
                     </div>
                 </div>
             </section>
-            <Contact />
+            <Contact aria-label="Kontaktní formulář" />
         </>
     );
 }

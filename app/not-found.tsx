@@ -11,6 +11,7 @@ export default function NotFound() {
             <div className="space-y-6 w-full text-center">
                 <div className="space-y-3">
                     <h2
+                        aria-label="Chyba 404"
                         className="font-bold text-transparent text-4xl sm:text-7xl tracking-wide"
                         style={{ WebkitTextStroke: "1px #ffffff" }}
                     >
@@ -20,14 +21,16 @@ export default function NotFound() {
                         Nemohli jsme najít stránku, kterou jsi hledal...
                     </p>
                 </div>
-                <div className="flex items-center gap-8">
+                <div className="flex justify-center items-center gap-8">
                     <Button
+                        aria-label="Přejít na domovskou stránku"
                         onClick={() => router.push("/app")}
-                        className="bg-foreground hover:bg-foreground hover:shadow-xl px-8 py-6 rounded-4xl font-bold text-background hover:text-background text-xl transition-all duration-300 cursor-pointer"
+                        className="bg-background hover:bg-foreground hover:shadow-xl px-8 py-6 rounded-4xl font-bold text-foreground hover:text-background text-xl transition-all duration-300 cursor-pointer"
                     >
                         Domů
                     </Button>
                     <Button
+                        aria-label="Přejít zpět"
                         onClick={() => router.back()}
                         className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl font-bold text-foreground hover:text-foreground text-xl transition-all duration-300 cursor-pointer"
                     >

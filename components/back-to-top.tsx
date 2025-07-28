@@ -59,9 +59,10 @@ export function BackToTop() {
                     ? "opacity-100 pointer-events-auto"
                     : "opacity-0 pointer-events-none"
             }`}
-            aria-label="Back to top"
+            aria-label="Přejít nahoru"
+            aria-expanded={visible}
         >
-            <ArrowUp size={20} className="flex-shrink-0 ml-0.5" />
+            <ArrowUp size={20} className="flex-shrink-0 ml-0.5" aria-hidden />
             <span className="opacity-0 group-hover:opacity-100 ml-1 text-sm whitespace-nowrap transition-opacity duration-200">
                 Nahoru
             </span>

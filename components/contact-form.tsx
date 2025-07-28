@@ -94,6 +94,7 @@ export function ContactForm() {
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="z-10 space-y-6 bg-background"
+                aria-label="Contact form"
             >
                 {/* Full Name Field */}
                 <FormField
@@ -108,6 +109,7 @@ export function ContactForm() {
                                 <Input
                                     placeholder="Zadejte celé jméno"
                                     className={`${inputClasses}`}
+                                    aria-label="Full name"
                                     {...field}
                                 />
                             </FormControl>
@@ -131,6 +133,7 @@ export function ContactForm() {
                                     <Input
                                         placeholder="Zadejte email"
                                         className={`${inputClasses}`}
+                                        aria-label="Email"
                                         {...field}
                                     />
                                 </FormControl>
@@ -152,6 +155,7 @@ export function ContactForm() {
                                     <Input
                                         placeholder="Zadejte telefon"
                                         className={`${inputClasses}`}
+                                        aria-label="Phone"
                                         {...field}
                                     />
                                 </FormControl>
@@ -174,6 +178,7 @@ export function ContactForm() {
                                 <Textarea
                                     placeholder="Napište svou zprávu..."
                                     className={`${inputClasses} min-h-[150px]`}
+                                    aria-label="Message"
                                     {...field}
                                 />
                             </FormControl>
@@ -185,6 +190,7 @@ export function ContactForm() {
                 <Button
                     type="submit"
                     className="bg-foreground hover:bg-background mt-4 py-3 border border-foreground rounded-lg w-full font-bold text-white hover:text-foreground text-lg transition cursor-pointer"
+                    aria-label="Submit message"
                 >
                     Odeslat zprávu
                 </Button>

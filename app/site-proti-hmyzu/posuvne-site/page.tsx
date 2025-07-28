@@ -8,6 +8,7 @@ export default function PosuvneSite() {
         <section className="py-44 cs-container">
             {/* Breadcrumb */}
             <Breadcrumb
+                aria-label="Breadcrumb navigation"
                 items={[
                     { title: "Domů", href: "/" },
                     { title: "Sítě proti hmyzu", href: "/site-proti-hmyzu" },
@@ -69,6 +70,7 @@ export default function PosuvneSite() {
                     <Link
                         href="/#kontakt"
                         className="group flex items-center gap-2 bg-foreground hover:bg-background mx-auto px-6 md:px-8 py-3 border hover:border-foreground border-background rounded-4xl max-w-fit font-bold text-background hover:text-foreground text-lg md:text-xl transition-colors cursor-pointer"
+                        aria-label="Poptat se"
                     >
                         Poptat se
                         <ArrowRight

@@ -5,9 +5,13 @@ import Link from "next/link";
 
 export default function RolovaciSite() {
     return (
-        <section className="py-44 cs-container">
+        <section
+            className="py-44 cs-container"
+            aria-label="Rolovací sítě section"
+        >
             {/* Breadcrumb */}
             <Breadcrumb
+                aria-label="Breadcrumb navigation"
                 items={[
                     { title: "Domů", href: "/" },
                     { title: "Sítě proti hmyzu", href: "/site-proti-hmyzu" },
@@ -16,7 +20,10 @@ export default function RolovaciSite() {
             />
 
             {/* Nadpis */}
-            <div className="mt-20 mb-16 text-center">
+            <div
+                className="mt-20 mb-16 text-center"
+                aria-label="Section header"
+            >
                 <h1 className="font-semibold text-3xl md:text-5xl">
                     Rolovací sítě
                 </h1>
@@ -27,8 +34,14 @@ export default function RolovaciSite() {
             </div>
 
             {/* Obrázek a text */}
-            <div className="flex flex-col items-center gap-12 md:grid md:grid-cols-12">
-                <div className="col-span-12 md:col-span-6 max-w-[400px] aspect-square">
+            <div
+                className="flex flex-col items-center gap-12 md:grid md:grid-cols-12"
+                aria-label="Image and text section"
+            >
+                <div
+                    className="col-span-12 md:col-span-6 max-w-[400px] aspect-square"
+                    aria-label="Product image"
+                >
                     <Image
                         src="/assets/img/rolovaci_sit.jpeg"
                         alt="Pevné okenní sítě"
@@ -38,7 +51,10 @@ export default function RolovaciSite() {
                         className="shadow-lg rounded-2xl size-full object-cover"
                     />
                 </div>
-                <div className="space-y-6 col-span-12 md:col-span-6">
+                <div
+                    className="space-y-6 col-span-12 md:col-span-6"
+                    aria-label="Product description"
+                >
                     <h2 className="font-bold text-2xl md:text-3xl md:text-left text-center">
                         Popis produktu
                     </h2>
@@ -68,6 +84,7 @@ export default function RolovaciSite() {
                     <Link
                         href="/#kontakt"
                         className="group flex items-center gap-2 bg-foreground hover:bg-background mx-auto px-6 md:px-8 py-3 border hover:border-foreground border-background rounded-4xl max-w-fit font-bold text-background hover:text-foreground text-lg md:text-xl transition-colors cursor-pointer"
+                        aria-label="Contact link"
                     >
                         Poptat se
                         <ArrowRight

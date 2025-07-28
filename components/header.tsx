@@ -18,7 +18,7 @@ const LINKS = [
 
 // Extracted Hamburger Icon Component
 const HamburgerIcon = ({ isOpen }: { isOpen: boolean }) => (
-    <div className="space-y-1">
+    <div className="space-y-1" aria-hidden="true">
         <span
             className={`block h-1 w-6 origin-center bg-background rounded-full transition-all duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-1" : ""}`}
         ></span>
@@ -201,41 +201,61 @@ export function Header() {
             className={`fixed top-0 left-0 right-0 z-[999] shadow-sm ${backgroundColor} ${
                 isVisible ? "translate-y-0" : "-translate-y-32"
             } transition-all duration-500 will-change-transform`}
+            role="banner"
         >
-            <nav className="flex justify-between items-center w-full cs-container">
-                <Link href="/" onClick={closeMobileMenu}>
+            <nav
+                className="flex justify-between items-center w-full cs-container"
+                role="navigation"
+                aria-label="Hlavní navigace"
+            >
+                <Link
+                    href="/"
+                    onClick={closeMobileMenu}
+                    aria-label="Travas Stínění - přejít na hlavní stránku"
+                >
                     <Image
                         src="/assets/img/logo/logo.png"
                         width={200}
                         height={200}
-                        alt="logo"
+                        alt="Travas Stínění logo"
                         className="w-full max-w-3xs h-22 md:h-32"
                         priority
                     />
                 </Link>
 
                 {/* Desktop Navigation */}
-                <ul className="hidden lg:flex items-center gap-4 font-bold text-background text-xl">
+                <ul
+                    className="hidden lg:flex items-center gap-4 font-bold text-background text-xl"
+                    role="menubar"
+                    aria-label="Navigační menu"
+                >
                     {LINKS.map((link) => (
                         <li
                             key={link.href}
                             className={`${isActive(link.href) ? "active" : ""} ${liClasses} from-left`}
+                            role="none"
                         >
                             <Link
                                 href={`/${link.href}`}
                                 className="block"
                                 draggable={false}
                                 onClick={(e) => handleLinkClick(e, link.href)}
+                                role="menuitem"
+                                aria-current={
+                                    isActive(link.href) ? "page" : undefined
+                                }
+                                aria-label={`Přejít na sekci ${link.label}`}
                             >
                                 {link.label}
                             </Link>
                         </li>
                     ))}
-                    <li className="mb-1.5">
+                    <li className="mb-1.5" role="none">
                         <Link
                             href="/#kontakt"
                             draggable={false}
                             onClick={(e) => handleLinkClick(e, "/#kontakt")}
+                            aria-label="Přejít na kontaktní formulář pro nezávaznou konzultaci"
                         >
                             <Button className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl w-full font-bold text-foreground hover:text-foreground text-xl transition-all duration-300 cursor-pointer">
                                 Nezávazná konzultace
@@ -250,8 +270,11 @@ export function Header() {
                         onClick={toggleMobileMenu}
                         className={`group !z-[1000] bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
                         aria-expanded={isMobileMenuOpen}
+                        aria-controls="mobile-menu"
                         aria-label={
-                            isMobileMenuOpen ? "Zavřít menu" : "Otevřít menu"
+                            isMobileMenuOpen
+                                ? "Zavřít navigační menu"
+                                : "Otevřít navigační menu"
                         }
                     >
                         <HamburgerIcon isOpen={isMobileMenuOpen} />
@@ -260,17 +283,22 @@ export function Header() {
                     {/* Mobile Menu */}
                     <div
                         ref={mobileMenuRef}
+                        id="mobile-menu"
                         className={`fixed inset-0 !z-[900] bg-foreground transition-all duration-500 ease-in-out h-screen ${
                             isMobileMenuOpen
                                 ? "-translate-y-20 opacity-100 pointer-events-auto"
                                 : "translate-y-full opacity-0 pointer-events-none"
                         }`}
                         style={{ top: "5rem" }}
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Mobilní navigační menu"
+                        aria-hidden={!isMobileMenuOpen}
                     >
                         <Button
                             onClick={toggleMobileMenu}
                             className="group top-11 right-3.5 !z-[1000] absolute bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button"
-                            aria-label="Zavřít menu"
+                            aria-label="Zavřít navigační menu"
                         >
                             <HamburgerIcon isOpen={isMobileMenuOpen} />
                         </Button>
@@ -281,6 +309,8 @@ export function Header() {
                                     ? "opacity-100 translate-y-0"
                                     : "opacity-0 translate-y-8"
                             }`}
+                            role="menu"
+                            aria-label="Mobilní navigační odkazy"
                         >
                             {LINKS.map((link, index) => (
                                 <li
@@ -295,6 +325,7 @@ export function Header() {
                                             ? `${index * 150}ms`
                                             : "0ms",
                                     }}
+                                    role="none"
                                 >
                                     <Link
                                         href={`/${link.href}`}
@@ -302,6 +333,13 @@ export function Header() {
                                         onClick={(e) =>
                                             handleLinkClick(e, link.href)
                                         }
+                                        role="menuitem"
+                                        aria-current={
+                                            isActive(link.href)
+                                                ? "page"
+                                                : undefined
+                                        }
+                                        aria-label={`Přejít na sekci ${link.label}`}
                                     >
                                         {link.label}
                                     </Link>
@@ -318,12 +356,14 @@ export function Header() {
                                         ? `${LINKS.length * 100}ms`
                                         : "0ms",
                                 }}
+                                role="none"
                             >
                                 <Link
                                     href="/#kontakt"
                                     onClick={(e) =>
                                         handleLinkClick(e, "/#kontakt")
                                     }
+                                    aria-label="Přejít na kontaktní formulář pro nezávaznou konzultaci"
                                 >
                                     <Button className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl w-full font-bold text-foreground hover:text-foreground text-xl transition-all duration-300 cursor-pointer">
                                         Nezávazná konzultace

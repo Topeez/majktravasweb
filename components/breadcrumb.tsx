@@ -21,16 +21,26 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
         >
             {items.map((item, index) => (
                 <div className="flex items-center" key={index}>
-                    {index !== 0 && <ChevronRight className="mx-2 w-4 h-4" />}
+                    {index !== 0 && (
+                        <ChevronRight
+                            aria-hidden="true"
+                            className="mx-2 w-4 h-4"
+                        />
+                    )}
                     {item.href ? (
                         <Link
                             href={item.href}
                             className="text-foreground hover:underline underline-offset-4"
+                            aria-label={item.title}
                         >
                             {item.title}
                         </Link>
                     ) : (
-                        <span className="w-full text-muted-foreground">
+                        <span
+                            className="w-full text-muted-foreground"
+                            aria-current="page"
+                            aria-label={item.title}
+                        >
                             {item.title}
                         </span>
                     )}

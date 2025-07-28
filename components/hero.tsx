@@ -128,6 +128,7 @@ export const HeroSection = memo(function HeroSection({
         return (
             <Link
                 href={primaryCta.href}
+                aria-label={primaryCta.label}
                 className="bg-background hover:bg-foreground px-6 md:px-8 py-3 rounded-4xl font-bold text-popover-foreground hover:text-background text-lg md:text-xl transition-colors cursor-pointer"
             >
                 {primaryCta.label}
@@ -142,6 +143,7 @@ export const HeroSection = memo(function HeroSection({
         return (
             <Link
                 href={secondaryCta.href}
+                aria-label={secondaryCta.label}
                 className="group flex items-center gap-2 bg-foreground hover:bg-background px-6 md:px-8 py-3 rounded-4xl font-bold hover:text-foreground text-lg md:text-xl transition-colors cursor-pointer"
             >
                 {secondaryCta.label}
@@ -190,6 +192,7 @@ export const HeroSection = memo(function HeroSection({
             {/* Scroll Down Button */}
             <Button
                 onClick={scrollToNextSection}
+                aria-label="Scroll down to the next section"
                 className="bottom-8 left-1/2 z-20 absolute flex justify-center items-center bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 hover:border-white/50 rounded-full size-12 aspect-square text-white transition-all -translate-x-1/2 animate-bounce cursor-pointer transform"
             >
                 <ChevronsDown size={24} />

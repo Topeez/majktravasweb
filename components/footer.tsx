@@ -16,9 +16,9 @@ export function Footer() {
         <footer className="bg-foreground py-12 text-white">
             <div className="cs-container">
                 <div className="gap-8 grid grid-cols-1 md:grid-cols-4">
-                    <div>
+                    <div aria-label="Company Information">
                         <div className="flex justify-center items-center">
-                            <Link href="/" draggable={false}>
+                            <Link href="/" draggable={false} aria-label="Home">
                                 <Image
                                     src="/assets/img/logo/logo.png"
                                     width={160}
@@ -36,7 +36,7 @@ export function Footer() {
                         </p>
                     </div>
 
-                    <div className="text-center">
+                    <div className="text-center" aria-label="Services">
                         <h4 className="mb-4 font-bold text-lg">Služby</h4>
                         <ul className="space-y-2 text-background">
                             {services.map((service, index) => (
@@ -45,6 +45,7 @@ export function Footer() {
                                         href={service.link}
                                         className="hover:underline transition"
                                         draggable={false}
+                                        aria-label={service.title}
                                     >
                                         {service.title}
                                     </Link>
@@ -53,7 +54,7 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div className="text-center">
+                    <div className="text-center" aria-label="Quick Links">
                         <h4 className="mb-4 font-bold text-lg">
                             Rychlé odkazy
                         </h4>
@@ -64,6 +65,7 @@ export function Footer() {
                                         href={link.href}
                                         className="hover:underline transition"
                                         draggable={false}
+                                        aria-label={link.label}
                                     >
                                         {link.label}
                                     </Link>
@@ -72,15 +74,21 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div className="text-center">
+                    <div
+                        className="text-center"
+                        aria-label="Contact Information"
+                    >
                         <h4 className="mb-4 font-bold text-lg">Kontakt</h4>
                         <ul className="space-y-2 text-background text-left">
                             {contactInfo.map((item, index) => (
                                 <li
                                     key={index}
                                     className="flex justify-center md:justify-start items-center"
+                                    aria-label={item.title}
                                 >
-                                    <div className="mr-3">{item.icon}</div>
+                                    <div className="mr-3" aria-hidden="true">
+                                        {item.icon}
+                                    </div>
                                     <span>{item.content}</span>
                                 </li>
                             ))}
@@ -100,6 +108,7 @@ export function Footer() {
                         className="font-bold animate-shine effect-shine"
                         target="_blank"
                         draggable={false}
+                        aria-label="Topeeez Website"
                     >
                         <span> Topeeez</span>
                     </Link>

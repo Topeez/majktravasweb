@@ -7,23 +7,40 @@ import { FeaturesSection, Feature } from "@/components/features";
 
 export default function Markyzy() {
     const breadcrumbItems = [
-        { title: "Domů", href: "/" },
-        { title: "Stínicí technika", href: "/stinici-technika" },
+        { title: "Domů", href: "/", ariaLabel: "Domů" },
+        {
+            title: "Stínicí technika",
+            href: "/stinici-technika",
+            ariaLabel: "Stínicí technika",
+        },
         {
             title: "Venkovní stínění",
             href: "/stinici-technika/venkovni-stineni",
+            ariaLabel: "Venkovní stínění",
         },
-        { title: "Markýzy" },
+        { title: "Markýzy", ariaLabel: "Markýzy" },
     ];
 
     const awningServiceFeatures: Feature[] = [
         {
-            icon: <Zap size={30} className="mx-auto mb-4 text-foreground" />,
+            icon: (
+                <Zap
+                    size={30}
+                    className="mx-auto mb-4 text-foreground"
+                    aria-label="Rychlá instalace"
+                />
+            ),
             title: "Rychlá instalace",
             description: "Markýzy nainstaluji bez zbytečných průtahů.",
         },
         {
-            icon: <Wrench size={30} className="mx-auto mb-4 text-foreground" />,
+            icon: (
+                <Wrench
+                    size={30}
+                    className="mx-auto mb-4 text-foreground"
+                    aria-label="Odborná montáž"
+                />
+            ),
             title: "Odborná montáž",
             description:
                 "Mám zkušenosti s různými typy markýz a způsobů uchycení.",
@@ -33,13 +50,20 @@ export default function Markyzy() {
                 <ShieldCheck
                     size={30}
                     className="mx-auto mb-4 text-foreground"
+                    aria-label="Záruka a servis"
                 />
             ),
             title: "Záruka a servis",
             description: "Nabízím záruční i pozáruční servis.",
         },
         {
-            icon: <Smile size={30} className="mx-auto mb-4 text-foreground" />,
+            icon: (
+                <Smile
+                    size={30}
+                    className="mx-auto mb-4 text-foreground"
+                    aria-label="Individuální přístup"
+                />
+            ),
             title: "Individuální přístup",
             description: "Přizpůsobím se vašim požadavkům a prostoru.",
         },
@@ -52,36 +76,7 @@ export default function Markyzy() {
     //         title: "Moderní markýza",
     //         description: "Elegantní řešení pro zastínění terasy",
     //     },
-    //     {
-    //         src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop",
-    //         alt: "Barevná markýza",
-    //         title: "Barevné provedení",
-    //         description: "Široký výběr barev a vzorů",
-    //     },
-    //     {
-    //         src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=400&fit=crop",
-    //         alt: "Velká markýza",
-    //         title: "Pro větší prostory",
-    //         description: "Ideální pro rozsáhlé terasy",
-    //     },
-    //     {
-    //         src: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop",
-    //         alt: "Automatická markýza",
-    //         title: "Automatické ovládání",
-    //         description: "Moderní systém s dálkovým ovládáním",
-    //     },
-    //     {
-    //         src: "https://images.unsplash.com/photo-1561501900-3701fa6a0864?w=600&h=400&fit=crop",
-    //         alt: "Stylová markýza",
-    //         title: "Stylový design",
-    //         description: "Dokonale ladí s architekturou",
-    //     },
-    //     {
-    //         src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-    //         alt: "Odolná markýza",
-    //         title: "Odolné materiály",
-    //         description: "Dlouhá životnost a snadná údržba",
-    //     },
+    //     // More images...
     // ];
 
     return (
@@ -90,13 +85,18 @@ export default function Markyzy() {
                 title="Stín, kde ho potřebujete &#45; markýzy pro vaši terasu i balkon"
                 backgroundImage="/assets/img/markyza_2.jpg"
                 placeholderColor="#5ca437"
+                aria-label="Hero Section"
             />
-            <section className="space-y-20 py-20 cs-container">
-                <Breadcrumb items={breadcrumbItems} />
+            <section
+                className="space-y-20 py-20 cs-container"
+                aria-label="Main Content"
+            >
+                <Breadcrumb items={breadcrumbItems} aria-label="Breadcrumb" />
 
                 <FeaturesSection
                     title="Profesionální montáž a servis markýz, jak má být"
                     features={awningServiceFeatures}
+                    aria-label="Features Section"
                 />
 
                 {/* <Gallery
@@ -106,9 +106,10 @@ export default function Markyzy() {
                     showTitles={true}
                     enableLightbox={true}
                     aspectRatio="auto"
+                    aria-label="Gallery Section"
                 /> */}
             </section>
-            <Contact />
+            <Contact aria-label="Contact Section" />
         </>
     );
 }

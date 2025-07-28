@@ -16,6 +16,7 @@ export function Card({
     return (
         <Link
             href={link}
+            aria-label={title}
             className={`text-background group shadow-lg hover:shadow-2xl rounded-xl overflow-hidden flex items-center justify-center transition-all duration-300 h-full min-h-[400px] will-change-auto bg-cover relative ${className}`}
         >
             <div
@@ -23,9 +24,13 @@ export function Card({
                 style={{
                     backgroundImage: `url(${image})`,
                 }}
+                aria-hidden="true"
             />
 
-            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-500" />
+            <div
+                className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-500"
+                aria-hidden="true"
+            />
 
             <div className="z-10 text-center">
                 <h3 className="font-semibold text-3xl">{title}</h3>
@@ -33,11 +38,13 @@ export function Card({
                     <Button
                         variant={"ghost"}
                         className="flex items-center bg-transparent hover:bg-transparent text-white hover:text-foreground group-hover:text-foreground text-lg transition-all duration-300 cursor-pointer"
+                        aria-label="Zjistit více o projektu"
                     >
                         Zjistit více
                         <ArrowRight
                             className="mt-0.5 group-hover:ml-2 group-hover:w-4 transition-all duration-300"
                             size={16}
+                            aria-hidden="true"
                         />
                     </Button>
                 </div>
