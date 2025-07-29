@@ -28,7 +28,20 @@ export default function InterieroveStineni() {
             img: "/assets/img/IMG_7601.jpeg",
             title: "Žaluzie",
             description:
-                "Klasické i moderní řešení pro regulaci světla. Vhodné do každé místnosti díky různým materiálům a barevným variantám.",
+                "Praktické a nadčasové řešení pro regulaci světla. Hodí se do bytů, kanceláří i domů.",
+            icon: (
+                <Blinds
+                    className="text-background"
+                    size={30}
+                    aria-label="Žaluzie"
+                />
+            ),
+        },
+        {
+            img: "/assets/img/zaluzie_stresni.png",
+            title: "Žaluzie - střešní",
+            description:
+                "Ideální pro střešní okna – snadno ovladatelné, efektivně stíní a ladí s interiérem.",
             icon: (
                 <Blinds
                     className="text-background"
@@ -41,7 +54,20 @@ export default function InterieroveStineni() {
             img: "/assets/img/latkove-rolety.jpg",
             title: "Látkové rolety",
             description:
-                "Minimalistické a praktické stínění s možností propustných i zatemňovacích látek. Skvěle ladí s interiérem.",
+                "Elegantní stínění v různých barvách i průhlednosti. Vhodné do ložnice, obýváku i kuchyně.",
+            icon: (
+                <Layers
+                    className="text-background"
+                    size={30}
+                    aria-label="Látkové rolety"
+                />
+            ),
+        },
+        {
+            img: "/assets/img/latkove_stresni.png",
+            title: "Látkové rolety - střešní",
+            description:
+                "Jednoduché řešení pro střešní okna – dobře drží, neplandají a skvěle vypadají.",
             icon: (
                 <Layers
                     className="text-background"
@@ -54,7 +80,7 @@ export default function InterieroveStineni() {
             img: "/assets/img/IMG_7820.jpeg",
             title: "Plisé",
             description:
-                "Flexibilní stínění vhodné pro klasická i atypická okna. Široká škála látek a tvarů.",
+                "Designové skládací žaluzie, které se přizpůsobí každému oknu i prostoru.",
             icon: (
                 <FoldHorizontal
                     className="text-background"
@@ -63,6 +89,20 @@ export default function InterieroveStineni() {
                 />
             ),
         },
+        {
+            img: "/assets/img/plise_stresni.png",
+            title: "Plisé - střešní",
+            description:
+                "Praktické a stylové plisé pro střešní okna. Výborně stíní a dobře drží v rámu.",
+            icon: (
+                <FoldHorizontal
+                    className="text-background"
+                    size={30}
+                    aria-label="Plisé"
+                />
+            ),
+        },
+
         {
             img: "/assets/img/",
             title: "Japonské stěny",
@@ -153,7 +193,7 @@ export default function InterieroveStineni() {
 
                     <div className="col-span-12">
                         <h3
-                            className="my-12 font-bold text-3xl md:text-4xl text-center"
+                            className="my-12 font-bold text-3xl md:text-5xl text-center"
                             aria-label="Titulek"
                         >
                             Typy interiérového stínění
@@ -170,8 +210,8 @@ export default function InterieroveStineni() {
                                 >
                                     <div className="h-[240px] overflow-hidden">
                                         <Image
-                                            width={1200}
-                                            height={800}
+                                            width={400}
+                                            height={400}
                                             src={option.img}
                                             alt={option.title}
                                             draggable={false}

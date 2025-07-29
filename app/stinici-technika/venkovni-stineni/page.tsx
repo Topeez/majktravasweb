@@ -9,7 +9,8 @@ export default function VenkovniStineni() {
             title: "Předokenní rolety",
             subtitle:
                 "Předokenní rolety zajišťují výbornou ochranu před horkem i hlukem díky izolační výplni. Spolehlivě odolávají nepřízni počasí a přidávají vašemu domovu na bezpečí i komfortu.",
-            image: "/assets/img/IMG_7776.jpeg",
+            image1: "/assets/img/IMG_7776.jpeg",
+            image2: "/assets/img/podomitka_rolety_venek.jpg",
             stats: {
                 warmSecurity: {
                     label: "Ochrana proti teplu",
@@ -32,12 +33,16 @@ export default function VenkovniStineni() {
                     value: 5,
                 },
             },
+            subtitle2: "2 varianty provedení",
+            variant1: <strong>&bdquo;Přiznané&rdquo;</strong>,
+            variant2: <strong>&bdquo;Podomítkové&rdquo;</strong>,
         },
         {
             title: "Venkovní žaluzie",
             subtitle:
                 "Venkovní žaluzie vám dávají plnou kontrolu nad světlem i teplotou v interiéru. Pomáhají udržet příjemné klima a zároveň šetří energii i náklady.",
-            image: "/assets/img/external_venetian_blind.jpg",
+            image1: "/assets/img/external_venetian_blind.jpg",
+            image2: "/assets/img/zaluzie_venek_podomitka.png",
             stats: {
                 warmSecurity: {
                     label: "Ochrana proti teplu",
@@ -60,12 +65,16 @@ export default function VenkovniStineni() {
                     value: 2,
                 },
             },
+            subtitle2: "2 varianty provedení",
+            variant1: <strong>&bdquo;Přiznané&rdquo;</strong>,
+            variant2: <strong>&bdquo;Podomítkové&rdquo;</strong>,
         },
         {
             title: "Screenové rolety",
             subtitle:
                 "Screenové rolety účinně stíní, aniž by bránily výhledu. Zabraňují přehřívání interiéru a blokují škodlivé UV paprsky – ideální pro moderní domy a kanceláře.",
-            image: "/assets/img/screen.jpg",
+            image1: "/assets/img/screen_prizn.png",
+            image2: "/assets/img/screen_podomitka.png",
             stats: {
                 warmSecurity: {
                     label: "Ochrana proti teplu",
@@ -88,6 +97,9 @@ export default function VenkovniStineni() {
                     value: 1,
                 },
             },
+            subtitle2: "2 varianty provedení",
+            variant1: <strong>&bdquo;Přiznané&rdquo;</strong>,
+            variant2: <strong>&bdquo;Podomítkové&rdquo;</strong>,
         },
     ];
 
@@ -125,8 +137,12 @@ export default function VenkovniStineni() {
                                 key={index}
                                 title={item.title}
                                 subtitle={item.subtitle}
-                                image={item.image}
+                                image1={item.image1}
+                                image2={item.image2}
                                 stats={item.stats}
+                                subtitle2={item.subtitle2}
+                                variant1={item.variant1}
+                                variant2={item.variant2}
                                 aria-label={item.title}
                             />
                         ))}

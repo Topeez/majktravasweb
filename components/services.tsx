@@ -11,10 +11,13 @@ export default function Services() {
         >
             <div className="cs-container">
                 <div className="mx-auto max-w-2xl text-center">
+                    <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
+                        služby
+                    </p>
                     <h2 className="font-bold text-3xl md:text-5xl">
                         Co pro vás mohu udělat
                     </h2>
-                    <p className="mt-4 text-gray-600 text-xl">
+                    <p className="mt-4 text-muted-foreground text-xl">
                         Kompletní řešení od prvotního zaměření přes odbornou
                         instalaci až po spolehlivý servis
                     </p>

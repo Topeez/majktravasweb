@@ -16,6 +16,7 @@ export function Card({
     return (
         <Link
             href={link}
+            draggable={false}
             aria-label={title}
             className={`text-background group shadow-lg hover:shadow-2xl rounded-xl overflow-hidden flex items-center justify-center transition-all duration-300 h-full min-h-[400px] will-change-auto bg-cover relative ${className}`}
         >

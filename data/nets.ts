@@ -11,9 +11,9 @@ export const nets: Net[] = [
     link: "/site-proti-hmyzu/pevne-okenni-site",
 },
 {
-    title: "Rolovací sítě",
+    title: "Sítě na střešní okna",
     image: "/assets/img/rolovaci_sit.jpeg",
-    link: "/site-proti-hmyzu/rolovaci-site",
+    link: "/site-proti-hmyzu/site-na-stresni-okna",
 },
 {
     title: "Síťové dveře",

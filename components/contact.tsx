@@ -11,6 +11,9 @@ export function Contact() {
             <div className="mx-auto px-4 cs-container">
                 <div className="flex lg:flex-row flex-col gap-12">
                     <div className="lg:w-1/2">
+                        <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
+                            kontakt
+                        </p>
                         <h2
                             className="font-bold text-3xl md:text-5xl md:text-left text-center"
                             aria-label="Kontaktní formulář"
@@ -18,7 +21,7 @@ export function Contact() {
                             Kontaktujte mě
                         </h2>
                         <p
-                            className="mt-4 text-gray-600 text-xl md:text-left text-center"
+                            className="mt-4 text-muted-foreground text-xl md:text-left text-center"
                             aria-label="Popis kontaktního formuláře"
                         >
                             Máte dotaz ohledně mých služeb? Rád vám poradím s
@@ -42,7 +45,7 @@ export function Contact() {
                                         <h3 className="font-bold text-lg">
                                             {item.title}
                                         </h3>
-                                        <div className="mt-1 text-gray-600">
+                                        <div className="mt-1 text-muted-foreground">
                                             {item.content}
                                         </div>
                                     </div>

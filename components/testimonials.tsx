@@ -130,7 +130,7 @@ export function Testimonials() {
                     </div>
                 </div>
             </div>
-            <blockquote className="mt-4 text-gray-600 md:text-xl italic leading-relaxed">
+            <blockquote className="mt-4 text-muted-foreground md:text-xl italic leading-relaxed">
                 {testimonial.text}
             </blockquote>
 
@@ -144,10 +144,13 @@ export function Testimonials() {
         <section id="recenze" className="py-16 md:py-24 overflow-hidden">
             <div className="cs-container">
                 <div className="mx-auto mb-16 max-w-2xl text-center">
+                    <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
+                        reference
+                    </p>
                     <h2 className="font-bold text-3xl md:text-5xl">
                         Co říkají moji zákazníci
                     </h2>
-                    <p className="mt-4 text-gray-600 text-xl">
+                    <p className="mt-4 text-muted-foreground text-xl">
                         Přečtěte si reference od spokojených klientů, kteří
                         využili mé služby
                     </p>

@@ -11,13 +11,16 @@ export function Benefits() {
             <div className="cs-container">
                 <div className="flex lg:flex-row flex-col items-center gap-12">
                     <div className="w-full lg:w-1/2">
+                        <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
+                            o mně
+                        </p>
                         <h2
                             className="font-bold text-3xl md:text-5xl md:text-left text-center"
                             aria-label="Why Choose Me"
                         >
                             Proč si vybrat právě mě
                         </h2>
-                        <p className="mt-4 max-w-xl text-gray-600 md:text-xl md:text-left text-center">
+                        <p className="mt-4 max-w-xl text-muted-foreground md:text-xl md:text-left text-center">
                             S více než 8 lety zkušeností v oboru vám nabízím
                             řešení, které splní vaše očekávání a přinese do
                             vašeho domova pohodlí a bezpečí.
@@ -43,7 +46,7 @@ export function Benefits() {
                                         <h3 className="font-bold text-xl">
                                             {benefit.title}
                                         </h3>
-                                        <p className="mt-2 text-gray-600">
+                                        <p className="mt-2 text-muted-foreground">
                                             {benefit.description}
                                         </p>
                                     </div>
