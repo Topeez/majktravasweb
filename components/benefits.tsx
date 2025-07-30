@@ -21,9 +21,14 @@ export function Benefits() {
                             Proč si vybrat právě mě
                         </h2>
                         <p className="mt-4 max-w-xl text-muted-foreground md:text-xl md:text-left text-center">
-                            S více než 8 lety zkušeností v oboru vám nabízím
-                            řešení, které splní vaše očekávání a přinese do
-                            vašeho domova pohodlí a bezpečí.
+                            S více než
+                            <span className="font-bold text-foreground">
+                                {" "}
+                                8 lety
+                            </span>{" "}
+                            zkušeností v oboru vám nabízím řešení, které splní
+                            vaše očekávání a přinese do vašeho domova pohodlí a
+                            bezpečí.
                         </p>
 
                         <div

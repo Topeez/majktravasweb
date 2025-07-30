@@ -101,19 +101,23 @@ export default function Markyzy() {
                     aria-label="Features Section"
                 />
 
-                <div className="relative mx-auto rounded-2xl h-[600px] aspect-square overflow-hidden">
-                    <div className="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black/50 to-transparent p-5 text-center">
-                        <h5 className="font-bold text-background text-3xl">
-                            Kazetová markýza
-                        </h5>
-                    </div>
+                <div
+                    className="relative mx-auto rounded-xl w-full md:w-1/2 h-64 md:h-[450px] overflow-hidden"
+                    aria-label="Image"
+                >
                     <Image
                         src="/assets/img/markyza_kazetova.png"
-                        width={1920}
-                        height={1080}
-                        alt="Kazetová markýza na terase"
+                        width={1200}
+                        height={800}
+                        alt="Kazetová markýza"
                         className="w-full h-full object-cover"
                     />
+
+                    <div className="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black/50 via-20% via-black/50 to-transparent p-5">
+                        <h4 className="font-bold text-background text-2xl text-center">
+                            Kazetová markýza
+                        </h4>
+                    </div>
                 </div>
 
                 {/* <Gallery

@@ -103,7 +103,7 @@ export function Testimonials() {
     const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => (
         <div
             key={index}
-            className="relative flex-shrink-0 bg-gray-50 hover:bg-gray-100 p-6 rounded-xl min-w-[400px] max-w-[400px] transition-all duration-300 group-hover:cursor-grab"
+            className="relative flex-shrink-0 bg-muted hover:bg-gray-100 p-6 rounded-xl min-w-[400px] max-w-[400px] transition-all duration-300 group-hover:cursor-grab"
             aria-label={`Reference od ${testimonial.name} pro ${testimonial.type}`}
         >
             <div className="flex items-center">
@@ -111,9 +111,7 @@ export function Testimonials() {
                     {testimonial.initials}
                 </div>
                 <div className="ml-4">
-                    <h3 className="font-bold md:text-2xl">
-                        {testimonial.name}
-                    </h3>
+                    <h3 className="font-bold md:text-xl">{testimonial.name}</h3>
                     <div
                         className="flex mt-1 text-yellow-400"
                         aria-label="Hodnocení 5 hvězdiček"
