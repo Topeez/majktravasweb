@@ -41,7 +41,7 @@ export default function VenkovniStineni() {
             title: "Venkovní žaluzie",
             subtitle:
                 "Venkovní žaluzie vám dávají plnou kontrolu nad světlem i teplotou v interiéru. Pomáhají udržet příjemné klima a zároveň šetří energii i náklady.",
-            image1: "/assets/img/external_venetian_blind.jpg",
+            image1: "/assets/img/IMG_7723.jpeg",
             image2: "/assets/img/zaluzie_venek_podomitka.png",
             stats: {
                 warmSecurity: {

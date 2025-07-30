@@ -24,7 +24,7 @@ export default function Services() {
                 </div>
 
                 <div
-                    className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-16"
+                    className="justify-items-center-safe gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-16"
                     aria-label="Služby sekce"
                 >
                     {/* Service Cards */}
@@ -32,7 +32,7 @@ export default function Services() {
                         <Link
                             key={index}
                             href={service.link}
-                            className="group relative flex flex-col justify-center items-center rounded-xl h-full min-h-[400px] overflow-hidden will-change-auto"
+                            className="group relative flex flex-col justify-center items-center rounded-xl w-full max-w-[500px] h-full min-h-[400px] overflow-hidden will-change-auto"
                             aria-label={service.title}
                         >
                             <div

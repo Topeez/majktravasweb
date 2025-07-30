@@ -7,7 +7,7 @@ export interface Net {
 export const nets: Net[] = [
 {
     title: "Pevné okenní sítě",
-    image: "/assets/img/IMG_7628.jpeg",
+    image: "/assets/img/pevna_sit.png",
     link: "/site-proti-hmyzu/pevne-okenni-site",
 },
 {
@@ -27,7 +27,7 @@ export const nets: Net[] = [
 },
 {
     title: "Plisé sítě",
-    image: "/assets/img/IMG_7637.jpeg",
+    image: "/assets/img/plisa_sit_3.jpg",
     link: "/site-proti-hmyzu/plise-site",
 }
 ];

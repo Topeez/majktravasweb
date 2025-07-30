@@ -1,8 +1,9 @@
 import { Breadcrumb } from "@/components/breadcrumb";
 import { Contact } from "@/components/contact";
 import { HeroSection } from "@/components/hero";
-import { Zap, Wrench, ShieldCheck, Smile } from "lucide-react";
+import { Sun, Sparkles, ShieldCheck, Expand } from "lucide-react";
 import { FeaturesSection, Feature } from "@/components/features";
+import Image from "next/image";
 // import { Gallery, GalleryImage } from "@/components/galerie";
 
 export default function Markyzy() {
@@ -24,48 +25,48 @@ export default function Markyzy() {
     const awningServiceFeatures: Feature[] = [
         {
             icon: (
-                <Zap
-                    size={30}
+                <Sun
+                    size={40}
                     className="mx-auto mb-4 text-foreground"
-                    aria-label="Rychlá instalace"
+                    aria-label="Ochrana před sluncem"
                 />
             ),
-            title: "Rychlá instalace",
-            description: "Markýzy nainstaluji bez zbytečných průtahů.",
+            title: "Ochrana před sluncem",
+            description:
+                "Zabraňují přímému slunečnímu záření na terasách a balkonech",
         },
         {
             icon: (
-                <Wrench
-                    size={30}
+                <Sparkles
+                    size={40}
                     className="mx-auto mb-4 text-foreground"
-                    aria-label="Odborná montáž"
+                    aria-label="Estetický prvek"
                 />
             ),
-            title: "Odborná montáž",
-            description:
-                "Mám zkušenosti s různými typy markýz a způsobů uchycení.",
+            title: "Estetický prvek",
+            description: "Zkrášlují vzhled domu nebo balkonu",
         },
         {
             icon: (
                 <ShieldCheck
-                    size={30}
+                    size={40}
                     className="mx-auto mb-4 text-foreground"
-                    aria-label="Záruka a servis"
+                    aria-label="Dlouhá životnost"
                 />
             ),
-            title: "Záruka a servis",
-            description: "Nabízím záruční i pozáruční servis.",
+            title: "Dlouhá životnost",
+            description: "Použité materiály zaručují odolnost a trvanlivost",
         },
         {
             icon: (
-                <Smile
-                    size={30}
+                <Expand
+                    size={40}
                     className="mx-auto mb-4 text-foreground"
-                    aria-label="Individuální přístup"
+                    aria-label="Možnost velkých rozměrů"
                 />
             ),
-            title: "Individuální přístup",
-            description: "Přizpůsobím se vašim požadavkům a prostoru.",
+            title: "Možnost velkých rozměrů",
+            description: "Zakryjí i velmi prostorné plochy",
         },
     ];
 
@@ -94,10 +95,26 @@ export default function Markyzy() {
                 <Breadcrumb items={breadcrumbItems} aria-label="Breadcrumb" />
 
                 <FeaturesSection
-                    title="Profesionální montáž a servis markýz, jak má být"
+                    title="Markýzy a jejich výhody"
+                    subtitle="Vyhánějí vás vedra a slunce z terasy? Chcete jednoduché řešení pro svůj balkon? Pak jsou pro vás markýzy ideálním řešením."
                     features={awningServiceFeatures}
                     aria-label="Features Section"
                 />
+
+                <div className="relative mx-auto rounded-2xl h-[600px] aspect-square overflow-hidden">
+                    <div className="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black/50 to-transparent p-5 text-center">
+                        <h5 className="font-bold text-background text-3xl">
+                            Kazetová markýza
+                        </h5>
+                    </div>
+                    <Image
+                        src="/assets/img/markyza_kazetova.png"
+                        width={1920}
+                        height={1080}
+                        alt="Kazetová markýza na terase"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
 
                 {/* <Gallery
                     title="Galerie"

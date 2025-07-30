@@ -9,6 +9,7 @@ export type Feature = {
 // Props for the FeaturesSection component
 type FeaturesSectionProps = {
     title: string;
+    subtitle?: string;
     features: Feature[];
     className?: string;
 };
@@ -16,6 +17,7 @@ type FeaturesSectionProps = {
 // Main reusable component
 export const FeaturesSection = memo(function FeaturesSection({
     title,
+    subtitle,
     features,
     className = "",
 }: FeaturesSectionProps) {
@@ -24,13 +26,18 @@ export const FeaturesSection = memo(function FeaturesSection({
             className={`flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container ${className}`}
             aria-label={title}
         >
-            <div className="space-y-16 col-span-12 px-6 md:px-16 py-12">
-                <h2
-                    className="font-bold text-4xl text-center"
-                    aria-label={title}
-                >
-                    {title}
-                </h2>
+            <div className="space-y-16 col-span-12 py-12">
+                <div className="space-y-8">
+                    <h2
+                        className="font-bold text-3xl md:text-5xl text-center"
+                        aria-label={title}
+                    >
+                        {title}
+                    </h2>
+                    <h3 className="text-muted-foreground text-xl text-center">
+                        {subtitle}
+                    </h3>
+                </div>
                 <div
                     className="gap-6 grid sm:grid-cols-2 lg:grid-cols-4 text-center"
                     aria-label="Features"
@@ -40,6 +47,7 @@ export const FeaturesSection = memo(function FeaturesSection({
                             key={index}
                             aria-label={feature.title}
                             role="listitem"
+                            className="space-y-6"
                         >
                             {feature.icon}
                             <h4 className="mb-2 font-semibold text-2xl">

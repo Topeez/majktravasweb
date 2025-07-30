@@ -11,7 +11,7 @@ export function Benefits() {
             <div className="cs-container">
                 <div className="flex lg:flex-row flex-col items-center gap-12">
                     <div className="w-full lg:w-1/2">
-                        <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
+                        <p className="font-bold text-muted-foreground text-base md:text-left text-center uppercase tracking-widest">
                             o mně
                         </p>
                         <h2

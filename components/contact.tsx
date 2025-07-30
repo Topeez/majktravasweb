@@ -11,7 +11,7 @@ export function Contact() {
             <div className="mx-auto px-4 cs-container">
                 <div className="flex lg:flex-row flex-col gap-12">
                     <div className="lg:w-1/2">
-                        <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
+                        <p className="font-bold text-muted-foreground text-base md:text-left text-center uppercase tracking-widest">
                             kontakt
                         </p>
                         <h2
