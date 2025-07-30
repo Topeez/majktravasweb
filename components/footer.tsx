@@ -1,16 +1,36 @@
+"use client";
+
 import { services } from "@/data/services";
 import { contactInfo } from "@/data/contact";
 import Link from "next/link";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
+import { usePathname, useRouter } from "next/navigation";
 
 export function Footer() {
+    const pathname = usePathname();
+    const router = useRouter();
+    const isHomePage = pathname === "/";
+
     const navLinks = [
         { label: "Služby", href: "#sluzby" },
         { label: "O mně", href: "#omne" },
         { label: "Reference", href: "#recenze" },
         { label: "Kontakt", href: "#kontakt" },
     ];
+
+    const handleNavClick = (href: string) => {
+        if (isHomePage) {
+            // If already on homepage, just scroll to section
+            const element = document.querySelector(href);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        } else {
+            // If not on homepage, navigate to homepage with hash
+            router.push(`/${href}`);
+        }
+    };
 
     return (
         <footer className="bg-foreground py-12 text-white">
@@ -61,14 +81,15 @@ export function Footer() {
                         <ul className="space-y-2 text-background">
                             {navLinks.map((link, index) => (
                                 <li key={index}>
-                                    <Link
-                                        href={link.href}
-                                        className="hover:underline transition"
-                                        draggable={false}
+                                    <button
+                                        onClick={() =>
+                                            handleNavClick(link.href)
+                                        }
+                                        className="text-left hover:underline transition cursor-pointer"
                                         aria-label={link.label}
                                     >
                                         {link.label}
-                                    </Link>
+                                    </button>
                                 </li>
                             ))}
                         </ul>
