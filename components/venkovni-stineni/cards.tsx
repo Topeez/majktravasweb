@@ -32,7 +32,7 @@ export function Card({
     variant2,
 }: Props) {
     return (
-        <div className="flex-col shadow-md p-6 border rounded-2xl w-full">
+        <div className="flex-col shadow-lg p-6 border rounded-2xl w-full">
             {/* Layout when subtitle2 is not empty */}
             {subtitle2 && (
                 <>

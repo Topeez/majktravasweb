@@ -86,7 +86,7 @@ export default function StiniciTechnika() {
 
                                     {/* Benefit card */}
                                     <div
-                                        className={`bg-background rounded-xl shadow-lg p-12 relative overflow-hidden
+                                        className={`bg-background rounded-xl shadow-lg p-8 relative flex items-center justify-center min-h-36 overflow-hidden
                                         ${index % 2 === 0 ? "md:mr-[55%]" : "md:ml-[55%]"}`}
                                         aria-label={item.text}
                                     >

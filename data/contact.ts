@@ -31,7 +31,7 @@ export const contactInfo: ContactItem[] = [
             "div",
             { className: "font-bold"},
             "Telefonicky Po - Pá:",
-            React.createElement("span", { className: "font-normal" }, " 8:00 - 16:00")
+            React.createElement("div", { className: "font-normal" }, " 8:00 - 16:00")
         ),
     },
 ];

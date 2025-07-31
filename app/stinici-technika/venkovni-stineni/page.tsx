@@ -124,7 +124,7 @@ export default function VenkovniStineni() {
             <section className="py-20">
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
                     <Breadcrumb items={breadcrumbItems} aria-label="Navigace" />
-                    <div className="space-y-6 md:col-span-12">
+                    <div className="space-y-12 md:col-span-12">
                         <h2
                             className="mb-12 font-bold text-3xl md:text-5xl text-center"
                             aria-label="Typy venkovního stínění"

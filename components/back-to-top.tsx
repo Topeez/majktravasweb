@@ -54,7 +54,7 @@ export function BackToTop() {
         <Button
             variant="ghost"
             onClick={scrollToTop}
-            className={`group fixed bottom-5 right-5 z-50 flex items-center justify-start rounded-full size-12 hover:w-24 bg-foreground text-background border border-background transition-[width] duration-200 cursor-pointer gap-0 overflow-hidden hover:border-foreground ${
+            className={`group will-change-transform fixed bottom-5 right-5 z-50 flex items-center justify-between rounded-full size-12 hover:w-24 bg-foreground text-background border border-background transition-[width] duration-200 cursor-pointer gap-0 overflow-hidden hover:border-foreground ${
                 visible
                     ? "opacity-100 pointer-events-auto"
                     : "opacity-0 pointer-events-none"

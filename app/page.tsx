@@ -20,7 +20,7 @@ export default function Home() {
                     href: "#sluzby",
                 }}
                 secondaryCta={{
-                    label: "Domluvte si nezávazné zaměření",
+                    label: "Nezávazné zaměření",
                     href: "/#kontakt",
                     icon: true,
                 }}

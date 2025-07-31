@@ -107,10 +107,12 @@ export function Footer() {
                                     className="flex justify-center md:justify-start items-center"
                                     aria-label={item.title}
                                 >
-                                    <div className="mr-3" aria-hidden="true">
+                                    <span className="mr-3" aria-hidden="true">
                                         {item.icon}
+                                    </span>
+                                    <div className="odd:flex odd:flex-col odd:justify-center odd:items-center last:text-center">
+                                        {item.content}
                                     </div>
-                                    <span>{item.content}</span>
                                 </li>
                             ))}
                         </ul>

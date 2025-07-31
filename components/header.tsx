@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { nets } from "@/data/nets";
+import { MobileMenu } from "@/components/mobile-menu"; // Adjust the import path as needed
 
 // Constants
 const SECTION_IDS = ["home", "sluzby", "omne", "recenze", "kontakt"];
@@ -16,18 +17,6 @@ const LINKS = [
     { href: "#kontakt", label: "Kontakt" },
 ];
 
-// Extracted Hamburger Icon Component
-const HamburgerIcon = ({ isOpen }: { isOpen: boolean }) => (
-    <div className="space-y-1" aria-hidden="true">
-        <span
-            className={`block h-1 w-6 origin-center bg-background rounded-full transition-all duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-1" : ""}`}
-        ></span>
-        <span
-            className={`block h-1 w-4 origin-center bg-background rounded-full transition-all duration-300 ease-in-out mt-1.5 ${isOpen ? "-rotate-45 -translate-y-1.5 w-6" : ""}`}
-        ></span>
-    </div>
-);
-
 export function Header() {
     const pathname = usePathname();
     const [isVisible, setIsVisible] = useState(true);
@@ -35,7 +24,6 @@ export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState<string | null>(null);
     const lastScrollY = useRef(0);
-    const mobileMenuRef = useRef<HTMLDivElement>(null);
     const isHomePage = pathname === "/";
     const liClasses =
         "li-item relative after:w-full after:h-[3px] after:origin-center will-change-transform";
@@ -134,34 +122,6 @@ export function Header() {
     const toggleMobileMenu = useCallback(() => {
         setIsMobileMenuOpen((prev) => !prev);
     }, []);
-
-    // Handle click outside mobile menu
-    useEffect(() => {
-        if (!isMobileMenuOpen) return;
-
-        const handleClickOutside = (e: MouseEvent) => {
-            const target = e.target as Element;
-            if (
-                mobileMenuRef.current &&
-                !mobileMenuRef.current.contains(target) &&
-                !target.closest(".mobile-menu-button")
-            ) {
-                closeMobileMenu();
-            }
-        };
-
-        const handleEscape = (e: KeyboardEvent) => {
-            if (e.key === "Escape") closeMobileMenu();
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        document.addEventListener("keydown", handleEscape);
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-            document.removeEventListener("keydown", handleEscape);
-        };
-    }, [isMobileMenuOpen, closeMobileMenu]);
 
     // Handle anchor link clicks
     const handleLinkClick = useCallback(
@@ -265,114 +225,15 @@ export function Header() {
                 </ul>
 
                 {/* Mobile Navigation */}
-                <div className="lg:hidden">
-                    <Button
-                        onClick={toggleMobileMenu}
-                        className={`group !z-[1000] bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button ${isMobileMenuOpen ? "opacity-0" : "opacity-100"}`}
-                        aria-expanded={isMobileMenuOpen}
-                        aria-controls="mobile-menu"
-                        aria-label={
-                            isMobileMenuOpen
-                                ? "Zavřít navigační menu"
-                                : "Otevřít navigační menu"
-                        }
-                    >
-                        <HamburgerIcon isOpen={isMobileMenuOpen} />
-                    </Button>
-
-                    {/* Mobile Menu */}
-                    <div
-                        ref={mobileMenuRef}
-                        id="mobile-menu"
-                        className={`fixed inset-0 !z-[900] bg-foreground transition-all duration-500 ease-in-out h-screen ${
-                            isMobileMenuOpen
-                                ? "-translate-y-20 opacity-100 pointer-events-auto"
-                                : "translate-y-full opacity-0 pointer-events-none"
-                        }`}
-                        style={{ top: "5rem" }}
-                        role="dialog"
-                        aria-modal="true"
-                        aria-label="Mobilní navigační menu"
-                        aria-hidden={!isMobileMenuOpen}
-                    >
-                        <Button
-                            onClick={toggleMobileMenu}
-                            className="group top-11 right-3.5 !z-[1000] absolute bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button"
-                            aria-label="Zavřít navigační menu"
-                        >
-                            <HamburgerIcon isOpen={isMobileMenuOpen} />
-                        </Button>
-
-                        <ul
-                            className={`flex flex-col justify-center items-center gap-8 h-full overflow-hidden font-bold text-background text-4xl text-center transition-all duration-700 ease-in-out ${
-                                isMobileMenuOpen
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-8"
-                            }`}
-                            role="menu"
-                            aria-label="Mobilní navigační odkazy"
-                        >
-                            {LINKS.map((link, index) => (
-                                <li
-                                    key={link.href}
-                                    className={`${isActive(link.href) ? "active" : ""} ${liClasses} from-left transition-all duration-800 ease-in-out ${
-                                        isMobileMenuOpen
-                                            ? "opacity-100 translate-y-0"
-                                            : "opacity-0 translate-y-4"
-                                    }`}
-                                    style={{
-                                        transitionDelay: isMobileMenuOpen
-                                            ? `${index * 150}ms`
-                                            : "0ms",
-                                    }}
-                                    role="none"
-                                >
-                                    <Link
-                                        href={`/${link.href}`}
-                                        className="block"
-                                        onClick={(e) =>
-                                            handleLinkClick(e, link.href)
-                                        }
-                                        role="menuitem"
-                                        aria-current={
-                                            isActive(link.href)
-                                                ? "page"
-                                                : undefined
-                                        }
-                                        aria-label={`Přejít na sekci ${link.label}`}
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                            <li
-                                className={`transition-all duration-500 ease-in-out ${
-                                    isMobileMenuOpen
-                                        ? "opacity-100 blur-none translate-y-0"
-                                        : "opacity-0 blur-sm translate-y-4"
-                                }`}
-                                style={{
-                                    transitionDelay: isMobileMenuOpen
-                                        ? `${LINKS.length * 100}ms`
-                                        : "0ms",
-                                }}
-                                role="none"
-                            >
-                                <Link
-                                    href="/#kontakt"
-                                    onClick={(e) =>
-                                        handleLinkClick(e, "/#kontakt")
-                                    }
-                                    aria-label="Přejít na kontaktní formulář pro nezávaznou konzultaci"
-                                >
-                                    <Button className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl w-full font-bold text-foreground hover:text-foreground text-xl transition-all duration-300 cursor-pointer">
-                                        Nezávazná konzultace
-                                    </Button>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <MobileMenu
+                    isOpen={isMobileMenuOpen}
+                    onToggle={toggleMobileMenu}
+                    onClose={closeMobileMenu}
+                    links={LINKS}
+                    isActive={isActive}
+                    handleLinkClick={handleLinkClick}
+                    liClasses={liClasses}
+                />
             </nav>
         </header>
     );
