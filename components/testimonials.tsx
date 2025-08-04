@@ -103,17 +103,15 @@ export function Testimonials() {
     const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => (
         <div
             key={index}
-            className="relative flex-shrink-0 bg-gray-50 hover:bg-gray-100 p-6 rounded-xl min-w-[400px] max-w-[400px] transition-all duration-300"
+            className="relative flex-shrink-0 bg-gray-50 hover:bg-gray-100 p-6 rounded-xl min-w-[400px] max-w-[400px] transition-all duration-300 hover:cursor-grab"
             aria-label={`Reference od ${testimonial.name} pro ${testimonial.type}`}
         >
             <div className="flex items-center">
-                <div className="flex justify-center items-center bg-gray-900 rounded-full w-12 h-12 font-bold text-white">
+                <div className="flex justify-center items-center bg-foreground rounded-full w-12 h-12 font-bold text-white">
                     {testimonial.initials}
                 </div>
                 <div className="ml-4">
-                    <h3 className="font-bold text-gray-900 md:text-xl">
-                        {testimonial.name}
-                    </h3>
+                    <h3 className="font-bold md:text-xl">{testimonial.name}</h3>
                     <div
                         className="flex mt-1 text-yellow-400"
                         aria-label="Hodnocení 5 hvězdiček"
@@ -134,58 +132,54 @@ export function Testimonials() {
                 {testimonial.text}
             </blockquote>
 
-            <div className="top-3 right-3 absolute bg-gray-900 px-2 py-1 rounded-full font-bold text-white text-xs">
+            <div className="top-3 right-3 absolute bg-foreground px-2 py-1 rounded-full font-bold text-background text-xs">
                 {testimonial.type}
             </div>
         </div>
     );
 
     return (
-        <section
-            id="recenze"
-            className="bg-white py-16 md:py-24 overflow-hidden"
-        >
-            <div className="mx-auto px-4 container">
+        <section id="recenze" className="py-16 md:py-24 overflow-hidden">
+            <div className="mx-auto px-4 cs-container">
                 <div className="mx-auto mb-16 max-w-2xl text-center">
-                    <p className="font-bold text-gray-500 text-base uppercase tracking-widest">
+                    <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
                         reference
                     </p>
-                    <h2 className="font-bold text-gray-900 text-3xl md:text-5xl">
+                    <h2 className="font-bold text-3xl md:text-5xl">
                         Co říkají moji zákazníci
                     </h2>
-                    <p className="mt-4 text-gray-600 text-xl">
+                    <p className="mt-4 text-muted-foreground text-xl">
                         Přečtěte si reference od spokojených klientů, kteří
                         využili mé služby
                     </p>
                 </div>
+            </div>
+            <div className="relative w-full">
+                {/* Gradient overlays for smooth fade effect */}
+                <div className="top-0 bottom-0 left-0 z-10 absolute bg-gradient-to-r from-background to-transparent w-20 pointer-events-none"></div>
+                <div className="top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-background to-transparent w-20 pointer-events-none"></div>
 
-                <div className="relative">
-                    {/* Gradient overlays for smooth fade effect */}
-                    <div className="top-0 bottom-0 left-0 z-10 absolute bg-gradient-to-r from-white to-transparent w-20 pointer-events-none"></div>
-                    <div className="top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-white to-transparent w-20 pointer-events-none"></div>
-
-                    <div
-                        className="flex gap-6 w-fit"
-                        style={{
-                            animation: "scroll 90s linear infinite",
-                            animationPlayState: isPaused ? "paused" : "running",
-                        }}
-                        onMouseEnter={() => setIsPaused(true)}
-                        onMouseLeave={() => setIsPaused(false)}
-                        onFocus={() => setIsPaused(true)}
-                        onBlur={() => setIsPaused(false)}
-                        tabIndex={0}
-                        role="group"
-                        aria-label="Scrollující seznam referencí - najeďte myší pro pozastavení"
-                    >
-                        {duplicatedTestimonials.map((testimonial, index) => (
-                            <TestimonialCard
-                                key={index}
-                                testimonial={testimonial}
-                                index={index}
-                            />
-                        ))}
-                    </div>
+                <div
+                    className="flex gap-6 w-fit"
+                    style={{
+                        animation: "scroll 90s linear infinite",
+                        animationPlayState: isPaused ? "paused" : "running",
+                    }}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                    onFocus={() => setIsPaused(true)}
+                    onBlur={() => setIsPaused(false)}
+                    tabIndex={0}
+                    role="group"
+                    aria-label="Scrollující seznam referencí - najeďte myší pro pozastavení"
+                >
+                    {duplicatedTestimonials.map((testimonial, index) => (
+                        <TestimonialCard
+                            key={index}
+                            testimonial={testimonial}
+                            index={index}
+                        />
+                    ))}
                 </div>
             </div>
 
