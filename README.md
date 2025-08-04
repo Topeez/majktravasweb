@@ -28,7 +28,7 @@ Cílem tohoto projektu je poskytnout moderní, přehlednou a plně responzivní 
 - ✅ Nasazení pomocí **Vercel** s automatickým deployem z GitHubu
 
 ## Použité technologie
-- **Framework**: [Next.js](https://nextjs.org/)
+- **Framework**: [Next.js](https://nextjs.org/), React
 - **Jazyk**: TypeScript
 - **Styly**: CSS / Tailwind CSS / Shadcn UI
 - **Formulář**: Resend
