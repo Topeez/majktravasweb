@@ -7,7 +7,7 @@ export interface Net {
 export const nets: Net[] = [
 {
     title: "Pevné okenní sítě",
-    image: "/assets/img/IMG_7628.jpeg",
+    image: "/assets/img/pevna_sit_okno.jpeg",
     link: "/site-proti-hmyzu/pevne-okenni-site",
 },
 {

@@ -118,7 +118,7 @@ export default function StiniciTechnika() {
                                 className="group relative flex flex-col justify-center items-center rounded-xl w-full h-full min-h-[400px] overflow-hidden will-change-auto"
                                 aria-label="Venkovní stínění"
                             >
-                                <div className="absolute inset-0 bg-[url(/assets/img/IMG_7045.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]" />
+                                <div className="absolute inset-0 bg-[url(/assets/img/venek_zaluzie_prizn.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]" />
 
                                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-500" />
 

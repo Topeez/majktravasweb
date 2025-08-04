@@ -44,7 +44,7 @@ export default function PevneOkenniSite() {
                     aria-label="Product image"
                 >
                     <Image
-                        src="/assets/img/pevna_sit.png"
+                        src="/assets/img/pevna_sit_okno.jpeg"
                         alt="Pevné okenní sítě"
                         width={800}
                         height={800}

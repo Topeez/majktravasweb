@@ -104,7 +104,7 @@ export default function InterieroveStineni() {
         },
 
         {
-            img: "/assets/img/",
+            img: "/assets/img/japonska_stena.jpg",
             title: "Japonské stěny",
             description:
                 "Ideální pro velké prosklené plochy i jako elegantní interiérový prvek. Designová variabilita.",

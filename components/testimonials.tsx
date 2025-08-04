@@ -16,13 +16,13 @@ interface TestimonialCardProps {
 }
 
 export function Testimonials() {
-    const testimonials = useMemo(
+    const testimonials = useMemo<Testimonial[]>(
         () => [
             {
                 initials: "PN",
                 name: "Petr Novák",
                 type: "Rolety",
-                text: "Velmi profesionální přístup. Montáž rolet proběhla rychle a precizně. Po roce používání vše funguje bez problémů. Rozhodně doporučuji!",
+                text: "Velmi profesionální přístup. Montáž rolet proběhla rychle a precizně. Vše funguje bez problémů. Rozhodně doporučuji!",
             },
             {
                 initials: "JK",
@@ -34,7 +34,7 @@ export function Testimonials() {
                 initials: "MS",
                 name: "Martin Svoboda",
                 type: "Garážová vrata",
-                text: "Montáž garážových vrat proběhla bez problémů. Ocenil jsem individuální přístup a odborné rady. Servis po instalaci je také na výborné úrovni.",
+                text: "Montáž garážových vrat proběhla bez problémů. Ocenil jsem individuální přístup a odborné rady. Servis je také na výborné úrovni.",
             },
             {
                 initials: "AH",
@@ -58,7 +58,7 @@ export function Testimonials() {
                 initials: "JH",
                 name: "Josef Horák",
                 type: "Markýza",
-                text: "Po dvou letech používání mohu říct, že investice do markýzy se vyplatila. Kvalitní materiál, precizní práce a dodržení termínu. Doporučuji!",
+                text: "Investice do markýzy se určitě vyplatila. Kvalitní materiál, precizní práce a dodržení termínu. Doporučuji všem!",
             },
             {
                 initials: "MN",
@@ -70,7 +70,7 @@ export function Testimonials() {
                 initials: "DS",
                 name: "David Svoboda",
                 type: "Sekční vrata",
-                text: "Sekční vrata fungují perfektně už druhý rok. Ocenil jsem hlavně poradenství při výběru a rychlost realizace. Profesionální služby na vysoké úrovni.",
+                text: "Sekční vrata fungují perfektně. Ocenil jsem hlavně poradenství při výběru a rychlost realizace. Profesionální služby na vysoké úrovni.",
             },
             {
                 initials: "KV",
@@ -82,7 +82,7 @@ export function Testimonials() {
                 initials: "PK",
                 name: "Pavel Kratochvíl",
                 type: "Oprava markýzy",
-                text: "Rychlá a efektivní oprava staré markýzy. Problém byl vyřešen do týdne od objednání. Férová cena a spolehlivý servis. Velmi doporučuji!",
+                text: "Rychlá a efektivní oprava staré markýzy. Problém byl vyřešen promptně. Férová cena a spolehlivý servis. Velmi doporučuji!",
             },
             {
                 initials: "LM",
@@ -103,15 +103,17 @@ export function Testimonials() {
     const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => (
         <div
             key={index}
-            className="relative flex-shrink-0 bg-muted hover:bg-gray-100 p-6 rounded-xl min-w-[400px] max-w-[400px] transition-all duration-300 group-hover:cursor-grab"
+            className="relative flex-shrink-0 bg-gray-50 hover:bg-gray-100 p-6 rounded-xl min-w-[400px] max-w-[400px] transition-all duration-300"
             aria-label={`Reference od ${testimonial.name} pro ${testimonial.type}`}
         >
             <div className="flex items-center">
-                <div className="flex justify-center items-center bg-foreground rounded-full w-12 h-12 font-bold text-background">
+                <div className="flex justify-center items-center bg-gray-900 rounded-full w-12 h-12 font-bold text-white">
                     {testimonial.initials}
                 </div>
                 <div className="ml-4">
-                    <h3 className="font-bold md:text-xl">{testimonial.name}</h3>
+                    <h3 className="font-bold text-gray-900 md:text-xl">
+                        {testimonial.name}
+                    </h3>
                     <div
                         className="flex mt-1 text-yellow-400"
                         aria-label="Hodnocení 5 hvězdiček"
@@ -128,44 +130,44 @@ export function Testimonials() {
                     </div>
                 </div>
             </div>
-            <blockquote className="mt-4 text-muted-foreground md:text-xl italic leading-relaxed">
+            <blockquote className="mt-4 text-gray-600 md:text-xl italic leading-relaxed">
                 {testimonial.text}
             </blockquote>
 
-            <div className="top-3 right-3 absolute bg-foreground px-2 py-1 rounded-full font-bold text-background text-xs">
+            <div className="top-3 right-3 absolute bg-gray-900 px-2 py-1 rounded-full font-bold text-white text-xs">
                 {testimonial.type}
             </div>
         </div>
     );
 
     return (
-        <section id="recenze" className="py-16 md:py-24 overflow-hidden">
-            <div className="cs-container">
+        <section
+            id="recenze"
+            className="bg-white py-16 md:py-24 overflow-hidden"
+        >
+            <div className="mx-auto px-4 container">
                 <div className="mx-auto mb-16 max-w-2xl text-center">
-                    <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
+                    <p className="font-bold text-gray-500 text-base uppercase tracking-widest">
                         reference
                     </p>
-                    <h2 className="font-bold text-3xl md:text-5xl">
+                    <h2 className="font-bold text-gray-900 text-3xl md:text-5xl">
                         Co říkají moji zákazníci
                     </h2>
-                    <p className="mt-4 text-muted-foreground text-xl">
+                    <p className="mt-4 text-gray-600 text-xl">
                         Přečtěte si reference od spokojených klientů, kteří
                         využili mé služby
                     </p>
                 </div>
 
-                <div
-                    className="group relative"
-                    role="region"
-                    aria-label="Sekce s referencemi"
-                >
+                <div className="relative">
+                    {/* Gradient overlays for smooth fade effect */}
+                    <div className="top-0 bottom-0 left-0 z-10 absolute bg-gradient-to-r from-white to-transparent w-20 pointer-events-none"></div>
+                    <div className="top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-white to-transparent w-20 pointer-events-none"></div>
+
                     <div
                         className="flex gap-6 w-fit"
                         style={{
-                            animationName: "scroll",
-                            animationDuration: "90s",
-                            animationTimingFunction: "linear",
-                            animationIterationCount: "infinite",
+                            animation: "scroll 90s linear infinite",
                             animationPlayState: isPaused ? "paused" : "running",
                         }}
                         onMouseEnter={() => setIsPaused(true)}
@@ -194,8 +196,7 @@ export function Testimonials() {
                     }
                     100% {
                         transform: translateX(
-                            -${350 * testimonials.length +
-                                24 * testimonials.length}px
+                            -${(400 + 24) * testimonials.length}px
                         );
                     }
                 }
