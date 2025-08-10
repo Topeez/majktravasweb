@@ -161,8 +161,8 @@ export async function POST(req: NextRequest) {
 
         // Send email using Resend
         await resend.emails.send({
-          from: "onboarding@resend.dev", // Tohle se musí změnit na verified doménu
-          to: "topetopinka7@seznam.cz", // mistrava@seznam.cz
+          from: "info@travasstineni.cz",
+          to: "mistrava@seznam.cz",
             subject: `Nová zpráva z webu od ${sanitizedData.name}`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
