@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY!);
 
 // Enhanced validation schema
 const contactFormSchema = z.object({
-    name: z.string()
+    fullname: z.string()
         .min(2, "Jméno musí mít alespoň 2 znaky")
         .max(50, "Jméno nesmí překročit 50 znaků")
         .trim(),
@@ -142,7 +142,7 @@ export async function POST(req: NextRequest) {
             );
         }
 
-        const { name, email, message, honeypot } = parsed.data;
+        const { fullname, email, message, honeypot } = parsed.data;
 
         // Honeypot check (silent failure for bots)
         if (honeypot) {
@@ -154,7 +154,7 @@ export async function POST(req: NextRequest) {
 
         // Sanitize input
         const sanitizedData = {
-            name: sanitizeInput(name),
+            name: sanitizeInput(fullname),
             email: sanitizeInput(email),
             message: sanitizeInput(message.replace(/\n/g, '<br>')), // Convert newlines to HTML
         };
