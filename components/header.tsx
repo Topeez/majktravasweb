@@ -175,10 +175,10 @@ export function Header() {
                 >
                     <Image
                         src="/assets/img/logo/logo.png"
-                        width={200}
+                        width={400}
                         height={200}
                         alt="Travas Stínění logo"
-                        className="w-full max-w-3xs h-22 md:h-32"
+                        className="w-auto max-w-3xs h-auto max-h-20 md:max-h-32"
                         priority
                     />
                 </Link>
@@ -214,7 +214,7 @@ export function Header() {
                         <Link
                             href="/#kontakt"
                             draggable={false}
-                            onClick={(e) => handleLinkClick(e, "/#kontakt")}
+                            onClick={(e) => handleLinkClick(e, "#kontakt")}
                             aria-label="Přejít na kontaktní formulář pro nezávaznou konzultaci"
                         >
                             <Button className="bg-background hover:bg-background hover:shadow-xl px-8 py-6 rounded-4xl w-full font-bold text-foreground hover:text-foreground text-xl transition-all duration-300 cursor-pointer">

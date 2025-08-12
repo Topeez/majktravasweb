@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function CTA() {
@@ -17,10 +18,14 @@ export function CTA() {
                 <div className="mt-6 sm:mt-8 lg:mt-10">
                     <Link
                         href="#kontakt"
-                        className="inline-block bg-white hover:bg-transparent px-6 sm:px-8 py-3 sm:py-4 border-2 border-background rounded-full font-bold text-popover-foreground hover:text-white text-base sm:text-lg transition"
+                        className="group inline-block bg-white hover:bg-transparent px-6 sm:px-8 py-3 sm:py-4 border-2 border-background rounded-full font-bold text-popover-foreground hover:text-white text-base sm:text-lg transition"
                         aria-label="Kontaktujte mě"
                     >
-                        Kontaktujte mě
+                        <span className="mr-2">Ozvat se</span>
+                        <ArrowRight
+                            size={20}
+                            className="inline-block transition group-hover:translate-x-1"
+                        />
                     </Link>
                 </div>
             </div>

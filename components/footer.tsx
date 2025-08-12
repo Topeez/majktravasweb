@@ -120,7 +120,7 @@ export function Footer() {
                 </div>
 
                 <Separator className="my-8" />
-                <div className="font-semibold text-muted text-center">
+                <div className="font-bold text-muted text-center">
                     &copy; {new Date().getFullYear()} Travas Stínění. Všechna
                     práva vyhrazena.
                 </div>
