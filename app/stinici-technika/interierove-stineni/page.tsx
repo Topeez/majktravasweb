@@ -163,19 +163,19 @@ export default function InterieroveStineni() {
                 <div className="flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container">
                     <Breadcrumb items={breadcrumbItems} aria-label="Navigace" />
 
-                    <div className="flex flex-col justify-between items-center md:items-start col-span-12 pb-8 h-full">
-                        <div className="md:text-left text-center">
+                    <div className="flex flex-col justify-between items-center col-span-12 pb-8 h-full">
+                        <div className="">
                             <h2
-                                className="mb-4 font-semibold text-3xl md:text-5xl leading-[1.2]"
+                                className="mb-4 font-bold text-3xl md:text-5xl text-center md:text-center"
                                 aria-label="Titulek"
                             >
                                 Interiérové stínění spojuje funkčnost a estetiku
                             </h2>
                         </div>
 
-                        <div>
+                        <div className="">
                             <h3
-                                className="my-4 font-bold text-foreground text-2xl md:text-4xl md:text-left text-center"
+                                className="my-4 font-semibold text-foreground text-2xl md:text-4xl text-center"
                                 aria-label="Titulek"
                             >
                                 Výhody

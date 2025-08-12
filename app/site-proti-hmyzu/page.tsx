@@ -25,7 +25,7 @@ export default function SiteProtiHmyzu() {
                 />
 
                 <h2
-                    className="my-12 font-semibold text-3xl md:text-5xl text-center leading-[1.2]"
+                    className="my-12 font-bold text-3xl md:text-5xl text-center leading-[1.2]"
                     aria-label="section title"
                 >
                     Typy sítí proti hmyzu

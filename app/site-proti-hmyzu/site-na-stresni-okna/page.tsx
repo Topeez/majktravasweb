@@ -24,7 +24,7 @@ export default function RolovaciSite() {
                 className="mt-20 mb-16 text-center"
                 aria-label="Section header"
             >
-                <h1 className="font-semibold text-3xl md:text-5xl">
+                <h1 className="font-bold text-3xl md:text-5xl">
                     Sítě na střešní okna
                 </h1>
                 <p className="mx-auto mt-4 max-w-3xl text-muted-foreground text-lg">

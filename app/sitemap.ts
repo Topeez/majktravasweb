@@ -79,5 +79,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+
+    // Nets pages
+    {
+      url: `${baseUrl}/site-proti-hmyzu/pevne-okenni-site`,
+      lastModified: lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/site-proti-hmyzu/site-na-stresni-okna`,
+      lastModified: lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/site-proti-hmyzu/sitove-dvere`,
+      lastModified: lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/site-proti-hmyzu/posuvne-site`,
+      lastModified: lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/site-proti-hmyzu/plise-site`,
+      lastModified: lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ]
 }

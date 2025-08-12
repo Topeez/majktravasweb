@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Toaster } from "sonner";
 import { BackToTop } from "@/components/back-to-top";
 
-const montserrat = Montserrat({
-    variable: "--font-montserrat",
+const opensans = Open_Sans({
     subsets: ["latin"],
 });
 
@@ -59,7 +58,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="cz">
-            <body className={`${montserrat.variable} antialiased`}>
+            <body className={`${opensans.className} antialiased`}>
                 <Header />
                 <main>{children}</main>
                 <BackToTop />

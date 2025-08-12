@@ -21,9 +21,7 @@ export default function PliseSite() {
                 className="mt-20 mb-16 text-center"
                 aria-label="Section header"
             >
-                <h1 className="font-semibold text-3xl md:text-5xl">
-                    Plisé sítě
-                </h1>
+                <h1 className="font-bold text-3xl md:text-5xl">Plisé sítě</h1>
                 <p className="mx-auto mt-4 max-w-3xl text-muted-foreground text-lg text-center">
                     Stylové skládací sítě, které skládáním připomínají harmoniku
                     nebo plisé rolety.

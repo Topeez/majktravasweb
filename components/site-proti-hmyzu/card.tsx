@@ -34,7 +34,7 @@ export function Card({
             />
 
             <div className="z-10 text-center">
-                <h3 className="font-semibold text-3xl">{title}</h3>
+                <h3 className="font-bold text-3xl">{title}</h3>
                 <div className="flex justify-center items-center mt-4 font-bold">
                     <Button
                         variant={"ghost"}

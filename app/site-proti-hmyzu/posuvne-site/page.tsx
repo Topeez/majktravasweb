@@ -18,9 +18,7 @@ export default function PosuvneSite() {
 
             {/* Nadpis */}
             <div className="mt-20 mb-16 text-center">
-                <h1 className="font-semibold text-3xl md:text-5xl">
-                    Posuvné sítě
-                </h1>
+                <h1 className="font-bold text-3xl md:text-5xl">Posuvné sítě</h1>
                 <p className="mx-auto mt-4 max-w-3xl text-muted-foreground text-lg">
                     Skládací nebo posuvné panely, vhodné zejména u velkých
                     prosklených dveří a teras.

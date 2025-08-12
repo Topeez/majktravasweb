@@ -24,9 +24,7 @@ export default function SitoveDvere() {
                 className="mt-20 mb-16 text-center"
                 aria-label="Section header"
             >
-                <h1 className="font-semibold text-3xl md:text-5xl">
-                    Síťové dveře
-                </h1>
+                <h1 className="font-bold text-3xl md:text-5xl">Síťové dveře</h1>
                 <p className="mx-auto mt-4 max-w-3xl text-muted-foreground text-lg">
                     Samostatné dveřní panely se sítí &#45; buď pevné nebo
                     zasouvací.
