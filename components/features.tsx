@@ -50,7 +50,7 @@ export const FeaturesSection = memo(function FeaturesSection({
                             className="space-y-6"
                         >
                             {feature.icon}
-                            <h4 className="mb-2 font-semibold text-2xl">
+                            <h4 className="mb-2 font-bold text-2xl">
                                 {feature.title}
                             </h4>
                             <p className="text-muted-foreground text-lg">
