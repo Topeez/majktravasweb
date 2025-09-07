@@ -34,6 +34,7 @@ export default function Services() {
                             href={service.link}
                             className="group relative flex flex-col justify-center items-center rounded-xl w-full max-w-[500px] h-full min-h-[400px] overflow-hidden will-change-auto"
                             aria-label={service.title}
+                            draggable={false}
                         >
                             <div
                                 className="absolute inset-0 bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]"

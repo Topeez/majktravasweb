@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { z } from "zod";
-
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY!);
 
 // Enhanced validation schema
 const contactFormSchema = z.object({
@@ -16,6 +13,9 @@ const contactFormSchema = z.object({
         .max(100, "Email nesmí překročit 100 znaků")
         .toLowerCase()
         .trim(),
+    phone: z.string()
+        .min(10, "Telefonní číslo musí mít alespoň 10 znaků")
+        .max(16, "Telefonní číslo je příliš dlouhé"),
     message: z.string()
         .min(10, "Zpráva musí mít alespoň 10 znaků")
         .max(1000, "Zpráva nesmí překročit 1000 znaků")
@@ -81,6 +81,22 @@ function sanitizeInput(input: string): string {
         .trim();
 }
 
+// Create nodemailer transporter
+function createEmailTransport() {
+  return nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT || '587'),
+      secure: process.env.SMTP_PORT === '465', // true for 465, false for other ports
+      auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+      },
+      tls: {
+          rejectUnauthorized: false // Accept self-signed certificates
+      }
+  });
+}
+
 // CORS headers
 const corsHeaders = {
     'Access-Control-Allow-Origin': process.env.ALLOWED_ORIGINS || '*',
@@ -141,7 +157,7 @@ export async function POST(req: NextRequest) {
             );
         }
 
-        const { fullname, email, message, honeypot } = parsed.data;
+        const { fullname, email, phone, message, honeypot } = parsed.data;
 
         // Honeypot check (silent failure for bots)
         if (honeypot) {
@@ -155,13 +171,29 @@ export async function POST(req: NextRequest) {
         const sanitizedData = {
             name: sanitizeInput(fullname),
             email: sanitizeInput(email),
+            phone: sanitizeInput(phone),
             message: sanitizeInput(message.replace(/\n/g, '<br>')), // Convert newlines to HTML
         };
 
-        // Send email using Resend
-        await resend.emails.send({
-          from: "info@travasstineni.cz",
-          to: "mistrava@seznam.cz",
+        // Create transporter
+        const transporter = createEmailTransport();
+
+        // Verify connection (optional but recommended)
+        try {
+            await transporter.verify();
+        } catch (verifyError) {
+            console.error('SMTP connection verification failed:', verifyError);
+            return NextResponse.json(
+                { error: "Chyba připojení k emailovému serveru." },
+                { status: 500, headers: corsHeaders }
+            );
+        }
+
+        // Email options
+        const mailOptions = {
+            from: `"${sanitizedData.name}" <${process.env.SMTP_USER}>`, // sender address
+            to: process.env.SMTP_TO || 'mistrava@seznam.cz', // recipient address
+            replyTo: sanitizedData.email, // user's email for replies
             subject: `Nová zpráva z webu od ${sanitizedData.name}`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -175,15 +207,38 @@ export async function POST(req: NextRequest) {
                                 ${sanitizedData.email}
                             </a>
                         </p>
+                        <p style="margin: 10px 0;"><strong>Telefon:</strong> ${sanitizedData.phone}</p>
                         <p style="margin: 10px 0;"><strong>Čas odeslání:</strong> ${new Date().toLocaleString('cs-CZ')}</p>
                     </div>
                     <div style="background: transparent; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
                         <h3 style="color: #374151; margin-top: 0;">Zpráva:</h3>
                         <p style="line-height: 1.6; color: #4b5563;">${sanitizedData.message}</p>
                     </div>
+                    <hr style="margin: 30px 0; border: none; border-top: 1px solid #e5e7eb;">
+                    <p style="font-size: 12px; color: #9ca3af; text-align: center;">
+                        Tato zpráva byla odeslána z kontaktního formuláře na webu travasstineni.cz
+                    </p>
                 </div>
             `,
-        });
+            // Plain text fallback
+            text: `
+Nová zpráva z kontaktního formuláře
+
+Jméno: ${sanitizedData.name}
+Email: ${sanitizedData.email}
+Telefon: ${sanitizedData.phone}
+Čas odeslání: ${new Date().toLocaleString('cs-CZ')}
+
+Zpráva:
+${message}
+
+---
+Tato zpráva byla odeslána z kontaktního formuláře na webu travasstineni.cz
+            `.trim(),
+        };
+
+        // Send email
+        await transporter.sendMail(mailOptions);
 
         // Log successful submission (without sensitive data)
         console.log(`Contact form submitted successfully from ${ip} at ${new Date().toISOString()}`);
@@ -196,9 +251,10 @@ export async function POST(req: NextRequest) {
     } catch (error) {
         console.error("Contact form error:", error);
         
-        // Check if it's a Resend-specific error
-        if (error && typeof error === 'object' && 'message' in error) {
-            console.error("Resend error details:", error);
+        // More detailed error logging for SMTP issues
+        if (error && typeof error === 'object' && 'code' in error) {
+            console.error("SMTP error code:", error.code);
+            console.error("SMTP error response:", (error as unknown as { response: string }).response);
         }
         
         return NextResponse.json(
