@@ -81,18 +81,18 @@ function sanitizeInput(input: string): string {
         .trim();
 }
 
-// Create nodemailer transporter
+// Create nodemailer transporter pro Seznam Email
 function createEmailTransport() {
   return nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_PORT === '465', // true for 465, false for other ports
+      host: 'smtp.seznam.cz', // Pevně nastavený Seznam SMTP server
+      port: 465, // SSL port pro Seznam
+      secure: true, // true pro port 465 (SSL)
       auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
+          user: process.env.SMTP_USER, // info@travasstineni.cz
+          pass: process.env.SMTP_PASS, // heslo k Seznam Email účtu
       },
       tls: {
-          rejectUnauthorized: false // Accept self-signed certificates
+          rejectUnauthorized: false // Pro kompatibilitu
       }
   });
 }
