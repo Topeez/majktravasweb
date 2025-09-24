@@ -222,18 +222,18 @@ export async function POST(req: NextRequest) {
             `,
             // Plain text fallback
             text: `
-Nová zpráva z kontaktního formuláře
+                  Nová zpráva z kontaktního formuláře
 
-Jméno: ${sanitizedData.name}
-Email: ${sanitizedData.email}
-Telefon: ${sanitizedData.phone}
-Čas odeslání: ${new Date().toLocaleString('cs-CZ')}
+                  Jméno: ${sanitizedData.name}
+                  Email: ${sanitizedData.email}
+                  Telefon: ${sanitizedData.phone}
+                  Čas odeslání: ${new Date().toLocaleString('cs-CZ')}
 
-Zpráva:
-${message}
+                  Zpráva:
+                  ${message}
 
----
-Tato zpráva byla odeslána z kontaktního formuláře na webu travasstineni.cz
+                  ---
+                  Tato zpráva byla odeslána z kontaktního formuláře na webu travasstineni.cz
             `.trim(),
         };
 
