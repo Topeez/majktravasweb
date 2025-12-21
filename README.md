@@ -31,7 +31,7 @@ Cílem tohoto projektu je poskytnout moderní, přehlednou a plně responzivní 
 - **Framework**: [Next.js](https://nextjs.org/), React
 - **Jazyk**: TypeScript
 - **Styly**: CSS / Tailwind CSS / Shadcn UI
-- **Formulář**: Resend
+- **Formulář**: email profi
 - **Deployment**: [Vercel](https://vercel.com/) napojený na veřejný GitHub repozitář
 
 ## Struktura repozitáře
