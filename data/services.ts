@@ -8,7 +8,7 @@ export interface Service {
 export const services: Service[] = [
     {
         title: "Stínicí technika",
-        description: "Interierové žaluzie, plisé rolety, látkové clony i předokenní systémy.",
+        description: "Interierové žaluzie, plisé rolety, látkové clony, předokenní systémy i přístřešky pro vozidla.",
         image: "/assets/img/IMG_7723.jpeg",
         link:"/stinici-technika"
     },

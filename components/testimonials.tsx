@@ -160,9 +160,12 @@ export function Testimonials() {
                 <div className="top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-background to-transparent w-20 pointer-events-none"></div>
 
                 <div
-                    className="flex gap-6 w-fit"
+                    className="flex gap-6 w-fit will-change-auto"
                     style={{
-                        animation: "scroll 90s linear infinite",
+                        animationName: "scroll",
+                        animationDuration: "160s",
+                        animationTimingFunction: "linear",
+                        animationIterationCount: "infinite",
                         animationPlayState: isPaused ? "paused" : "running",
                     }}
                     onMouseEnter={() => setIsPaused(true)}

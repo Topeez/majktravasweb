@@ -1,7 +1,9 @@
 import { Breadcrumb } from "@/components/breadcrumb";
 import { Contact } from "@/components/contact";
 import { HeroSection } from "@/components/hero";
+import { Separator } from "@/components/ui/separator";
 import { Card } from "@/components/venkovni-stineni/cards";
+import Image from "next/image";
 
 export default function VenkovniStineni() {
     const items = [
@@ -146,6 +148,27 @@ export default function VenkovniStineni() {
                                 aria-label={item.title}
                             />
                         ))}
+                        <div className="flex flex-col shadow-lg p-6 border rounded-2xl w-full">
+                            <div className="flex-1 space-y-4 text-center">
+                                <h3 className="font-bold text-foreground text-2xl md:text-3xl">
+                                    Přístřešky na vozidla
+                                </h3>
+                                <p className="text-muted-foreground text-lg">
+                                    Chraňte svá vozidla před nepřízní počasí a
+                                    UV zářením pomocí elegantních přístřešků na
+                                    auta. Nabízím různé designy a materiály,
+                                    které dokonale doplní Váš domov.
+                                </p>
+                                <Separator />
+                                <Image
+                                    src="/assets/img/pristresek-pro-auto.jpg"
+                                    alt="Přístřešek na vozidla"
+                                    width={800}
+                                    height={600}
+                                    className="mx-auto rounded-lg"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

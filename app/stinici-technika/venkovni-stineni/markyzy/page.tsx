@@ -70,16 +70,6 @@ export default function Markyzy() {
         },
     ];
 
-    // const galleryImages: GalleryImage[] = [
-    //     {
-    //         src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=400&fit=crop",
-    //         alt: "Moderní markýza na terase",
-    //         title: "Moderní markýza",
-    //         description: "Elegantní řešení pro zastínění terasy",
-    //     },
-    //     // More images...
-    // ];
-
     return (
         <>
             <HeroSection
@@ -106,7 +96,7 @@ export default function Markyzy() {
                     aria-label="Image"
                 >
                     <Image
-                        src="/assets/img/markyza_kazetova.png"
+                        src="/assets/img/markyza.jpg"
                         width={1200}
                         height={800}
                         alt="Kazetová markýza"
