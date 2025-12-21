@@ -8,10 +8,14 @@ import { useRef, useEffect } from "react";
 const HamburgerIcon = ({ isOpen }: { isOpen: boolean }) => (
     <div className="space-y-1" aria-hidden="true">
         <span
-            className={`block h-1 w-6 origin-center bg-background rounded-full transition-all duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-1" : ""}`}
+            className={`block h-1 w-6 origin-center bg-background rounded-full transition-all duration-300 ease-in-out ${
+                isOpen ? "rotate-45 translate-y-1" : ""
+            }`}
         ></span>
         <span
-            className={`block h-1 w-4 origin-center bg-background rounded-full transition-all duration-300 ease-in-out mt-1.5 ${isOpen ? "-rotate-45 -translate-y-1.5 w-6" : ""}`}
+            className={`block h-1 w-4 origin-center bg-background rounded-full transition-all duration-300 ease-in-out mt-1.5 ${
+                isOpen ? "-rotate-45 -translate-y-1.5 w-6" : ""
+            }`}
         ></span>
     </div>
 );
@@ -69,7 +73,9 @@ export function MobileMenu({
         <div className="lg:hidden">
             <Button
                 onClick={onToggle}
-                className={`group !z-[1000] bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button ${isOpen ? "opacity-0" : "opacity-100"}`}
+                className={`group !z-[1000] bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button ${
+                    isOpen ? "opacity-0" : "opacity-100"
+                }`}
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
                 aria-label={
@@ -96,7 +102,7 @@ export function MobileMenu({
             >
                 <Button
                     onClick={onToggle}
-                    className="group top-11 right-3.5 !z-[1000] absolute bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button"
+                    className="group top-7 right-3.5 !z-[1000] absolute bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button"
                     aria-label="Zavřít navigační menu"
                 >
                     <HamburgerIcon isOpen={isOpen} />
@@ -114,7 +120,9 @@ export function MobileMenu({
                     {links.map((link, index) => (
                         <li
                             key={link.href}
-                            className={`${isActive(link.href) ? "active" : ""} ${liClasses} from-left transition-all duration-800 ease-in-out ${
+                            className={`${
+                                isActive(link.href) ? "active" : ""
+                            } ${liClasses} from-left transition-all duration-800 ease-in-out ${
                                 isOpen
                                     ? "opacity-100 translate-y-0"
                                     : "opacity-0 translate-y-4"
