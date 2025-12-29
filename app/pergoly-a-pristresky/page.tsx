@@ -44,10 +44,10 @@ export default function PergolyAPristresky() {
                         className="items-center gap-12 grid md:grid-cols-2 mb-32 scroll-mt-24"
                     >
                         <div>
-                            <h2 className="mb-6 font-bold text-foreground text-3xl md:text-4xl">
+                            <h2 className="mb-6 font-bold text-foreground text-center md:text-left text-3xl md:text-4xl">
                                 Bioklimatické pergoly
                             </h2>
-                            <p className="mb-6 text-muted-foreground text-lg leading-relaxed">
+                            <p className="mb-6 text-muted-foreground text-center md:text-left text-lg leading-relaxed">
                                 Revoluční řešení zastřešení terasy. Díky
                                 naklápěcím lamelám můžete regulovat sluneční
                                 paprsky i proudění vzduchu. Při úplném uzavření
@@ -117,10 +117,10 @@ export default function PergolyAPristresky() {
                         </div>
 
                         <div>
-                            <div className="inline-block bg-primary/10 mb-4 px-3 py-1 rounded-full font-bold text-primary text-xs uppercase tracking-wider">
+                            <div className="inline-block text-center md:text-left bg-primary/10 mb-4 px-3 py-1 rounded-full font-bold text-primary text-xs uppercase tracking-wider">
                                 Ochrana vozu
                             </div>
-                            <h2 className="mb-6 font-bold text-foreground text-3xl md:text-4xl">
+                            <h2 className="mb-6 font-bold text-center md:text-left text-foreground text-3xl md:text-4xl">
                                 Přístřešky pro auta (Carporty)
                             </h2>
                             <p className="mb-6 text-muted-foreground text-lg leading-relaxed">
