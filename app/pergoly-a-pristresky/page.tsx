@@ -21,16 +21,16 @@ export default function PergolyAPristresky() {
                 arria-label="Hero sekce pro pergoly a přístřešky"
             />
 
-            <section className="bg-background py-16 md:py-24">
+            <section className="py-16 md:py-24">
                 <div className="mx-auto px-4 cs-container">
                     <Breadcrumb items={breadcrumbItems} className="mb-12" />
 
                     {/* Úvodní text stránky */}
                     <div className="mb-20 max-w-3xl">
-                        <h2 className="mb-6 font-bold text-3xl md:text-4xl">
+                        <h2 className="mb-6 font-bold text-center md:text-left text-3xl md:text-4xl">
                             Rozšiřte svůj obytný prostor
                         </h2>
-                        <p className="text-muted-foreground text-lg">
+                        <p className="text-muted-foreground text-center md:text-left text-lg">
                             Nabízíme špičková řešení z odolného hliníku. Ať už
                             hledáte stínění pro terasu nebo bezpečné parkování,
                             naše konstrukce vynikají dlouhou životností,
