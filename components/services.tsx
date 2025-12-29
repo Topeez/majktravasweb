@@ -1,75 +1,43 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
 import { Button } from "./ui/button";
+import { BentoGrid } from "./bento-grid";
+
 export default function Services() {
     return (
-        <section
-            id="sluzby"
-            className="bg-white py-16 md:py-24"
-            aria-label="Služby"
-        >
-            <div className="cs-container">
-                <div className="mx-auto max-w-2xl text-center">
-                    <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
-                        služby
-                    </p>
-                    <h2 className="font-bold text-3xl md:text-5xl">
-                        Co pro vás mohu udělat
-                    </h2>
-                    <p className="mt-4 text-muted-foreground text-xl">
-                        Kompletní řešení od prvotního zaměření přes odbornou
-                        instalaci až po spolehlivý servis
-                    </p>
-                </div>
+        <section className="bg-background py-24">
+            <div className="mx-auto px-4 cs-container">
+                <div className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6 mb-12">
+                    <div className="max-w-2xl">
+                        <p className="mb-2 font-bold text-muted-foreground text-base md:text-left text-center uppercase tracking-widest">
+                            služby
+                        </p>
+                        <h2 className="mb-4 font-bold text-3xl md:text-5xl">
+                            Co pro vás mohu udělat
+                        </h2>
+                        <p className="text-muted-foreground text-lg">
+                            Kompletní řešení od prvotního zaměření přes odbornou
+                            instalaci až po spolehlivý servis.
+                        </p>
+                    </div>
 
-                <div
-                    className="justify-items-center-safe gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-16"
-                    aria-label="Služby sekce"
-                >
-                    {/* Service Cards */}
-                    {services.map((service, index) => (
-                        <Link
-                            key={index}
-                            href={service.link}
-                            className="group relative flex flex-col justify-center items-center rounded-xl w-full max-w-[500px] h-full min-h-[400px] overflow-hidden will-change-auto"
-                            aria-label={service.title}
-                            draggable={false}
+                    <div className="hidden md:block">
+                        <Button
+                            className="bg-foreground hover:bg-background mt-4 py-3 border border-foreground rounded-lg w-full font-bold text-white hover:text-foreground text-lg transition cursor-pointer"
+                            asChild
                         >
-                            <div
-                                className="absolute inset-0 bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]"
-                                style={{
-                                    backgroundImage: `url(${service.image})`,
-                                }}
-                            />
-
-                            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-500" />
-
-                            <div className="z-10 relative p-6 text-white text-center">
-                                <h3 className="font-bold text-3xl">
-                                    {service.title}
-                                </h3>
-                                <p className="mt-3 max-w-md">
-                                    {service.description}
-                                </p>
-                                <div className="flex justify-center items-center mt-4 font-bold">
-                                    <Button
-                                        variant={"ghost"}
-                                        className="flex items-center bg-transparent hover:bg-transparent text-white hover:text-foreground group-hover:text-foreground text-lg transition-all duration-300 cursor-pointer"
-                                        aria-label="Zjistit více o službě"
-                                    >
-                                        Zjistit více
-                                        <ArrowRight
-                                            className="mt-0.5 group-hover:ml-2 group-hover:w-4 transition-all duration-300"
-                                            size={16}
-                                            aria-hidden="true"
-                                        />
-                                    </Button>
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
+                            <Link href="/#kontakt">Nezávazná poptávka</Link>
+                        </Button>
+                    </div>
                 </div>
+
+                <BentoGrid items={services} />
+            </div>
+
+            <div className="md:hidden mt-8 text-center">
+                <Button className="w-full" asChild>
+                    <Link href="/kontakt">Nezávazná poptávka</Link>
+                </Button>
             </div>
         </section>
     );

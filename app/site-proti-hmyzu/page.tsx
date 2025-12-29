@@ -1,8 +1,8 @@
 import { Breadcrumb } from "@/components/breadcrumb";
 import { Contact } from "@/components/contact";
 import { HeroSection } from "@/components/hero";
-import { Card } from "@/components/site-proti-hmyzu/card";
 import { nets } from "@/data/nets";
+import { BentoGrid } from "@/components/bento-grid";
 
 export default function SiteProtiHmyzu() {
     const breadcrumbItems = [
@@ -18,36 +18,32 @@ export default function SiteProtiHmyzu() {
                 placeholderColor="#5ca437"
                 aria-label="hero section"
             />
-            <section className="py-20 cs-container" aria-label="main content">
-                <Breadcrumb
-                    items={breadcrumbItems}
-                    aria-label="breadcrumb navigation"
-                />
 
-                <h2
-                    className="my-12 font-bold text-3xl md:text-5xl text-center leading-[1.2]"
-                    aria-label="section title"
-                >
-                    Typy sítí proti hmyzu
-                </h2>
+            <section className="bg-background py-16 md:py-24">
+                <div className="mx-auto px-4 cs-container">
+                    <Breadcrumb
+                        items={breadcrumbItems}
+                        aria-label="breadcrumb navigation"
+                        className="mb-12"
+                    />
 
-                <div
-                    className="flex flex-wrap justify-center gap-8"
-                    aria-label="card container"
-                >
-                    {nets.map((data, index) => (
-                        <Card
-                            key={index}
-                            link={data.link}
-                            className="flex-1 min-w-[300px] max-w-[400px]"
-                            title={data.title}
-                            image={data.image}
-                            aria-label={data.title}
-                        />
-                    ))}
+                    <div className="mb-12">
+                        <h2 className="mb-4 font-bold text-3xl md:text-4xl">
+                            Typy sítí proti hmyzu
+                        </h2>
+                        <p className="max-w-2xl text-muted-foreground text-lg">
+                            Vyberte si to pravé řešení pro vaše okna a dveře.
+                            Nabízím širokou škálu typů od pevných až po
+                            plisované sítě.
+                        </p>
+                    </div>
+
+                    {/* BENTO GRID */}
+                    <BentoGrid items={nets} />
                 </div>
             </section>
-            <Contact aria-label="contact section" />
+
+            <Contact />
         </>
     );
 }

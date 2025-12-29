@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils"; // Předpokládám, že máš cn utilitu
 
 type Crumb = {
     title: string;
@@ -11,12 +12,16 @@ type Crumb = {
 
 interface BreadcrumbProps {
     items: Crumb[];
+    className?: string; // Přidáno
 }
 
-export function Breadcrumb({ items }: BreadcrumbProps) {
+export function Breadcrumb({ items, className }: BreadcrumbProps) {
     return (
         <nav
-            className="flex items-center col-span-12 w-full text-muted-foreground text-sm"
+            className={cn(
+                "flex items-center col-span-12 w-full text-muted-foreground text-sm",
+                className // Zde se aplikuje tvůj custom className
+            )}
             aria-label="breadcrumb"
         >
             {items.map((item, index) => (

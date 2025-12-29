@@ -178,7 +178,7 @@ export function Header() {
                         width={400}
                         height={200}
                         alt="Travas Stínění logo"
-                        className="w-auto max-w-3xs h-auto max-h-20 md:max-h-32"
+                        className="w-auto max-w-3xs h-auto max-h-20 md:max-h-24"
                         priority
                     />
                 </Link>
@@ -192,7 +192,9 @@ export function Header() {
                     {LINKS.map((link) => (
                         <li
                             key={link.href}
-                            className={`${isActive(link.href) ? "active" : ""} ${liClasses} from-left`}
+                            className={`${
+                                isActive(link.href) ? "active" : ""
+                            } ${liClasses} from-left`}
                             role="none"
                         >
                             <Link
