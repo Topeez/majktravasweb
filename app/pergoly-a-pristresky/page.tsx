@@ -17,6 +17,7 @@ export default function PergolyAPristresky() {
             <HeroSection
                 title="Hliníkové systémy, které promění vaši terasu v celoroční oázu a ochrání váš vůz."
                 backgroundImage="/assets/img/bio-pergola-hero.jpg"
+                placeholderColor="#5ca437"
                 arria-label="Hero sekce pro pergoly a přístřešky"
             />
 
