@@ -15,7 +15,7 @@ export default function PergolyAPristresky() {
     return (
         <>
             <HeroSection
-                title="Hliníkové systémy, které promění vaši terasu v celoroční oázu a ochrání váš vůz."
+                title="Užívejte si zahradu za každého počasí a dopřejte svému vozu bezpečí pod moderním zastřešením."
                 backgroundImage="/assets/img/bio-pergola-hero.jpg"
                 placeholderColor="#5ca437"
                 arria-label="Hero sekce pro pergoly a přístřešky"
@@ -60,7 +60,7 @@ export default function PergolyAPristresky() {
                                     "Naklápěcí lamely (regulace stínu a ventilace)",
                                     "Integrovaný odvod vody v nohách pergoly",
                                     "Vysoká odolnost proti větru a zatížení sněhem",
-                                    "Možnost bočního zasklení nebo screenových rolet",
+                                    "Možnost screenových rolet",
                                 ].map((item, i) => (
                                     <li
                                         key={i}
