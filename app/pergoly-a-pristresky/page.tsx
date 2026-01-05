@@ -22,7 +22,7 @@ export default function PergolyAPristresky() {
             />
 
             <section className="py-16 md:py-24">
-                <div className="mx-auto px-4 cs-container">
+                <div className="px-4 cs-container">
                     <Breadcrumb items={breadcrumbItems} className="mb-12" />
 
                     {/* Úvodní text stránky */}
@@ -38,7 +38,6 @@ export default function PergolyAPristresky() {
                         </p>
                     </div>
 
-                    {/* SEKCE 1: BIOKLIMATICKÉ PERGOLY (Obrázek vpravo) */}
                     <div
                         id="bioklimaticke-pergoly"
                         className="items-center gap-12 grid md:grid-cols-2 mb-32 scroll-mt-24"
@@ -99,7 +98,6 @@ export default function PergolyAPristresky() {
                         </div>
                     </div>
 
-                    {/* SEKCE 2: PŘÍSTŘEŠKY PRO AUTA (Obrázek vlevo - Zig-Zag) */}
                     <div
                         id="pristresky-pro-auta"
                         className="items-center gap-12 grid md:grid-cols-2 scroll-mt-24"

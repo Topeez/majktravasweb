@@ -41,6 +41,7 @@ export default function VenkovniStineni() {
             title: "Venkovní žaluzie",
             subtitle:
                 "Venkovní žaluzie vám dávají plnou kontrolu nad světlem i teplotou v interiéru. Pomáhají udržet příjemné klima a zároveň šetří energii i náklady.",
+            // Na vyber mate nekolik typu venkovnich zaluzii, napr. C60/80, S70/90, T80, Z70/90.
             image1: "/assets/img/priznana_venkovni_zaluzie.jpeg",
             image2: "/assets/img/zaluzie_venek_podomitka.png",
             stats: {

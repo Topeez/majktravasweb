@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: {
         template: "Travas Stínění | %s",
         default:
-            "Travas Stínění - Montáž rolet, žaluzií, markýz a garážových vrat",
+            "Travas Stínění - Kompletní dodávka stínící techniky a garážových vrat",
     },
     description:
         "Profesionální montáž stínící techniky, garážových vrat a markýz. Více než 8 let zkušeností, rychlé termíny do 4 týdnů, spolehlivý servis. Kontaktujte nás pro nezávaznou nabídku.",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
             "Kvalitní montáž rolet, žaluzií, markýz a garážových vrat s více než 8 lety zkušeností. Rychlé termíny, spolehlivý servis.",
         images: [
             {
-                url: "/assets/img/logo/logo.png", // Note: removed leading slash if it's in public folder
+                url: "/assets/img/logo/stineni_big.png",
                 width: 800,
                 height: 600,
                 alt: "Travas Stínění - logo společnosti",

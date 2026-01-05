@@ -100,8 +100,8 @@ export default function InterieroveStineni() {
                             >
                                 <div className="relative h-[280px] overflow-hidden">
                                     <Image
-                                        width={600}
-                                        height={600}
+                                        width={1920}
+                                        height={1080}
                                         src={option.img}
                                         alt={option.title}
                                         draggable={false}
@@ -126,6 +126,12 @@ export default function InterieroveStineni() {
                         ))}
                     </div>
                 </div>
+                <h3 className="mt-20 mb-12 font-bold text-3xl md:text-5xl text-center">
+                    Tak co? Máte vybráno?
+                </h3>
+                <h4 className="font-bold text-foreground text-2xl md:text-4xl text-center">
+                    Neváhejte se mi ozvat!
+                </h4>
             </section>
             <Contact aria-label="Kontaktní formulář" />
         </>
