@@ -156,8 +156,8 @@ export function Testimonials() {
             </div>
             <div className="relative w-full">
                 {/* Gradient overlays for smooth fade effect */}
-                <div className="top-0 bottom-0 left-0 z-10 absolute bg-gradient-to-r from-background to-transparent w-20 pointer-events-none"></div>
-                <div className="top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-background to-transparent w-20 pointer-events-none"></div>
+                <div className="top-0 bottom-0 left-0 z-10 absolute bg-gradient-to-r from-background to-transparent w-10 md:w-20 pointer-events-none"></div>
+                <div className="top-0 right-0 bottom-0 z-10 absolute bg-gradient-to-l from-background to-transparent w-10 md:w-20 pointer-events-none"></div>
 
                 <div
                     className="flex gap-6 w-fit will-change-auto"

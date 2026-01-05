@@ -27,7 +27,7 @@ export default function SiteProtiHmyzu() {
                         className="mb-12"
                     />
 
-                    <div className="mb-12">
+                    <div className="mb-12 md:text-left text-center">
                         <h2 className="mb-4 font-bold text-3xl md:text-4xl">
                             Typy sítí proti hmyzu
                         </h2>

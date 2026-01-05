@@ -27,10 +27,10 @@ export default function PergolyAPristresky() {
 
                     {/* Úvodní text stránky */}
                     <div className="mb-20 max-w-3xl">
-                        <h2 className="mb-6 font-bold text-center md:text-left text-3xl md:text-4xl">
+                        <h2 className="mb-6 font-bold text-3xl md:text-4xl md:text-left text-center">
                             Rozšiřte svůj obytný prostor
                         </h2>
-                        <p className="text-muted-foreground text-center md:text-left text-lg">
+                        <p className="text-muted-foreground text-lg md:text-left text-center">
                             Nabízíme špičková řešení z odolného hliníku. Ať už
                             hledáte stínění pro terasu nebo bezpečné parkování,
                             naše konstrukce vynikají dlouhou životností,
@@ -44,10 +44,10 @@ export default function PergolyAPristresky() {
                         className="items-center gap-12 grid md:grid-cols-2 mb-32 scroll-mt-24"
                     >
                         <div>
-                            <h2 className="mb-6 font-bold text-foreground text-center md:text-left text-3xl md:text-4xl">
+                            <h2 className="mb-6 font-bold text-foreground text-3xl md:text-4xl md:text-left text-center">
                                 Bioklimatické pergoly
                             </h2>
-                            <p className="mb-6 text-muted-foreground text-center md:text-left text-lg leading-relaxed">
+                            <p className="mb-6 text-muted-foreground text-lg md:text-left text-center leading-relaxed">
                                 Revoluční řešení zastřešení terasy. Díky
                                 naklápěcím lamelám můžete regulovat sluneční
                                 paprsky i proudění vzduchu. Při úplném uzavření
@@ -61,9 +61,9 @@ export default function PergolyAPristresky() {
                                     "Integrovaný odvod vody v nohách pergoly",
                                     "Vysoká odolnost proti větru a zatížení sněhem",
                                     "Možnost screenových rolet",
-                                ].map((item, i) => (
+                                ].map((item) => (
                                     <li
-                                        key={i}
+                                        key={item}
                                         className="flex items-start gap-3"
                                     >
                                         <div className="bg-foreground mt-1 p-1 rounded-full">
@@ -95,7 +95,6 @@ export default function PergolyAPristresky() {
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                             />
-                            {/* Dekorativní prvek */}
                             <div className="absolute inset-0 m-4 border-2 border-white/10 rounded-2xl pointer-events-none" />
                         </div>
                     </div>
@@ -117,10 +116,10 @@ export default function PergolyAPristresky() {
                         </div>
 
                         <div>
-                            <div className="inline-block text-center md:text-left bg-primary/10 mb-4 px-3 py-1 rounded-full font-bold text-primary text-xs uppercase tracking-wider">
+                            <div className="inline-block bg-primary/10 mb-4 px-3 py-1 rounded-full font-bold text-primary text-xs md:text-left text-center uppercase tracking-wider">
                                 Ochrana vozu
                             </div>
-                            <h2 className="mb-6 font-bold text-center md:text-left text-foreground text-3xl md:text-4xl">
+                            <h2 className="mb-6 font-bold text-foreground text-3xl md:text-4xl md:text-left text-center">
                                 Přístřešky pro auta (Carporty)
                             </h2>
                             <p className="mb-6 text-muted-foreground text-lg leading-relaxed">
@@ -136,9 +135,9 @@ export default function PergolyAPristresky() {
                                     "Cirkulace vzduchu (auto rychleji schne)",
                                     "Bezúdržbová hliníková konstrukce (žádné natírání)",
                                     "Moderní design sladěný s domem",
-                                ].map((item, i) => (
+                                ].map((item) => (
                                     <li
-                                        key={i}
+                                        key={item}
                                         className="flex items-start gap-3"
                                     >
                                         <div className="bg-foreground mt-1 p-1 rounded-full">

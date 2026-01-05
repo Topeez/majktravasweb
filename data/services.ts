@@ -13,6 +13,12 @@ export const services: Service[] = [
         link:"/stinici-technika"
     },
     {
+        title: "Pergoly a přístřešky",
+        description: "Bioklimatické pergoly pro vaši terasu a designové přístřešky pro ochranu vašeho vozu.",
+        image: "/assets/img/bio-pergola.jpg",
+        link: "/pergoly-a-pristresky"
+    },
+    {
         title: "Garážová vrata",
         description: "Sekční, rolovací vrata s moderním ovládáním.",
         image: "/assets/img/garaz.jpeg",
@@ -29,11 +35,5 @@ export const services: Service[] = [
         description: "Pevné, rolovací a posuvné sítě pro okna i dveře.",
         image: "/assets/img/IMG_7628.jpeg",
         link:"/site-proti-hmyzu"
-    },
-    {
-        title: "Pergoly a přístřešky",
-        description: "Bioklimatické pergoly pro vaši terasu a designové přístřešky pro ochranu vašeho vozu.",
-        image: "/assets/img/bio-pergola.jpg",
-        link: "/pergoly-a-pristresky"
     }
 ];

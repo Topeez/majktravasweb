@@ -46,6 +46,7 @@
         forwards;
     --animate-shine: shine 3s infinite;
     --animate-shimmer: shimmer 1.5s ease-in-out infinite;
+    --animate-tilt: tilt-shaking 0.25s ease-in-out;
 }
 
 :root {
@@ -243,6 +244,24 @@
     to {
         mask-position: -50%;
         -webkit-mask-position: -50%;
+    }
+}
+
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0eg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }
 

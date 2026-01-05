@@ -8,8 +8,8 @@ export default function Services() {
         <section className="bg-background py-24">
             <div className="mx-auto px-4 cs-container">
                 <div className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6 mb-12">
-                    <div className="max-w-2xl">
-                        <p className="mb-2 font-bold text-muted-foreground text-base md:text-left text-center uppercase tracking-widest">
+                    <div className="max-w-2xl md:text-left text-center">
+                        <p className="mb-2 font-bold text-muted-foreground text-base uppercase tracking-widest">
                             služby
                         </p>
                         <h2 className="mb-4 font-bold text-3xl md:text-5xl">
@@ -35,7 +35,10 @@ export default function Services() {
             </div>
 
             <div className="md:hidden mt-8 text-center">
-                <Button className="w-full" asChild>
+                <Button
+                    className="bg-foreground hover:bg-background mx-12 mt-4 py-3 border border-foreground rounded-lg font-bold text-white hover:text-foreground text-lg transition cursor-pointer"
+                    asChild
+                >
                     <Link href="/kontakt">Nezávazná poptávka</Link>
                 </Button>
             </div>

@@ -7,12 +7,12 @@ export interface BentoItem {
     title: string;
     image: string;
     link: string;
-    description?: string; // Volitelné, protože u sítí proti hmyzu popisky nemáte
+    description?: string;
 }
 
 interface BentoGridProps {
     items: BentoItem[];
-    className?: string; // Pro případné další stylování mřížky zvenčí
+    className?: string;
 }
 
 export function BentoGrid({ items, className }: BentoGridProps) {
@@ -68,7 +68,7 @@ export function BentoGrid({ items, className }: BentoGridProps) {
 
                             {/* Zobrazit popis jen pokud existuje */}
                             {item.description && (
-                                <p className="opacity-0 md:group-hover:opacity-100 md:opacity-90 group-hover:opacity-100 mt-3 max-w-md text-gray-200 line-clamp-2 leading-relaxed transition-opacity duration-300 delay-75">
+                                <p className="opacity-80 group-hover:opacity-100 mt-3 max-w-md text-gray-200 line-clamp-2 leading-relaxed transition-opacity duration-300 delay-75">
                                     {item.description}
                                 </p>
                             )}

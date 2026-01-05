@@ -31,24 +31,20 @@ export function Benefits() {
                             bezpečí.
                         </p>
 
-                        <div
-                            className="space-y-8 mt-10"
-                            aria-label="Benefits List"
-                        >
+                        <div className="space-y-8 mt-10">
                             {benefits.map((benefit, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-start"
-                                    aria-label={`Benefit ${index + 1}`}
+                                    className="group flex items-start cursor-default"
                                 >
-                                    <div
-                                        className="flex flex-shrink-0 justify-center items-center bg-primary/10 rounded-full w-14 h-14"
-                                        aria-hidden="true"
-                                    >
-                                        {benefit.icon}
+                                    <div className="flex flex-shrink-0 justify-center items-center bg-primary/10 group-hover:bg-foreground rounded-full w-14 h-14 transition-colors group-hover:animate-tilt">
+                                        <benefit.icon
+                                            size={24}
+                                            className="text-foreground group-hover:text-white transition-colors"
+                                        />
                                     </div>
                                     <div className="ml-6">
-                                        <h3 className="font-bold text-xl">
+                                        <h3 className="font-bold group-hover:text-foreground text-xl transition-colors">
                                             {benefit.title}
                                         </h3>
                                         <p className="mt-2 text-muted-foreground">
