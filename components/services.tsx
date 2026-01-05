@@ -5,7 +5,7 @@ import { BentoGrid } from "./bento-grid";
 
 export default function Services() {
     return (
-        <section className="bg-background py-24">
+        <section id="sluzby" className="bg-background py-24">
             <div className="mx-auto px-4 cs-container">
                 <div className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6 mb-12">
                     <div className="max-w-2xl md:text-left text-center">

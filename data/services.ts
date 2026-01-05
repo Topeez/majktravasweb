@@ -9,7 +9,7 @@ export const services: Service[] = [
     {
         title: "Stínicí technika",
         description: "Interierové žaluzie, plisé rolety, látkové clony i předokenní systémy.",
-        image: "/assets/img/IMG_7723.jpeg",
+        image: "/assets/img/d1ZQOl7-.jpg",
         link:"/stinici-technika"
     },
     {
@@ -20,7 +20,7 @@ export const services: Service[] = [
     },
     {
         title: "Garážová vrata",
-        description: "Sekční, rolovací vrata s moderním ovládáním.",
+        description: "Sekční, rolovací i dvoukřídlá vrata s moderním ovládáním.",
         image: "/assets/img/garaz.jpeg",
         link:"/garazova-vrata"
     },

@@ -8,22 +8,24 @@ type Stat = {
     value: number;
 };
 
-type Props = {
+interface Props {
     title: string;
     subtitle: string;
+    subtitle2?: string;
+    descriptionExtra?: React.ReactNode;
     stats: {
         [key: string]: Stat;
     };
-    subtitle2?: string;
     image1: string;
     image2: string;
     variant1?: string | React.ReactElement;
     variant2?: string | React.ReactElement;
-};
+}
 
 export function Card({
     title,
     subtitle,
+    descriptionExtra,
     image1,
     image2,
     stats,
@@ -55,6 +57,12 @@ export function Card({
                                 >
                                     {subtitle}
                                 </p>
+
+                                {descriptionExtra && (
+                                    <div className="mt-2">
+                                        {descriptionExtra}
+                                    </div>
+                                )}
                             </div>
 
                             {/* Stats */}
