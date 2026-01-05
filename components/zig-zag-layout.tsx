@@ -32,13 +32,6 @@ export function ZigZagLayout({ items, className }: ZigZagLayoutProps) {
                         id={item.id}
                         className="items-center gap-12 grid md:grid-cols-2 scroll-mt-24"
                     >
-                        {/* TEXTOVÁ ČÁST */}
-                        {/* Pokud je sudý (0, 2...), text je vlevo (order-first). 
-                            Pokud lichý (1, 3...), text je vpravo (order-last).
-                            Na mobilu je text vždy pod obrázkem nebo nad ním, podle preference. 
-                            Zde dávám obrázek první na mobilu pro vizuál, nebo text.
-                            Standardně: Text první na mobilu, Text vlevo na desktopu.
-                         */}
                         <div
                             className={cn(
                                 isEven ? "md:order-first" : "md:order-last"
@@ -79,7 +72,6 @@ export function ZigZagLayout({ items, className }: ZigZagLayoutProps) {
                             </Button>
                         </div>
 
-                        {/* OBRÁZKOVÁ ČÁST */}
                         <div className="group relative shadow-2xl rounded-2xl w-full h-[400px] md:h-[500px] overflow-hidden">
                             <Image
                                 src={item.imageSrc}
@@ -87,7 +79,6 @@ export function ZigZagLayout({ items, className }: ZigZagLayoutProps) {
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                             />
-                            {/* Dekorativní border */}
                             <div className="absolute inset-0 m-4 border-2 border-white/10 rounded-2xl pointer-events-none" />
                         </div>
                     </div>

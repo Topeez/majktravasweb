@@ -96,7 +96,7 @@ export default function Markyzy() {
                     aria-label="Image"
                 >
                     <Image
-                        src="/assets/img/markyza.jpg"
+                        src="/assets/img/markyza3.jpg"
                         width={1200}
                         height={800}
                         alt="Kazetová markýza"

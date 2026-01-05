@@ -44,12 +44,12 @@ export function DetailProduktu({
 
             {/* Obrázek a text */}
             <div className="flex flex-col items-center gap-12 md:grid md:grid-cols-12">
-                <div className="relative col-span-12 md:col-span-6 max-w-[400px] aspect-square">
+                <div className="relative col-span-12 md:col-span-6 w-full h-[400px] md:h-[500px] aspect-square">
                     <Image
                         src={imageSrc}
                         alt={imageAlt || title}
-                        width={1200}
-                        height={1000}
+                        width={1920}
+                        height={1080}
                         draggable={false}
                         className="shadow-lg rounded-2xl size-full object-cover"
                     />

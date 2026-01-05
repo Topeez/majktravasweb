@@ -68,10 +68,10 @@ export default function StiniciTechnika() {
                             aria-label="Benefits of shading technology"
                         >
                             {/* Vertical line */}
-                            <div className="hidden md:block top-0 left-1/2 absolute bg-gray-200 w-0.5 h-full -translate-x-1/2 transform"></div>
+                            <div className="hidden md:block top-0 left-1/2 absolute bg-gray-200 w-0.5 h-5/6 -translate-x-1/2 transform"></div>
 
                             {/* Mobile line */}
-                            <div className="md:hidden top-0 left-4 absolute bg-gray-200 w-0.5 h-full"></div>
+                            <div className="md:hidden top-0 left-4 absolute bg-gray-200 w-0.5 h-5/6"></div>
 
                             {list.map((item, index) => (
                                 <div
@@ -86,11 +86,15 @@ export default function StiniciTechnika() {
 
                                     {/* Benefit card */}
                                     <div
-                                        className={`bg-background rounded-xl shadow-lg p-8 relative flex items-center justify-center min-h-36 overflow-hidden
-                                        ${index % 2 === 0 ? "md:mr-[55%]" : "md:ml-[55%]"}`}
+                                        className={`bg-background rounded-xl shadow-lg p-8 relative flex items-center min-h-36 overflow-hidden
+                                        ${
+                                            index % 2 === 0
+                                                ? "md:mr-[55%] justify-start text-left"
+                                                : "md:ml-[55%] justify-end text-right"
+                                        }`}
                                         aria-label={item.text}
                                     >
-                                        <p className="z-10 relative font-semibold text-xl">
+                                        <p className="z-10 relative max-w-xs font-semibold text-xl">
                                             {item.text}
                                         </p>
 
@@ -98,7 +102,11 @@ export default function StiniciTechnika() {
                                         <span
                                             className={`absolute font-black text-[180px] leading-none text-transparent opacity-35 
                                             text-outline-2 z-0
-                                            ${index % 2 === 0 ? "-right-8 -bottom-12" : "-left-8 -bottom-12"}`}
+                                            ${
+                                                index % 2 === 0
+                                                    ? "-right-8 -bottom-12"
+                                                    : "-left-8 -bottom-12"
+                                            }`}
                                         >
                                             {"0" + item.id}
                                         </span>
