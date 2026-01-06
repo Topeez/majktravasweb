@@ -72,9 +72,9 @@ export function Card({
                                         key={key}
                                         className="shadow-sm p-4 border border-muted rounded-lg"
                                     >
-                                        <div className="flex justify-between font-medium text-muted-foreground">
+                                        <div className="flex justify-center font-medium text-muted-foreground text-center">
                                             <span
-                                                className="text-sm md:text-xl"
+                                                className="text-md md:text-xl"
                                                 aria-label={stat.label}
                                             >
                                                 {stat.label}

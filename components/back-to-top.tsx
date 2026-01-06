@@ -62,8 +62,12 @@ export function BackToTop() {
             aria-label="Přejít nahoru"
             aria-expanded={visible}
         >
-            <ArrowUp size={20} className="flex-shrink-0 ml-0.5" aria-hidden />
-            <span className="opacity-0 group-hover:opacity-100 ml-1 text-sm whitespace-nowrap transition-opacity duration-200">
+            <ArrowUp
+                size={20}
+                className="flex-shrink-0 ml-[0.155rem]"
+                aria-hidden
+            />
+            <span className="opacity-0 group-hover:opacity-100 text-sm whitespace-nowrap transition-opacity duration-200">
                 Nahoru
             </span>
         </Button>

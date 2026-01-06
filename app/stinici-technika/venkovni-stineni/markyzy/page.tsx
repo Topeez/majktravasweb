@@ -85,7 +85,16 @@ export default function Markyzy() {
                 <Breadcrumb items={breadcrumbItems} aria-label="Breadcrumb" />
 
                 <FeaturesSection
-                    title="Markýzy a jejich výhody"
+                    title={
+                        <h2
+                            className="font-bold text-3xl md:text-5xl text-center"
+                            aria-label="Section Title"
+                        >
+                            <span className="text-foreground">Markýzy</span>{" "}
+                            &#45; praktické a stylové řešení pro váš venkovní
+                            prostor
+                        </h2>
+                    }
                     subtitle="Vyhánějí vás vedra a slunce z terasy? Chcete jednoduché řešení pro svůj balkon? Pak jsou pro vás markýzy ideálním řešením."
                     features={awningServiceFeatures}
                     aria-label="Features Section"

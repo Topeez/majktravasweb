@@ -29,7 +29,10 @@ export default function SiteProtiHmyzu() {
 
                     <div className="mb-12 md:text-left text-center">
                         <h2 className="mb-4 font-bold text-3xl md:text-4xl">
-                            Typy sítí proti hmyzu
+                            Typy{" "}
+                            <span className="text-foreground">
+                                sítí proti hmyzu
+                            </span>
                         </h2>
                         <p className="max-w-2xl text-muted-foreground text-lg">
                             Vyberte si to pravé řešení pro vaše okna a dveře.
@@ -38,7 +41,6 @@ export default function SiteProtiHmyzu() {
                         </p>
                     </div>
 
-                    {/* BENTO GRID */}
                     <BentoGrid items={nets} />
                 </div>
             </section>

@@ -41,10 +41,10 @@ export default function InterieroveStineni() {
                     <div className="items-center gap-12 md:gap-24 grid grid-cols-1 md:grid-cols-2 mb-24">
                         <div className="flex flex-col gap-6">
                             <h2 className="font-bold text-foreground text-3xl md:text-5xl leading-tight">
-                                Interiérové stínění spojuje{" "}
-                                <span className="text-black">
-                                    funkčnost a estetiku
-                                </span>
+                                Interiérové stínění{" "}
+                                <span className="text-black">spojuje</span>{" "}
+                                funkčnost <span className="text-black">a</span>{" "}
+                                estetiku
                             </h2>
                             <p className="text-muted-foreground text-lg leading-relaxed">
                                 Správně zvolené stínění dokáže proměnit
@@ -85,7 +85,10 @@ export default function InterieroveStineni() {
                     {/* Typy stínění */}
                     <div className="mb-12 md:text-left text-center">
                         <h3 className="mb-4 font-bold text-3xl md:text-4xl">
-                            Typy interiérového stínění
+                            Typy{" "}
+                            <span className="text-foreground">
+                                interiérového stínění
+                            </span>
                         </h3>
                         <p className="text-muted-foreground">
                             Vyberte si řešení přesně pro vaše okna

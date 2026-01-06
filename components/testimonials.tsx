@@ -145,9 +145,21 @@ export function Testimonials() {
                     <p className="font-bold text-muted-foreground text-base uppercase tracking-widest">
                         reference
                     </p>
-                    <h2 className="font-bold text-3xl md:text-5xl">
-                        Co říkají moji zákazníci
+                    <h2 className="py-2 font-bold text-3xl md:text-5xl leading-relaxed">
+                        {" "}
+                        Co říkají moji
+                        <span className="inline-block relative px-1">
+                            {" "}
+                            <span
+                                className="absolute inset-0 bg-foreground rounded-sm -skew-y-4 transform"
+                                aria-hidden="true"
+                            ></span>
+                            <span className="relative px-1 text-background">
+                                zákazníci
+                            </span>
+                        </span>
                     </h2>
+
                     <p className="mt-4 text-muted-foreground text-xl">
                         Přečtěte si reference od spokojených klientů, kteří
                         využili mé služby

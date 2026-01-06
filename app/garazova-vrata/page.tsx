@@ -96,13 +96,27 @@ export default function GarazovaVrata() {
 
                 <div className="col-span-12 px-6 md:px-16 py-12">
                     <FeaturesSection
-                        title="Vrata, která splní vaše očekávání"
+                        title={
+                            <h2
+                                className="font-bold text-3xl md:text-5xl text-center"
+                                aria-label="Section Title"
+                            >
+                                <span className="text-foreground">Vrata</span>,
+                                která{" "}
+                                <span className="text-foreground">splní</span>{" "}
+                                vaše{" "}
+                                <span className="text-foreground">
+                                    očekávání
+                                </span>
+                            </h2>
+                        }
                         features={gateFeatures}
                     />
                 </div>
 
                 <h2 className="mb-20 font-bold text-4xl text-center">
-                    Typy garážových vrat
+                    Typy{" "}
+                    <span className="text-foreground">garážových vrat</span>
                 </h2>
 
                 {/* Zde je tvoje nová komponenta */}

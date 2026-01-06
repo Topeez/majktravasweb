@@ -52,7 +52,10 @@ export default function StiniciTechnika() {
                             className="font-bold text-4xl md:text-5xl text-center"
                             aria-label="Co je stínicí technika?"
                         >
-                            Co je stínicí technika?
+                            Co je to{" "}
+                            <span className="text-foreground">
+                                stínicí technika?
+                            </span>
                         </h2>
                         <p className="text-xl leading-relaxed">
                             Stínicí technika zahrnuje širokou škálu produktů
@@ -119,7 +122,8 @@ export default function StiniciTechnika() {
                     <div className="md:col-span-12">
                         <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 w-full">
                             <div className="place-items-center col-span-2 p-10 font-bold text-4xl text-center">
-                                Tak co, které stínění bude pro Vás to pravé?
+                                Tak co, které stínění bude pro Vás to{" "}
+                                <span className="text-foreground">pravé?</span>
                             </div>
                             <Link
                                 href={"/stinici-technika/venkovni-stineni"}

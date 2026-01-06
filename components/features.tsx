@@ -6,15 +6,13 @@ export type Feature = {
     description: string;
 };
 
-// Props for the FeaturesSection component
 type FeaturesSectionProps = {
-    title: string;
+    title: React.ReactNode;
     subtitle?: string;
     features: Feature[];
     className?: string;
 };
 
-// Main reusable component
 export const FeaturesSection = memo(function FeaturesSection({
     title,
     subtitle,
@@ -24,16 +22,11 @@ export const FeaturesSection = memo(function FeaturesSection({
     return (
         <div
             className={`flex flex-col gap-12 md:grid md:grid-cols-12 w-full cs-container ${className}`}
-            aria-label={title}
+            aria-label="Features Section"
         >
             <div className="space-y-16 col-span-12 py-12">
                 <div className="space-y-8">
-                    <h2
-                        className="font-bold text-3xl md:text-5xl text-center"
-                        aria-label={title}
-                    >
-                        {title}
-                    </h2>
+                    {title}
                     <h3 className="text-muted-foreground text-xl text-center">
                         {subtitle}
                     </h3>
