@@ -29,8 +29,8 @@ export default function Home() {
             <Services />
             <SpacerBig />
             <Benefits />
-            <Testimonials />
             <CTA />
+            <Testimonials />
             <Contact />
         </>
     );

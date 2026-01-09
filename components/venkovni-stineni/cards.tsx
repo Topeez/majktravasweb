@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Separator } from "../ui/separator";
+import React from "react";
 
 type Stat = {
     label: string;
@@ -10,7 +11,8 @@ type Stat = {
 
 interface Props {
     title: string;
-    subtitle: string;
+    // Změna typu: ReactNode je nejobecnější a nejlepší pro obsah (bere string, number, JSX, null...)
+    subtitle: React.ReactNode;
     subtitle2?: string;
     descriptionExtra?: React.ReactNode;
     stats: {
@@ -35,28 +37,23 @@ export function Card({
 }: Props) {
     return (
         <div className="flex-col shadow-lg p-6 border rounded-2xl w-full">
-            {/* Layout when subtitle2 is not empty */}
             {subtitle2 && (
                 <>
                     <div
                         className="flex md:flex-row md:odd:flex-row-reverse flex-col gap-6 md:gap-12 overflow-hidden"
-                        aria-label={`Card with title ${title} and subtitle ${subtitle}`}
+                        aria-label={`Karta ${title}`}
                     >
                         {/* Content */}
                         <div className="flex flex-col justify-between gap-8 w-full h-full">
                             <div className="flex-1 space-y-4 text-center">
-                                <h3
-                                    className="font-bold text-foreground text-2xl md:text-3xl"
-                                    aria-label={title}
-                                >
+                                <h3 className="font-bold text-foreground text-2xl md:text-3xl">
                                     {title}
                                 </h3>
-                                <p
-                                    className="text-muted-foreground text-lg"
-                                    aria-label={subtitle}
-                                >
+
+                                {/* ZDE JE OPRAVA */}
+                                <div className="text-muted-foreground text-lg">
                                     {subtitle}
-                                </p>
+                                </div>
 
                                 {descriptionExtra && (
                                     <div className="mt-2">
@@ -91,8 +88,8 @@ export function Card({
                                                     }
                                                     aria-label={
                                                         i < stat.value
-                                                            ? `${stat.label} - ${stat.value} of 5`
-                                                            : `${stat.label} - 0 of 5`
+                                                            ? `${stat.label} - ${stat.value} z 5`
+                                                            : `${stat.label} - 0 z 5`
                                                     }
                                                 />
                                             ))}
@@ -115,11 +112,8 @@ export function Card({
                         </div>
 
                         <div className="flex md:flex-row flex-col justify-between items-center gap-8">
-                            {/* Image */}
-                            <div
-                                className="relative rounded-xl w-full md:w-1/2 h-64 md:h-[450px] overflow-hidden"
-                                aria-label="Image"
-                            >
+                            {/* Image 1 */}
+                            <div className="relative rounded-xl w-full md:w-1/2 h-64 md:h-[450px] overflow-hidden">
                                 <Image
                                     src={image1}
                                     width={1200}
@@ -127,19 +121,16 @@ export function Card({
                                     alt={title}
                                     className="w-full h-full object-cover"
                                 />
-
                                 <div className="absolute inset-0 m-4 border-2 border-white/10 rounded-2xl pointer-events-none" />
-
                                 <div className="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black/50 via-20% via-black/50 to-transparent p-5">
                                     <h4 className="text-background text-3xl text-center">
                                         {variant1}
                                     </h4>
                                 </div>
                             </div>
-                            <div
-                                className="relative rounded-xl w-full md:w-1/2 h-64 md:h-[450px] overflow-hidden"
-                                aria-label="Image"
-                            >
+
+                            {/* Image 2 */}
+                            <div className="relative rounded-xl w-full md:w-1/2 h-64 md:h-[450px] overflow-hidden">
                                 <Image
                                     src={image2}
                                     width={1200}
@@ -147,9 +138,7 @@ export function Card({
                                     alt={title}
                                     className="w-full h-full object-cover"
                                 />
-
                                 <div className="absolute inset-0 m-4 border-2 border-white/10 rounded-2xl pointer-events-none" />
-
                                 <div className="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black/50 via-20% via-black/50 to-transparent p-5">
                                     <h4 className="text-background text-3xl text-center">
                                         {variant2}

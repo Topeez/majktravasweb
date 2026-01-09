@@ -68,7 +68,7 @@ const gateTypes: ZigZagItem[] = [
         features: [
             "Maximální úspora místa pod stropem (lze využít pro úložné prostory)",
             "Montáž možná před, do i za otvor",
-            "Tichý chod a snadné ovládání",
+            "Snadné ovládání",
             "Hliníkové lamely s dlouhou životností a odolností proti korozi",
             "Integrovaná ochrana proti zvednutí",
         ],

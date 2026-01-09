@@ -35,37 +35,19 @@ export default function VenkovniStineni() {
                 </div>
             </div>
 
-            {/* Lamela S70/90 */}
+            {/* Lamela S65/90 */}
             <div className="group inline-block relative">
                 <button
                     type="button"
                     className="bg-background hover:bg-foreground focus:bg-foreground px-2 py-0.5 border border-foreground rounded-md outline-none font-bold text-foreground hover:text-white focus:text-white text-sm transition-colors cursor-help"
                 >
-                    S70/90
+                    S65/90
                 </button>
                 <div className="invisible group-focus-within:visible group-hover:visible bottom-full left-1/2 z-50 absolute bg-foreground opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 shadow-lg mb-2 p-3 rounded-lg w-64 text-background text-sm transition-all -translate-x-1/2 duration-200 pointer-events-none">
                     <p>
-                        <strong>Lamela 70/90 (tvar S):</strong> Designová
+                        <strong>Lamela 65/90 (tvar S):</strong> Designová
                         &apos;vlnka&apos;. Kombinuje pevnost &apos;Zetka&apos; s
                         oblým elegantním vzhledem.
-                    </p>
-                    <div className="top-full left-1/2 absolute border-8 border-transparent border-t-foreground -translate-x-1/2"></div>
-                </div>
-            </div>
-
-            {/* Lamela T80 */}
-            <div className="group inline-block relative">
-                <button
-                    type="button"
-                    className="bg-background hover:bg-foreground focus:bg-foreground px-2 py-0.5 border border-foreground rounded-md outline-none font-bold text-foreground hover:text-white focus:text-white text-sm transition-colors cursor-help"
-                >
-                    T80
-                </button>
-                <div className="invisible group-focus-within:visible group-hover:visible bottom-full left-1/2 z-50 absolute bg-foreground opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 shadow-lg mb-2 p-3 rounded-lg w-64 text-background text-sm transition-all -translate-x-1/2 duration-200 pointer-events-none">
-                    <p>
-                        <strong>Lamela T80 (tvar T):</strong> Přísně hranatý,
-                        technický design. Ideální pro moderní architekturu.
-                        Nízký nábal.
                     </p>
                     <div className="top-full left-1/2 absolute border-8 border-transparent border-t-foreground -translate-x-1/2"></div>
                 </div>
@@ -93,8 +75,16 @@ export default function VenkovniStineni() {
     const items = [
         {
             title: "Předokenní rolety",
-            subtitle:
-                "Předokenní rolety zajišťují výbornou ochranu před horkem i hlukem díky izolační výplni. Spolehlivě odolávají nepřízni počasí a přidávají vašemu domovu na bezpečí i komfortu.",
+            subtitle: (
+                <p>
+                    Předokenní rolety{" "}
+                    <strong>zajišťují výbornou ochranu</strong> před horkem i
+                    hlukem díky izolační výplni. Spolehlivě{" "}
+                    <strong>odolávají</strong> nepřízni počasí a{" "}
+                    <strong>přidávají</strong> vašemu domovu na bezpečí i
+                    komfortu.
+                </p>
+            ),
             image1: "/assets/img/IMG_7776.jpeg",
             image2: "/assets/img/podomitka_rolety_venek.jpg",
             stats: {
@@ -110,9 +100,14 @@ export default function VenkovniStineni() {
         },
         {
             title: "Venkovní žaluzie",
-            subtitle:
-                "Venkovní žaluzie vám dávají plnou kontrolu nad světlem i teplotou v interiéru. Pomáhají udržet příjemné klima a zároveň šetří energii i náklady.",
-            // TADY PŘEDÁVÁME KOMPONENTU S TOOLTIPY
+            subtitle: (
+                <p>
+                    Venkovní žaluzie vám dávají plnou kontrolu nad světlem i
+                    teplotou v interiéru. Pomáhají udržet příjemné klima a
+                    zároveň šetří energii i náklady. Jsou k{" "}
+                    <strong>dispozici i jako šikmé žaluzie</strong>.
+                </p>
+            ),
             descriptionExtra: <LamellaTypes />,
             image1: "/assets/img/priznana_venkovni_zaluzie.jpeg",
             image2: "/assets/img/zaluzie_venek_podomitka.png",
@@ -129,8 +124,14 @@ export default function VenkovniStineni() {
         },
         {
             title: "Screenové rolety",
-            subtitle:
-                "Screenové rolety účinně stíní, aniž by bránily výhledu. Zabraňují přehřívání interiéru a blokují škodlivé UV paprsky – ideální pro moderní domy a kanceláře.",
+            subtitle: (
+                <p>
+                    Screenové rolety <strong>účinně stíní</strong>, aniž by
+                    bránily výhledu. <strong>Zabraňují přehřívání</strong>{" "}
+                    interiéru a blokují škodlivé <strong>UV paprsky</strong> –
+                    ideální pro moderní domy a kanceláře.
+                </p>
+            ),
             image1: "/assets/img/screen_prizn.png",
             image2: "/assets/img/screen_podomitka.png",
             stats: {
@@ -146,9 +147,17 @@ export default function VenkovniStineni() {
         },
         {
             title: "Veranda",
-            subtitle:
-                "Ideální pro zastínění verand, zimních zahrad i teras. Roleta je dostupná ve variantách HRV52 a HRV80-ZIP a pokryje plochu až 25 m². Nabízí jednoduché ovládání s možností napojení na chytrou domácnost a široký výběr barev pro sladění s exteriérem.",
-            image1: "/assets/img/veranda_kulaty_box.webp",
+            subtitle: (
+                <p>
+                    Ideální pro zastínění verand, zimních zahrad i teras. Roleta
+                    je dostupná ve <strong>variantách HRV52 a HRV80-ZIP</strong>{" "}
+                    a <strong>pokryje plochu až 25 m&sup2;</strong>. Nabízí
+                    <strong> jednoduché ovládání</strong> s možností napojení na
+                    chytrou domácnost a široký výběr barev pro sladění s
+                    exteriérem.
+                </p>
+            ),
+            image1: "/assets/img/veranda_kulaty_box.jpg",
             image2: "/assets/img/veranda_hranaty_box.jpg",
             stats: {
                 warmSecurity: { label: "Ochrana proti teplu", value: 4 },

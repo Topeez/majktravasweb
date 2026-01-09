@@ -24,7 +24,7 @@ export default function NotFound() {
                 <div className="flex justify-center items-center gap-8">
                     <Button
                         aria-label="Přejít na domovskou stránku"
-                        onClick={() => router.push("/app")}
+                        onClick={() => router.push("/")}
                         className="bg-background hover:bg-foreground hover:shadow-xl px-8 py-6 rounded-4xl font-bold text-foreground hover:text-background text-xl transition-all duration-300 cursor-pointer"
                     >
                         Domů

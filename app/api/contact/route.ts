@@ -182,7 +182,7 @@ export async function POST(req: NextRequest) {
         try {
             await transporter.verify();
         } catch (verifyError) {
-            console.error('SMTP connection verification failed:', verifyError);
+            console.error('SMTP verifikace spojení selhala:', verifyError);
             return NextResponse.json(
                 { error: "Chyba připojení k emailovému serveru." },
                 { status: 500, headers: corsHeaders }
@@ -192,7 +192,7 @@ export async function POST(req: NextRequest) {
         // Email options
         const mailOptions = {
             from: `"${sanitizedData.name}" <${process.env.SMTP_USER}>`, // sender address
-            to: process.env.SMTP_TO || 'mistrava@seznam.cz', // recipient address
+            to: process.env.SMTP_TO || 'info@travasstineni.cz', // recipient address
             replyTo: sanitizedData.email, // user's email for replies
             subject: `Nová zpráva z webu od ${sanitizedData.name}`,
             html: `
@@ -241,7 +241,7 @@ export async function POST(req: NextRequest) {
         await transporter.sendMail(mailOptions);
 
         // Log successful submission (without sensitive data)
-        console.log(`Contact form submitted successfully from ${ip} at ${new Date().toISOString()}`);
+        console.log(`Kontaktní formulář byl odeslán z ${ip} v ${new Date().toISOString()}`);
 
         return NextResponse.json(
             { success: true, message: "Zpráva byla úspěšně odeslána!" },
@@ -249,12 +249,12 @@ export async function POST(req: NextRequest) {
         );
 
     } catch (error) {
-        console.error("Contact form error:", error);
+        console.error("Chyba při odesílání zprávy:", error);
         
         // More detailed error logging for SMTP issues
         if (error && typeof error === 'object' && 'code' in error) {
-            console.error("SMTP error code:", error.code);
-            console.error("SMTP error response:", (error as unknown as { response: string }).response);
+            console.error("SMTP kód chyby:", error.code);
+            console.error("SMTP chybová odpověď:", (error as unknown as { response: string }).response);
         }
         
         return NextResponse.json(

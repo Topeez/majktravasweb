@@ -9,12 +9,11 @@ import { nets } from "@/data/nets";
 import { MobileMenu } from "@/components/mobile-menu"; // Adjust the import path as needed
 
 // Constants
-const SECTION_IDS = ["home", "sluzby", "omne", "recenze", "kontakt"];
+const SECTION_IDS = ["home", "sluzby", "omne", "recenze"];
 const LINKS = [
     { href: "#sluzby", label: "Služby" },
     { href: "#omne", label: "O mně" },
     { href: "#recenze", label: "Reference" },
-    { href: "#kontakt", label: "Kontakt" },
 ];
 
 export function Header() {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { HeroSection } from "@/components/hero";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function StiniciTechnika() {
     const list = [
@@ -120,70 +120,75 @@ export default function StiniciTechnika() {
                     </div>
 
                     <div className="md:col-span-12">
-                        <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 w-full">
+                        <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 auto-rows-[350px] w-full">
                             <div className="place-items-center col-span-2 p-10 font-bold text-4xl text-center">
                                 Tak co, které stínění bude pro Vás to{" "}
                                 <span className="text-foreground">pravé?</span>
                             </div>
                             <Link
                                 href={"/stinici-technika/venkovni-stineni"}
-                                className="group relative flex flex-col justify-center items-center rounded-xl w-full h-full min-h-[400px] overflow-hidden will-change-auto"
+                                className="group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl h-full overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
                                 aria-label="Venkovní stínění"
                             >
-                                <div className="absolute inset-0 bg-[url(/assets/img/venek_zaluzie_prizn.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]" />
+                                <Image
+                                    src={"/assets/img/venek_zaluzie_prizn.jpeg"}
+                                    alt={"Venkovní stínění"}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
 
-                                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
 
-                                <div className="z-10 relative p-6 text-white text-center">
-                                    <h3 className="font-bold text-3xl">
-                                        Venkovní stínění
-                                    </h3>
-                                    <p className="mt-3 max-w-md">
-                                        Stínění pro Vaše venkovní prostory
-                                    </p>
-                                    <div className="flex justify-center items-center mt-4 font-bold">
-                                        <Button
-                                            variant={"ghost"}
-                                            className="flex items-center bg-transparent hover:bg-transparent text-white hover:text-foreground group-hover:text-foreground text-lg transition-all duration-300 cursor-pointer"
-                                            aria-label="Zjistit více o venkovním stínění"
-                                        >
-                                            Zjistit více
-                                            <ArrowRight
-                                                className="mt-0.5 group-hover:ml-2 group-hover:w-4 transition-all duration-300"
-                                                size={16}
-                                            />
-                                        </Button>
+                                <div className="z-10 absolute inset-0 flex flex-col justify-end p-6 md:p-8 h-full">
+                                    <div className="transition-transform translate-y-2 group-hover:translate-y-0 duration-300 transform">
+                                        <div className="flex justify-between items-center">
+                                            <h3 className="font-bold text-background text-3xl">
+                                                Venkovní stínění
+                                            </h3>
+                                            <div className="bg-white/20 opacity-0 group-hover:opacity-100 backdrop-blur-sm p-2 rounded-full transition-all translate-x-4 group-hover:translate-x-0 duration-300">
+                                                <ArrowRight className="w-5 h-5 text-white" />
+                                            </div>
+                                        </div>
+                                        <p className="opacity-80 group-hover:opacity-100 mt-3 max-w-md text-gray-200 line-clamp-2 leading-relaxed transition-opacity duration-300 delay-75">
+                                            Stínění pro Vaše venkovní prostory
+                                        </p>
                                     </div>
                                 </div>
                             </Link>
                             <Link
                                 href={"/stinici-technika/interierove-stineni"}
-                                className="group relative flex flex-col justify-center items-center rounded-xl w-full h-full min-h-[400px] overflow-hidden will-change-auto"
+                                className="group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl h-full overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
                                 aria-label="Interierové stínění"
                             >
-                                <div className="absolute inset-0 bg-[url(/assets/img/IMG_7820.jpeg)] bg-cover bg-no-repeat bg-center group-hover:scale-110 transition-all duration-500 will-change-[scale]" />
+                                <Image
+                                    src={"/assets/img/IMG_7820.jpeg"}
+                                    alt={"Interierové stínění"}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
 
-                                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-all duration-500" />
+                                {/* Stejné gradienty jako u první karty */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
 
-                                <div className="z-10 relative p-6 text-white text-center">
-                                    <h3 className="font-bold text-3xl">
-                                        Interierové stínění
-                                    </h3>
-                                    <p className="mt-3 max-w-md">
-                                        Stínění pro Váš interiér
-                                    </p>
-                                    <div className="flex justify-center items-center mt-4 font-bold">
-                                        <Button
-                                            variant={"ghost"}
-                                            className="flex items-center bg-transparent hover:bg-transparent text-white hover:text-foreground group-hover:text-foreground text-lg transition-all duration-300 cursor-pointer"
-                                            aria-label="Zjistit více o interierovém stínění"
-                                        >
-                                            Zjistit více
-                                            <ArrowRight
-                                                className="mt-0.5 group-hover:ml-2 group-hover:w-4 transition-all duration-300"
-                                                size={16}
-                                            />
-                                        </Button>
+                                {/* Stejná struktura obsahu */}
+                                <div className="z-10 absolute inset-0 flex flex-col justify-end p-6 md:p-8 h-full">
+                                    <div className="transition-transform translate-y-2 group-hover:translate-y-0 duration-300 transform">
+                                        <div className="flex justify-between items-center">
+                                            <h3 className="font-bold text-background text-3xl">
+                                                Interiérové stínění
+                                            </h3>
+                                            <div className="bg-white/20 opacity-0 group-hover:opacity-100 backdrop-blur-sm p-2 rounded-full transition-all translate-x-4 group-hover:translate-x-0 duration-300">
+                                                <ArrowRight className="w-5 h-5 text-white" />
+                                            </div>
+                                        </div>
+                                        <p className="opacity-80 group-hover:opacity-100 mt-3 max-w-md text-gray-200 line-clamp-2 leading-relaxed transition-opacity duration-300 delay-75">
+                                            Designové a funkční stínění pro váš
+                                            interiér.
+                                        </p>
                                     </div>
                                 </div>
                             </Link>
