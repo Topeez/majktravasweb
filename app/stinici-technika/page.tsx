@@ -120,14 +120,14 @@ export default function StiniciTechnika() {
                     </div>
 
                     <div className="md:col-span-12">
+                        <div className="place-items-center col-span-2 p-10 font-bold text-4xl text-center">
+                            Tak co, které stínění bude pro Vás to{" "}
+                            <span className="text-foreground">pravé?</span>
+                        </div>
                         <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 auto-rows-[350px] w-full">
-                            <div className="place-items-center col-span-2 p-10 font-bold text-4xl text-center">
-                                Tak co, které stínění bude pro Vás to{" "}
-                                <span className="text-foreground">pravé?</span>
-                            </div>
                             <Link
                                 href={"/stinici-technika/venkovni-stineni"}
-                                className="group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl h-full overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
+                                className="group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl w-full h-[350px] overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
                                 aria-label="Venkovní stínění"
                             >
                                 <Image
@@ -159,7 +159,7 @@ export default function StiniciTechnika() {
                             </Link>
                             <Link
                                 href={"/stinici-technika/interierove-stineni"}
-                                className="group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl h-full overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
+                                className="group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl w-full h-[350px] overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
                                 aria-label="Interierové stínění"
                             >
                                 <Image
@@ -170,11 +170,9 @@ export default function StiniciTechnika() {
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
 
-                                {/* Stejné gradienty jako u první karty */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
 
-                                {/* Stejná struktura obsahu */}
                                 <div className="z-10 absolute inset-0 flex flex-col justify-end p-6 md:p-8 h-full">
                                     <div className="transition-transform translate-y-2 group-hover:translate-y-0 duration-300 transform">
                                         <div className="flex justify-between items-center">
