@@ -33,7 +33,7 @@ export function Footer() {
     };
 
     return (
-        <footer className="bg-foreground py-12 text-white">
+        <footer className="bg-foreground py-12 text-background">
             <div className="cs-container">
                 <div className="gap-8 grid grid-cols-1 md:grid-cols-4">
                     <div aria-label="Company Information">

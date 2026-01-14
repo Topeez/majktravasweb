@@ -107,7 +107,7 @@ export function Testimonials() {
             aria-label={`Reference od ${testimonial.name} pro ${testimonial.type}`}
         >
             <div className="flex items-center">
-                <div className="flex justify-center items-center bg-foreground rounded-full w-12 h-12 font-bold text-white">
+                <div className="flex justify-center items-center bg-foreground rounded-full w-12 h-12 font-bold text-background">
                     {testimonial.initials}
                 </div>
                 <div className="ml-4">

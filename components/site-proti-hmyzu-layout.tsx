@@ -54,7 +54,7 @@ export function DetailProduktu({
                         className="shadow-lg rounded-2xl size-full object-cover"
                     />
                     {/* Dekorativní border */}
-                    <div className="absolute inset-0 m-4 border-2 border-white/10 rounded-2xl pointer-events-none" />
+                    <div className="absolute inset-0 m-4 border-2 border-background/10 rounded-2xl pointer-events-none" />
                 </div>
 
                 <div className="space-y-6 col-span-12 md:col-span-6">
@@ -69,7 +69,7 @@ export function DetailProduktu({
                         {features.map((item, index) => (
                             <li key={index} className="flex items-start gap-3">
                                 <div className="flex-shrink-0 bg-foreground mt-1 p-1 rounded-full">
-                                    <Check className="w-4 h-4 text-white" />
+                                    <Check className="w-4 h-4 text-background" />
                                 </div>
                                 <span className="text-primary/90">{item}</span>
                             </li>

@@ -73,7 +73,7 @@ export function MobileMenu({
         <div className="lg:hidden">
             <Button
                 onClick={onToggle}
-                className={`group !z-[1000] bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button ${
+                className={`group !z-[1000] bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-background text-xl cursor-pointer mobile-menu-button ${
                     isOpen ? "opacity-0" : "opacity-100"
                 }`}
                 aria-expanded={isOpen}
@@ -102,7 +102,7 @@ export function MobileMenu({
             >
                 <Button
                     onClick={onToggle}
-                    className="group top-7 right-3.5 !z-[1000] absolute bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-white text-xl cursor-pointer mobile-menu-button"
+                    className="group top-7 right-3.5 !z-[1000] absolute bg-transparent hover:bg-transparent shadow-none size-10 aspect-square font-bold text-foreground hover:text-background text-xl cursor-pointer mobile-menu-button"
                     aria-label="Zavřít navigační menu"
                 >
                     <HamburgerIcon isOpen={isOpen} />

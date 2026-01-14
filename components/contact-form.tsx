@@ -42,7 +42,9 @@ function notify(type: "success" | "error", message: string) {
         style: {
             backgroundColor: "#F3F4F6",
             color: "#1F2937",
-            borderLeft: `4px solid ${type === "success" ? "#5ca437" : "#c53030"}`,
+            borderLeft: `4px solid ${
+                type === "success" ? "#5ca437" : "#c53030"
+            }`,
         },
         icon: type === "success" ? "✅" : "❌",
     });
@@ -189,7 +191,7 @@ export function ContactForm() {
 
                 <Button
                     type="submit"
-                    className="bg-foreground hover:bg-background mt-4 py-3 border border-foreground rounded-lg w-full font-bold text-white hover:text-foreground text-lg transition cursor-pointer"
+                    className="bg-foreground hover:bg-background mt-4 py-3 border border-foreground rounded-lg w-full font-bold text-background hover:text-foreground text-lg transition cursor-pointer"
                     aria-label="Submit message"
                 >
                     Odeslat zprávu

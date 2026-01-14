@@ -8,7 +8,7 @@ export function CTA() {
             aria-label="Kontaktní sekce"
         >
             <div className="z-30 relative px-4 sm:px-6 lg:px-8 text-center cs-container">
-                <h2 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                <h2 className="font-bold text-background text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                     Máte zájem o mé služby?
                 </h2>
                 <p className="mx-auto mt-3 sm:mt-4 px-4 sm:px-0 max-w-2xl text-gray-100 text-base sm:text-lg md:text-xl">
@@ -18,7 +18,7 @@ export function CTA() {
                 <div className="mt-6 sm:mt-8 lg:mt-10">
                     <Link
                         href="#kontakt"
-                        className="group inline-block bg-white hover:bg-transparent px-6 sm:px-8 py-3 sm:py-4 border-2 border-background rounded-full font-bold text-popover-foreground hover:text-white text-base sm:text-lg transition"
+                        className="group inline-block bg-background hover:bg-transparent px-6 sm:px-8 py-3 sm:py-4 border-2 border-background rounded-full font-bold text-popover-foreground hover:text-background text-base sm:text-lg transition"
                         aria-label="Kontaktujte mě"
                     >
                         <span className="mr-2">Ozvat se</span>

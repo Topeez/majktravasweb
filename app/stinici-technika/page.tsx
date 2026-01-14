@@ -127,7 +127,7 @@ export default function StiniciTechnika() {
                         <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 auto-rows-[350px] w-full">
                             <Link
                                 href={"/stinici-technika/venkovni-stineni"}
-                                className="group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl w-full h-[350px] overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
+                                className="group relative bg-foreground shadow-sm hover:shadow-xl rounded-2xl w-full h-[350px] overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
                                 aria-label="Venkovní stínění"
                             >
                                 <Image
@@ -159,7 +159,7 @@ export default function StiniciTechnika() {
                             </Link>
                             <Link
                                 href={"/stinici-technika/interierove-stineni"}
-                                className="group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl w-full h-[350px] overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
+                                className="group relative bg-foreground shadow-sm hover:shadow-xl rounded-2xl w-full h-[350px] overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
                                 aria-label="Interierové stínění"
                             >
                                 <Image

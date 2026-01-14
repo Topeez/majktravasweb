@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ContactButton } from "./contact-button";
 
 export interface ZigZagItem {
     id?: string;
@@ -51,7 +50,7 @@ export function ZigZagLayout({ items, className }: ZigZagLayoutProps) {
                                         className="flex items-start gap-3"
                                     >
                                         <div className="flex-shrink-0 bg-foreground mt-1 p-1 rounded-full">
-                                            <Check className="w-4 h-4 text-white" />
+                                            <Check className="w-4 h-4 text-background" />
                                         </div>
                                         <span className="text-primary/90">
                                             {feature}
@@ -60,16 +59,15 @@ export function ZigZagLayout({ items, className }: ZigZagLayoutProps) {
                                 ))}
                             </ul>
 
-                            <Button
-                                asChild
-                                className="bg-foreground hover:bg-background mt-4 px-8 py-6 border border-foreground rounded-3xl w-full md:w-auto font-bold text-white hover:text-foreground text-lg transition cursor-pointer"
+                            <ContactButton
+                                href={item.buttonLink}
+                                linkPrefix={item.id}
+                                className="group"
                             >
-                                <Link href={item.buttonLink || "/#kontakt"}>
-                                    {item.buttonText ||
-                                        `Mám zájem o ${item.title.toLowerCase()}`}
-                                    <ArrowRight className="ml-2 w-5 h-5" />
-                                </Link>
-                            </Button>
+                                {item.buttonText ||
+                                    `Mám zájem o ${item.title.toLowerCase()}`}
+                                <ArrowRight className="ml-1.5 group-hover:ml-2 size-5 transition-all" />
+                            </ContactButton>
                         </div>
 
                         <div className="group relative shadow-2xl rounded-2xl w-full h-[400px] md:h-[500px] overflow-hidden">
@@ -79,7 +77,7 @@ export function ZigZagLayout({ items, className }: ZigZagLayoutProps) {
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                             />
-                            <div className="absolute inset-0 m-4 border-2 border-white/10 rounded-2xl pointer-events-none" />
+                            <div className="absolute inset-0 m-4 border-2 border-background/10 rounded-2xl pointer-events-none" />
                         </div>
                     </div>
                 );

@@ -121,7 +121,7 @@ export function Card({
                                     alt={title}
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 m-4 border-2 border-white/10 rounded-2xl pointer-events-none" />
+                                <div className="absolute inset-0 m-4 border-2 border-background/10 rounded-2xl pointer-events-none" />
                                 <div className="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black/50 via-20% via-black/50 to-transparent p-5">
                                     <h4 className="text-background text-3xl text-center">
                                         {variant1}
@@ -138,7 +138,7 @@ export function Card({
                                     alt={title}
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 m-4 border-2 border-white/10 rounded-2xl pointer-events-none" />
+                                <div className="absolute inset-0 m-4 border-2 border-background/10 rounded-2xl pointer-events-none" />
                                 <div className="absolute inset-0 flex justify-center items-end bg-gradient-to-t from-black/50 via-20% via-black/50 to-transparent p-5">
                                     <h4 className="text-background text-3xl text-center">
                                         {variant2}

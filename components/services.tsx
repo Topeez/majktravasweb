@@ -2,6 +2,7 @@ import Link from "next/link";
 import { services } from "@/data/services";
 import { Button } from "./ui/button";
 import { BentoGrid } from "./bento-grid";
+import { ContactButton } from "./contact-button";
 
 export default function Services() {
     return (
@@ -22,12 +23,7 @@ export default function Services() {
                     </div>
 
                     <div className="hidden md:block">
-                        <Button
-                            className="bg-foreground hover:bg-background mt-4 py-3 border border-foreground rounded-lg w-full font-bold text-white hover:text-foreground text-lg transition cursor-pointer"
-                            asChild
-                        >
-                            <Link href="/#kontakt">Nezávazná poptávka</Link>
-                        </Button>
+                        <ContactButton>Nezávazná poptávka</ContactButton>
                     </div>
                 </div>
 
@@ -36,7 +32,7 @@ export default function Services() {
 
             <div className="md:hidden mt-8 text-center">
                 <Button
-                    className="bg-foreground hover:bg-background mx-12 mt-4 py-3 border border-foreground rounded-lg font-bold text-white hover:text-foreground text-lg transition cursor-pointer"
+                    className="bg-foreground hover:bg-background mx-12 mt-4 py-3 border border-foreground rounded-lg font-bold text-background hover:text-foreground text-lg transition cursor-pointer"
                     asChild
                 >
                     <Link href="/kontakt">Nezávazná poptávka</Link>

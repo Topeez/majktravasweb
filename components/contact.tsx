@@ -38,7 +38,7 @@ export function Contact() {
                                     className="flex items-start"
                                     aria-label={item.title}
                                 >
-                                    <div className="flex flex-shrink-0 justify-center items-center bg-foreground rounded-full size-10 text-white">
+                                    <div className="flex flex-shrink-0 justify-center items-center bg-foreground rounded-full size-10 text-background">
                                         {item.icon}
                                     </div>
                                     <div className="ml-4">
@@ -56,7 +56,7 @@ export function Contact() {
 
                     <div className="lg:w-1/2">
                         <div
-                            className="bg-white shadow-lg p-6 md:p-8 rounded-xl"
+                            className="bg-background shadow-lg p-6 md:p-8 rounded-xl"
                             aria-label="Formulář"
                         >
                             <h3

@@ -77,7 +77,7 @@ export const HeroSection = memo(function HeroSection({
         () =>
             cn(
                 "z-10 relative flex flex-col justify-center items-center",
-                "bg-cover bg-no-repeat bg-center w-full min-h-screen text-white",
+                "bg-cover bg-no-repeat bg-center w-full min-h-screen text-background",
                 "overflow-hidden"
             ),
         []
@@ -163,7 +163,7 @@ export const HeroSection = memo(function HeroSection({
             <div className={placeholderClassName}>
                 <div className="absolute inset-0" style={placeholderStyle} />
                 {/* Subtle animated gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-background/5 to-transparent animate-pulse" />
             </div>
 
             {/* Background Image Layer */}
@@ -193,7 +193,7 @@ export const HeroSection = memo(function HeroSection({
             <Button
                 onClick={scrollToNextSection}
                 aria-label="Scroll down to the next section"
-                className="bottom-8 left-1/2 z-20 absolute flex justify-center items-center bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 hover:border-white/50 rounded-full size-12 aspect-square text-white transition-all -translate-x-1/2 animate-bounce cursor-pointer transform"
+                className="bottom-8 left-1/2 z-20 absolute flex justify-center items-center bg-background/20 hover:bg-background/30 backdrop-blur-sm border border-background/30 hover:border-background/50 rounded-full size-12 aspect-square text-background transition-all -translate-x-1/2 animate-bounce cursor-pointer transform"
             >
                 <ChevronsDown size={24} />
             </Button>

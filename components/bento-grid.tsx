@@ -28,7 +28,7 @@ export function BentoGrid({ items, className }: BentoGridProps) {
                     key={index}
                     href={item.link}
                     className={cn(
-                        "group relative bg-gray-900 shadow-sm hover:shadow-xl rounded-2xl overflow-hidden transition-all hover:-translate-y-1",
+                        "group relative bg-foreground shadow-sm hover:shadow-xl rounded-2xl overflow-hidden transition-all hover:-translate-y-1",
                         // Bento logika: 1. karta je široká (2 sloupce)
                         index === 0 ? "md:col-span-2" : "md:col-span-1"
                     )}
@@ -52,7 +52,7 @@ export function BentoGrid({ items, className }: BentoGridProps) {
                             <div className="flex justify-between items-center">
                                 <h3
                                     className={cn(
-                                        "mb-0 font-bold text-white",
+                                        "mb-0 font-bold text-background",
                                         index === 0
                                             ? "text-2xl md:text-3xl"
                                             : "text-xl"
@@ -61,8 +61,8 @@ export function BentoGrid({ items, className }: BentoGridProps) {
                                     {item.title}
                                 </h3>
 
-                                <div className="bg-white/20 opacity-0 group-hover:opacity-100 backdrop-blur-sm p-2 rounded-full transition-all translate-x-4 group-hover:translate-x-0 duration-300">
-                                    <ArrowRight className="w-5 h-5 text-white" />
+                                <div className="bg-background/20 opacity-0 group-hover:opacity-100 backdrop-blur-sm p-2 rounded-full transition-all translate-x-4 group-hover:translate-x-0 duration-300">
+                                    <ArrowRight className="w-5 h-5 text-background" />
                                 </div>
                             </div>
 

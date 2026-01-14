@@ -40,7 +40,7 @@ export function Benefits() {
                                     <div className="flex flex-shrink-0 justify-center items-center bg-primary/10 group-hover:bg-foreground rounded-full w-14 h-14 transition-colors group-hover:animate-tilt">
                                         <benefit.icon
                                             size={24}
-                                            className="text-foreground group-hover:text-white transition-colors"
+                                            className="text-foreground group-hover:text-background transition-colors"
                                         />
                                     </div>
                                     <div className="ml-6">
