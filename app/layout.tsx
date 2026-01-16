@@ -8,6 +8,7 @@ import { BackToTop } from "@/components/back-to-top";
 
 const opensans = Open_Sans({
     subsets: ["latin"],
+    display: "swap",
 });
 
 const BASE_URL = "https://travasstineni.cz";
