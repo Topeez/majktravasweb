@@ -6,6 +6,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { usePathname, useRouter } from "next/navigation";
+import {
+    ClimaxLogo,
+    IsotraLogo,
+    JimiToreLogo,
+    TridoLogo,
+} from "./logo-cloud/logos";
 
 export function Footer() {
     const pathname = usePathname();
@@ -21,51 +27,75 @@ export function Footer() {
 
     const handleNavClick = (href: string) => {
         if (isHomePage) {
-            // If already on homepage, just scroll to section
             const element = document.querySelector(href);
             if (element) {
                 element.scrollIntoView({ behavior: "smooth" });
             }
         } else {
-            // If not on homepage, navigate to homepage with hash
             router.push(`/${href}`);
         }
     };
 
     return (
-        <footer className="bg-foreground py-12 text-background">
+        <footer className="bg-foreground py-16 text-background">
             <div className="cs-container">
-                <div className="gap-8 grid grid-cols-1 md:grid-cols-4">
-                    <div aria-label="Company Information">
-                        <div className="flex justify-center items-center">
-                            <Link href="/" draggable={false} aria-label="Home">
-                                <Image
-                                    src="/assets/img/logo/logo.png"
-                                    width={160}
-                                    height={80}
-                                    alt="logo"
-                                    className="w-40"
-                                    draggable={false}
-                                />
-                            </Link>
+                <div className="flex flex-col items-center mb-16">
+                    <p className="mb-8 font-bold text-white/40 text-xs text-center uppercase tracking-[0.2em]">
+                        Autorizovaná montáž ověřených značek
+                    </p>
+
+                    <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+                        <div className="flex justify-center w-28 md:w-36">
+                            <ClimaxLogo className="opacity-50 hover:opacity-100 brightness-0 invert" />
                         </div>
-                        <p className="mt-4 text-background md:text-left text-center">
+                        <div className="flex justify-center w-28 md:w-36">
+                            <IsotraLogo className="opacity-50 hover:opacity-100 brightness-0 invert" />
+                        </div>
+                        <div className="flex justify-center w-28 md:w-36">
+                            <JimiToreLogo className="opacity-50 hover:opacity-100 brightness-0 invert" />
+                        </div>
+                        <div className="flex justify-center w-28 md:w-36">
+                            <TridoLogo className="opacity-50 hover:opacity-100 brightness-0 invert" />
+                        </div>
+                    </div>
+                </div>
+
+                <Separator className="bg-white/10 mb-12" />
+
+                <div className="gap-10 grid grid-cols-1 md:grid-cols-4">
+                    <div className="flex flex-col items-center md:items-start md:text-left text-center">
+                        <Link
+                            href="/"
+                            draggable={false}
+                            aria-label="Home"
+                            className="block mb-6"
+                        >
+                            <Image
+                                src="/assets/img/logo/logo.png"
+                                width={160}
+                                height={80}
+                                alt="Travas Stínění Logo"
+                                className="w-40"
+                                draggable={false}
+                            />
+                        </Link>
+                        <p className="max-w-xs text-white/70 text-sm leading-relaxed">
                             Profesionální montáže stínicí techniky s více než 8
                             letou praxí. Zaměřuji se na individuální řešení a
                             precizní provedení.
                         </p>
                     </div>
 
-                    <div className="text-center" aria-label="Services">
-                        <h4 className="mb-4 font-bold text-lg">Služby</h4>
-                        <ul className="space-y-2 text-background">
+                    <div className="md:text-left text-center">
+                        <h4 className="mb-6 font-bold text-lg tracking-wide">
+                            Služby
+                        </h4>
+                        <ul className="space-y-3 text-white/70 text-sm">
                             {services.map((service, index) => (
                                 <li key={index}>
                                     <Link
                                         href={service.link}
-                                        className="hover:underline transition"
-                                        draggable={false}
-                                        aria-label={service.title}
+                                        className="block py-1 hover:text-white transition-colors"
                                     >
                                         {service.title}
                                     </Link>
@@ -74,19 +104,18 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div className="text-center" aria-label="Quick Links">
-                        <h4 className="mb-4 font-bold text-lg">
+                    <div className="md:text-left text-center">
+                        <h4 className="mb-6 font-bold text-lg tracking-wide">
                             Rychlé odkazy
                         </h4>
-                        <ul className="space-y-2 text-background">
+                        <ul className="space-y-3 text-white/70 text-sm">
                             {navLinks.map((link, index) => (
                                 <li key={index}>
                                     <button
                                         onClick={() =>
                                             handleNavClick(link.href)
                                         }
-                                        className="text-left hover:underline transition cursor-pointer"
-                                        aria-label={link.label}
+                                        className="block py-1 w-full md:w-auto hover:text-white text-left transition-colors cursor-pointer"
                                     >
                                         {link.label}
                                     </button>
@@ -95,22 +124,20 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div
-                        className="text-center"
-                        aria-label="Contact Information"
-                    >
-                        <h4 className="mb-4 font-bold text-lg">Kontakt</h4>
-                        <ul className="space-y-2 text-background text-left">
+                    <div className="md:text-left text-center">
+                        <h4 className="mb-6 font-bold text-lg tracking-wide">
+                            Kontakt
+                        </h4>
+                        <ul className="space-y-4 text-white/70 text-sm">
                             {contactInfo.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="flex justify-center md:justify-start items-center"
-                                    aria-label={item.title}
+                                    className="flex md:flex-row flex-col items-center md:items-start gap-3"
                                 >
-                                    <span className="mr-3" aria-hidden="true">
+                                    <span className="mt-0.5 text-white shrink-0">
                                         {item.icon}
                                     </span>
-                                    <div className="odd:flex odd:flex-col odd:justify-center odd:items-center last:text-center">
+                                    <div className="leading-tight">
                                         {item.content}
                                     </div>
                                 </li>
@@ -119,22 +146,25 @@ export function Footer() {
                     </div>
                 </div>
 
-                <Separator className="my-8" />
-                <div className="font-bold text-muted text-center">
-                    &copy; {new Date().getFullYear()} Travas Stínění. Všechna
-                    práva vyhrazena.
-                </div>
-                <div className="mt-5 text-muted text-xs text-center">
-                    Webovou stránku vytvořil
-                    <Link
-                        href={"https://www.topeeez.cz"}
-                        className="font-bold animate-shine effect-shine"
-                        target="_blank"
-                        draggable={false}
-                        aria-label="Topeeez Website"
-                    >
-                        <span> Topeeez</span>
-                    </Link>
+                <Separator className="bg-white/10 my-10" />
+
+                <div className="flex flex-col justify-between items-center gap-4 text-white/40 text-xs">
+                    <div className="font-bold text-muted text-center">
+                        &copy; {new Date().getFullYear()} Travas Stínění.
+                        Všechna práva vyhrazena.
+                    </div>
+                    <div className="mt-5 text-muted text-xs text-center">
+                        Webovou stránku vytvořil
+                        <Link
+                            href={"https://www.topeeez.cz"}
+                            className="font-bold animate-shine effect-shine"
+                            target="_blank"
+                            draggable={false}
+                            aria-label="Topeeez portfolio"
+                        >
+                            <span> Topeeez</span>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>
