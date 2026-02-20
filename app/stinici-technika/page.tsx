@@ -127,7 +127,7 @@ export default function StiniciTechnika() {
                         <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 auto-rows-[350px] w-full">
                             <Link
                                 href={"/stinici-technika/venkovni-stineni"}
-                                className="group relative bg-foreground shadow-sm hover:shadow-xl rounded-2xl w-full h-[350px] overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
+                                className="group relative bg-foreground shadow-sm hover:shadow-xl rounded-2xl w-full h-87.5 overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
                                 aria-label="Venkovní stínění"
                             >
                                 <Image
@@ -138,7 +138,7 @@ export default function StiniciTechnika() {
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
 
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
 
                                 <div className="z-10 absolute inset-0 flex flex-col justify-end p-6 md:p-8 h-full">
@@ -159,7 +159,7 @@ export default function StiniciTechnika() {
                             </Link>
                             <Link
                                 href={"/stinici-technika/interierove-stineni"}
-                                className="group relative bg-foreground shadow-sm hover:shadow-xl rounded-2xl w-full h-[350px] overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
+                                className="group relative bg-foreground shadow-sm hover:shadow-xl rounded-2xl w-full h-87.5 overflow-hidden transition-all hover:-translate-y-1 will-change-auto"
                                 aria-label="Interierové stínění"
                             >
                                 <Image
@@ -170,7 +170,7 @@ export default function StiniciTechnika() {
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
 
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
 
                                 <div className="z-10 absolute inset-0 flex flex-col justify-end p-6 md:p-8 h-full">
